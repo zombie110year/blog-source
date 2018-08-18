@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "transmit",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\assert\\python\\insert_local_text.py",
+                "-i",
+                "${file}",
+                "-o",
+                "${workspaceFolder}\\assert\\resources\\${fileBasename}.html",
+            ],
+            "group": "test",
+        },
+        {
+            "label": "format",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "D:\\OneDrive\\Github\\python_practice\\others\\Text_Operation\\blank_line_killer.py",
+                "-d",
+                "D:\\Blog\\public",
+                "-m",
+                ".html",
+            ],
+            "group": "test"
+        }
+    ]
+}
