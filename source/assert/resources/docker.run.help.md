@@ -1,4 +1,4 @@
-[Origin-File](/assert/repos/docker/docker.run.help.md)
+[Origin-File](/assert/repos/docker/docker.run.help)
 
 ```
 Usage:	docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
