@@ -25,7 +25,7 @@ Note:   target 不以路径分隔符结尾, 可以为目录, 也可以为文件
 """%__file__
 
 #! =================================重要变量 开始=================================
-REPLACE_TARGET = re.compile(r"^[ \t]*\n{1}")          # 设置替换目标 == 换行符 \n 前仅有空白字符或什么也没有的一行
+REPLACE_TARGET = re.compile(r"^[ \t]*\n{1}$")          # 设置替换目标 == 换行符 \n 前仅有空白字符或什么也没有的一行
 sysinfo = platform.platform()
 SEPERATOR = "/"          # * 根据系统类型设置路径分隔符
 if "Windows" in sysinfo:
