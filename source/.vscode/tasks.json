@@ -8,11 +8,11 @@
             "type": "shell",
             "command": "python",
             "args": [
-                "${workspaceFolder}\\assert\\python\\insert_local_text.py",
+                "${workspaceFolder}\\assert\\python\\insert_local_text.win.py",
                 "-i",
                 "${file}",
                 "-o",
-                "${workspaceFolder}\\assert\\resources\\${fileBasename}.html",
+                "${workspaceFolder}\\assert\\resources\\${fileBasename}.md",
             ],
             "group": "test",
         },

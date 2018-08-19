@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<a href="/public/assert/repos/docker/docker.run.help">Origin-File</a>
-    <pre><code>
+```
 Usage:	docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 Run a command in a new container
@@ -106,6 +97,4 @@ Options:
       --volumes-from list              Mount volumes from the specified container(s)
   -w, --workdir string                 Working directory inside the container
 
-</code></pre>
-</body>
-</html>
+```
