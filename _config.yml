@@ -27,6 +27,9 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :zh-CN
 skip_render:
+  - /assert/repos/*
+  - /assert/css/*
+  - /assert/js/*
 
 # Writing
 new_post_name: :title.md # File name of new posts

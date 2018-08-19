@@ -107,7 +107,7 @@ Python 代码的基本结构:
 - (可选) 特殊注释, 前两行
 - 语句
 
-了解了 Python 的基本概念之后, 就先学习一下 Python 的 [运算符](/2018/07/27/pynote-python运算符/) 和 [控制结构](/2018/07/27/pynote-python控制结构) 吧. 先把 Python 用起来.
+了解了 Python 的基本概念之后, 就先学习一下 Python 的 [运算符](/2018/07/pynote-python运算符/) 和 [控制结构](/2018/07/pynote-python控制结构) 吧. 先把 Python 用起来.
 
 - 数据结构
   - 数字

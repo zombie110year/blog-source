@@ -1,4 +1,3 @@
-```
 Usage:	docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 Run a command in a new container
@@ -96,5 +95,3 @@ Options:
       --volume-driver string           Optional volume driver for the container
       --volumes-from list              Mount volumes from the specified container(s)
   -w, --workdir string                 Working directory inside the container
-
-```
