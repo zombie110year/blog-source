@@ -174,4 +174,4 @@ conflict: unable to remove repository reference "hello-world:latest" (must force
 
 ---
 
-[^docker.run.help]: [Docker.run.help](/public/assert/resources/docker.run.help.html)
+[^docker.run.help]: [Docker.run.help](/assert/resources/docker.run.help.html)
