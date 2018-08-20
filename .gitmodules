@@ -1,3 +1,6 @@
 [submodule "deployed"]
 	path = ./.deploy.git
 	url = git@github.com:zombie110year/zombie110year.github.io.git
+[submodule ".deploy.git"]
+	path = .deploy.git
+	url = https://github.com/zombie110year/zombie110year.gihub.io
