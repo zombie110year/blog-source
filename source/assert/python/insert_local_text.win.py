@@ -31,9 +31,7 @@ origin_file = origin_file.replace("\\", "/")
 md_template = """\
 [Origin-File](%s)
 
-```
 %s
-```
 """
 
 with open(input_file, "r", encoding="utf-8") as read_file:
