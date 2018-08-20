@@ -29,15 +29,17 @@ def main():
     date = "%4d-%02d-%02d %02d:%02d:%02d"%(t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min, t.tm_sec)
     context = """\
 # %s
+
 %s
+
 > date:%s
 """%(main_str, other_str, date)
-    with open("./source/_posts/_TIPS.md", "rt", encoding="utf-8") as f:
+    with open("./source/_posts/TIPS.md", "rt", encoding="utf-8") as f:
         full_text = f.read()
         MD_TEMPLATE[2] = "date: %s\n"%date
         MD_TEMPLATE[8] = full_text[66:]
         MD_TEMPLATE[6] = context
-    with open("./source/_posts/_TIPS.md", "wb") as f:
+    with open("./source/_posts/TIPS.md", "wb") as f:
         out_text = ""
         for lines in MD_TEMPLATE:
             out_text += lines
