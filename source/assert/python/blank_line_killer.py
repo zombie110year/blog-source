@@ -8,8 +8,8 @@ import sys
 
 # * getopt 获取 target_dir, file_mode
 # * 获取目标目录文件列表
-# 对其中一个文件:
-## 调用外部程序格式化             # TODO: 下载代码格式化工具
+# * 对其中一个文件:
+## * 调用外部程序格式化             # 下载代码格式化工具: jdf
 ## * 读取文本内容
 ## * 删除空行
 ## * 覆盖写入源文件
@@ -91,7 +91,7 @@ def test_walk_path(mode="print"):
             print("%d:\t|%s"%(i, item))
             i += 1
 
-def main():
+def blank_line_killer():
     """ main 函数"""
     global target_dir
     global file_mode
@@ -117,4 +117,4 @@ def main():
 #* ================================声明函数部分 结束================================
 
 if __name__ == "__main__":
-    main()
+    blank_line_killer()
