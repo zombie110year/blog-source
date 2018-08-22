@@ -90,7 +90,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 # apt 源中 `termux-*` 软件包的作用
 
-Termux Wiki.
+[Termux Wiki](https://wiki.termux.com/wiki) .
 
 ```
 ======================= ========================================================
@@ -103,6 +103,33 @@ termux-create-package   用于在 Termux 环境下创建 .deb 软件包. 默认�
 termux-elf-cleaner      用于清理编译程序时连接器未使用的 ELF 文件.
 termux-exec             提供识别 shebang 的功能. (shebang, 脚本的特殊注释, 如: #! /bin/bash)
 termux-tools            Termux 非官方工具库.
+```
+
+## termux-api
+
+官方 Wiki 只解释了 `termux-notification` 的用法:
+
+
+```
+Usage:  termux-notification <options>
+Options:
+ --action action          action to execute when pressing the notification
+ --button1 text           text to show on the first notification button
+ --button1-action action  action to execute on the first notification button
+ --button2 text           text to show on the second notification button
+ --button2-action action  action to execute on the second notification button
+ --button3 text           text to show on the third notification button
+ --button3-action action  action to execute on the third notification button
+ --content content        contnet to show in the notification. Read from stdin not specified here.
+ --id id                  notification id (will overwrite any previous notification with the same id)
+ --led-color rrggbb       color of the blinking led as RRGGBB (default: none)
+ --led-on milliseconds    number of milliseconds for the LED to be on while it's flashing (default: 800)
+ --led-off milliseconds   number of milliseconds for the LED to be off while it's flashing (default: 800)
+ --on-delete action       action to execute when the the notification is cleared
+ --priority prio          notification priority (high/low/max/min/default)
+ --sound                  play a sound with the notification
+ --title title            notification title to show
+ --vibrate pattern        vibrate pattern, comma separated as in 500,1000,200
 ```
 
 ---

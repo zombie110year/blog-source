@@ -1,8 +1,28 @@
 ---
 title: 'Tips'
-date: 2018-08-22 18:48:02
+date: 2018-08-23 03:39:16
 categories: Tips
 ---
+
+# 检查翻墙VPS是否被封的办法
+
+## 首先, `ping` 测试.
+
+- 检查能否 `ping` 通.
+
+## 其次, 端口测试
+
+国内端口测试:
+
+[站长工具/port](http://tool.chinaz.com/port)
+
+国外端口测试:
+
+[Open Port Finder](https://www.yougetsignal.com/tools/open-ports/)
+
+> date:2018-08-23 03:39:16
+
+<!--more-->
 
 # 更换Hexo主题的背景图
 
@@ -20,8 +40,6 @@ body { background:url(/images/imagename.jpg);}
 
 > date:2018-08-22 18:48:02
 
-<!--more-->
-
 # PowerShell 中的转义字符
 
 PowerShell 使用反引号作为转义字符;
@@ -32,28 +50,6 @@ PowerShell 使用反引号作为转义字符;
 
 > date:2018-08-22 18:07:10
 
-# 在ConEmu中启动 PowerShell 执行启动动作
-
-我安装了 `oh-my-posh` 后, 想要在启动 PowerShell 时自动生效, 但是因为一些问题, VsCode 上的终端会出现光标错位的现象.
-
-我希望在 ConEmu 启动时执行自定义的 `Start-ConEmu` 函数, 而在 VsCode 下就使用原生 PowerShell.
-
-task 设置中, 如果直接设置
-
-```
-powershell Start-ConEmu
-```
-
-会导致执行完命令就退出. 需要加上参数 `-NoExit`
-
-```
-powershell -NoExit Start-ConEmu
-```
-
-这样, 执行完我自定义的函数后, PowerShell 就不会退出了.
-
-> date:2018-08-22 17:31:53
-
 # ~/.ssh/config 配置
 
 ```
@@ -61,6 +57,7 @@ Host <hostname>
         HostName <domain or IP adress>
         PreferredAuthentications publickey
         IdentityFile ~/.ssh/id_rsa # 使用的私钥
+        Port 22         # 如果使用其他端口, 自行设置
         User <登陆的用户名>
 ```
 
@@ -71,6 +68,8 @@ Host <hostname>
 # Linux BBR
 
 内核版本必须大于 4.9.
+
+[升级内核](https://www.google.com/search?q=Linux+升级内核)
 
 检查是否已开启:
 
@@ -89,12 +88,6 @@ echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf
 
 > date:2018-08-21 22:11:40
 
-# Keepass 自动输入, 终端登陆ssh格式:
-
-```
-ssh {USERNAME}@{URL}{ENTER}{PASSWORD}{ENTER}
-```
-
 > date:2018-08-21 21:56:46
 
 # Android 刷机包结构?
@@ -108,10 +101,6 @@ ssh {USERNAME}@{URL}{ENTER}{PASSWORD}{ENTER}
 - 打开, 切换编辑文件
 
 > date:2018-08-21 01:28:04
-
-# 今晚研究变量的作用域
-
-> date:2018-08-20 18:10:22
 
 # Python @ Windows 如何处理字符编码
 
