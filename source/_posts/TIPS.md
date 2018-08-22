@@ -1,10 +1,42 @@
 ---
 title: 'Tips'
-date: 2018-08-22 17:31:53
+date: 2018-08-22 18:48:02
 categories: Tips
 ---
 
-# 在ConEmu中启动PowerShell执行特定命令
+# 更换Hexo主题的背景图
+
+
+将喜欢的背景图放到 `project-->themes-->next-->source-->images` 目录下。
+打开 `project-->themes-->next-->source-->css-->_custom-->custom.styl` 文件，加入代码
+
+```
+body { background:url(/images/imagename.jpg);}
+```
+
+重新编译项目就OK了。
+
+[参考](http://www.lieeber.com/2016/05/15/Hexo%E4%BD%BF%E7%94%A8%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8Ftips/#%E6%9B%B4%E6%8D%A2next%E4%B8%BB%E9%A2%98%E7%9A%84%E8%83%8C%E6%99%AF)
+
+> date:2018-08-22 18:48:02
+
+<!--more-->
+
+# PowerShell 中的转义字符
+
+PowerShell 使用反引号作为转义字符;
+
+```
+所以如果要在终端中使用反引号, 就打两个反引号就好了
+```
+
+> date:2018-08-22 18:07:10
+
+# 在ConEmu中启动 PowerShell 执行启动动作
+
+我安装了 `oh-my-posh` 后, 想要在启动 PowerShell 时自动生效, 但是因为一些问题, VsCode 上的终端会出现光标错位的现象.
+
+我希望在 ConEmu 启动时执行自定义的 `Start-ConEmu` 函数, 而在 VsCode 下就使用原生 PowerShell.
 
 task 设置中, 如果直接设置
 
@@ -21,8 +53,6 @@ powershell -NoExit Start-ConEmu
 这样, 执行完我自定义的函数后, PowerShell 就不会退出了.
 
 > date:2018-08-22 17:31:53
-
-<!--more-->
 
 # ~/.ssh/config 配置
 
