@@ -1,8 +1,30 @@
 ---
 title: 'Tips'
-date: 2018-08-23 03:39:16
+date: 2018-08-23 22:14:26
 categories: Tips
 ---
+
+# 映射自定义域名到 GitHub Page
+
+0. 首先, 需要自己拥有一个域名, 在域名服务商处购买 (买国内的需要实名认证, 但是不推荐买国外的, 因为.)
+0. 其次, 需要在 DNS 解析服务商处建立域名映射
+0. 最后, 需要在 GitHub 仓库中添加 CNAME 文件, 使其接受映射. 
+
+如果映射域名为 `blog.example.com`, 则 CNAME 文件内容为
+
+```
+blog.example.com
+```
+
+注意, CNAME 文件中只能有一个域名.
+
+## 添加 HTTPS
+
+添加 HTTPS 协议需要拥有 SSL 证书.
+
+> date:2018-08-23 22:14:26
+
+<!--more-->
 
 # 检查翻墙VPS是否被封的办法
 
@@ -21,8 +43,6 @@ categories: Tips
 [Open Port Finder](https://www.yougetsignal.com/tools/open-ports/)
 
 > date:2018-08-23 03:39:16
-
-<!--more-->
 
 # 更换Hexo主题的背景图
 

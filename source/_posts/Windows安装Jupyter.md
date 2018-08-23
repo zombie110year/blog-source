@@ -47,4 +47,32 @@ $INSTALL/Library/bin
 
 使用 `jupyter notebook` 运行服务, 随后可在 `localhost:8888` 使用 `Jupyter NoteBook`. 进去之后会要求输入密码, 只需要输入设置的密码就好(别输散列值).
 
-Enjoy! 😄
+Enjoy! 🙂
+
+# 修改 Jupyter Notebook 主题
+
+[Jupyter-Themes](https://github.com/dunovank/jupyter-themes)
+
+使用 `pip` 安装之后, 对于浏览器界面, 需要在命令行中执行命名更改主题, 所有代码参考 [这里](https://github.com/dunovank/jupyter-themes#command-line-usage).
+
+比如我使用了
+
+```
+jt -t oceans16 -f fira -fs 13 -cellw 90% -ofs 11 -dfs 11 -T
+#设置 oceans16 主题, 设置 fira 字体, 设置代码字体大小 13px, 设置 Cell 宽度 90% 屏幕, 设置输出块字体大小 11px, 设置工具栏可见.
+```
+
+而对于作图(ploting) 的主题, 需要在 Notebook 代码中使用
+
+```py
+from jupyterthemes import jtplot
+jtplot.style(<args>)
+```
+
+Enjoy!😄
+
+# 在远程服务器上部署 Jupyter NoteBook
+
+就像在本地上安装并运行 Jupyter NoteBook 一样.
+
+除此之外, 需要讲以下 Jupyter NoteBook 的用户和权限控制.
