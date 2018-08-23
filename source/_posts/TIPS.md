@@ -1,8 +1,16 @@
 ---
 title: 'Tips'
-date: 2018-08-23 22:14:26
+date: 2018-08-24 00:22:24
 categories: Tips
 ---
+
+# PowerShell rm
+
+可以向 -Exclude (忽略) 传递多个值, 使用逗号 , 分割. -Include 同理.
+
+> date:2018-08-24 00:22:24
+
+<!--more-->
 
 # 映射自定义域名到 GitHub Page
 
@@ -27,8 +35,6 @@ CloudFlare 免费服务提供的是共享的 SSL 证书.
 在 Cloudflare 注册账号后, 选择免费服务, 输入自己的域名. Cloudflare 会查询域名记录, 之后会给两个域名服务器地址, 这两个链接就是 Cloudflare 的 DNS 解析服务器域名. 将其复制, 在购买域名处将解析服务更换为此地址, 等待缓存刷新之后, 访问自己的域名就会由 Cloudflare 解析. 就能使用 Cloudflare 提供的公共证书了.
 
 > date:2018-08-23 22:14:26
-
-<!--more-->
 
 # 检查翻墙VPS是否被封的办法
 
