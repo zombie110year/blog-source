@@ -9,6 +9,8 @@ categories:
 date: 2018-07-26 15:29:44
 ---
 
+<!--more-->
+
 # Python 基础认识
 
 ## 配置 Python 开发环境

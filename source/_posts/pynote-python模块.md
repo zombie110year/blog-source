@@ -7,6 +7,8 @@ categories:
     - Python
 ---
 
+<!--more-->
+
 # Python 模块的目录结构
 
 ```

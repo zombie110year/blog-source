@@ -30,6 +30,8 @@ New-Item -ItemType HardLink -Path D:\Link -Value D:\Target #创建硬链接 D:\L
 New-Item -ItemType Junction -Path D:\Link -Value D:\Target #创建 Junction D:\Link -> D:\Target
 ```
 
+<!--more-->
+
 在创建链接时, 可以使用 `-Force` 参数. 如果在创建链接之前, 目录中已经存在一个与链接同名的文件或子目录, 那么系统会报错 "NewItemError, resource exists", 并不会创建该链接. 那么, 就得使用 `-Force` 参数强行创建, 覆盖已经存在的文件或子目录.
 
 ## 移除/修改链接文件

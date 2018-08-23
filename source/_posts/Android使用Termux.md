@@ -19,6 +19,8 @@ Termux 是运行在安卓手机上的一个终端模拟器, 不需要 root 权�
 
 # Termux 配置
 
+<!--more-->
+
 ```
 vim
 openssh

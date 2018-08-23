@@ -49,6 +49,8 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 
 等待安装完成后, `choco --help` 检查安装是否成功.
 
+<!--more-->
+
 # 先安装一个 Vim 试试
 
 > 初次使用, 发现 chocolatey 貌似是通过发布安装脚本的形式来分发软件的.

@@ -16,6 +16,8 @@ date: 2018-08-15 22:39:39
 - [`try..finally`](#异常清理行为)
 - [`with...as`](#使用-with...as-语句)
 
+<!--more-->
+
 # 语法
 
 ## `try...except`

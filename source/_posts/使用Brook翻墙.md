@@ -7,6 +7,9 @@ tags:
 categories:
   - 日常
 ---
+
+<!--more-->
+
 # 部署翻墙工具 Brook
 
 [Brook@GitHub](https://github.com/txthinking/brook)
