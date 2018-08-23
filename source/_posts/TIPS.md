@@ -12,30 +12,6 @@ categories: Tips
 
 <!--more-->
 
-# 映射自定义域名到 GitHub Page
-
-0. 首先, 需要自己拥有一个域名, 在域名服务商处购买 (买国内的需要实名认证, 但是不推荐买国外的, 因为.)
-0. 其次, 需要在 DNS 解析服务商处建立域名映射
-0. 最后, 需要在 GitHub 仓库中添加 CNAME 文件, 使其接受映射. 
-
-如果映射域名为 `blog.example.com`, 则 CNAME 文件内容为
-
-```
-blog.example.com
-```
-
-注意, CNAME 文件中只能有一个域名.
-
-## 添加 HTTPS
-
-添加 HTTPS 协议需要拥有 SSL 证书. 由于国内需要备案, 很麻烦, 而国外购买 SSL 证书很贵, 因此选择 [cloudflare](https://www.cloudflare.com/) 的服务.
-
-CloudFlare 免费服务提供的是共享的 SSL 证书.
-
-在 Cloudflare 注册账号后, 选择免费服务, 输入自己的域名. Cloudflare 会查询域名记录, 之后会给两个域名服务器地址, 这两个链接就是 Cloudflare 的 DNS 解析服务器域名. 将其复制, 在购买域名处将解析服务更换为此地址, 等待缓存刷新之后, 访问自己的域名就会由 Cloudflare 解析. 就能使用 Cloudflare 提供的公共证书了.
-
-> date:2018-08-23 22:14:26
-
 # 检查翻墙VPS是否被封的办法
 
 ## 首先, `ping` 测试.
@@ -67,6 +43,10 @@ body { background:url(/images/imagename.jpg);}
 重新编译项目就OK了。
 
 [参考](http://www.lieeber.com/2016/05/15/Hexo%E4%BD%BF%E7%94%A8%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8Ftips/#%E6%9B%B4%E6%8D%A2next%E4%B8%BB%E9%A2%98%E7%9A%84%E8%83%8C%E6%99%AF)
+
+但是这效果...... 应该需要改 CSS 把 post 部分弄宽一点吧... 但是不会改... 暂时放弃.
+
+![Snipaste_2018-08-24_01-36-38.png](https://i.loli.net/2018/08/24/5b7ef0c9cb183.png)
 
 > date:2018-08-22 18:48:02
 
