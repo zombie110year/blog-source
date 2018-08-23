@@ -12,9 +12,9 @@
                 "-i",
                 "${file}",
                 "-o",
-                "${workspaceFolder}\\assert\\resources\\${fileBasename}.md",
+                "${workspaceFolder}\\assert\\resources\\${fileBasename}.md"
             ],
-            "group": "test",
+            "group": "test"
         },
         {
             "label": "format",
@@ -25,9 +25,19 @@
                 "-d",
                 "D:\\Blog\\public",
                 "-m",
-                ".html",
+                ".html"
             ],
             "group": "test"
+        },
+        {
+            "label": "RunPython",
+            "type": "shell",
+            "command": "python",
+            "problemMatcher": [],
+            "args": [
+                "${file}"
+            ],
+            "group": "build",
         }
     ]
 }

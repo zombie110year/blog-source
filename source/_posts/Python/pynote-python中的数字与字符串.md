@@ -161,7 +161,7 @@ print("%s(%s) %s!"%(test1,test2,test3))
 hello(HELLO) WoRlD!
 ```
 
-  - 另一种格式化方法为 `"{}{}".format(a,b)`
+  - 另一种格式化方法为 `"{}{}".format(a,b)` 对字符串调用 `format()` 方法.
 
 ```py
 test1 = 1
