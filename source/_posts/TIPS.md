@@ -20,7 +20,11 @@ blog.example.com
 
 ## 添加 HTTPS
 
-添加 HTTPS 协议需要拥有 SSL 证书.
+添加 HTTPS 协议需要拥有 SSL 证书. 由于国内需要备案, 很麻烦, 而国外购买 SSL 证书很贵, 因此选择 [cloudflare](https://www.cloudflare.com/) 的服务.
+
+CloudFlare 免费服务提供的是共享的 SSL 证书.
+
+在 Cloudflare 注册账号后, 选择免费服务, 输入自己的域名. Cloudflare 会查询域名记录, 之后会给两个域名服务器地址, 这两个链接就是 Cloudflare 的 DNS 解析服务器域名. 将其复制, 在购买域名处将解析服务更换为此地址, 等待缓存刷新之后, 访问自己的域名就会由 Cloudflare 解析. 就能使用 Cloudflare 提供的公共证书了.
 
 > date:2018-08-23 22:14:26
 
