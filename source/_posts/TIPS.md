@@ -1,16 +1,73 @@
 ---
 title: 'Tips'
-date: 2018-08-24 00:22:24
+date: 2018-08-25 00:05:02
 categories: Tips
 ---
+
+# locate找不到数据库的解决办法
+
+`updatedb` 指令生成数据库
+
+> date:2018-08-25 00:05:02
+
+<!--more-->
+
+# FireFox config 设置
+
+about:config页面:
+
+```
+view_source.editor.external             允许使用外部编辑器
+view_source.editor.path                 编辑器路径
+security.enterprise_roots.enabled       固定根证书
+```
+
+> date:2018-08-24 20:40:31
+
+# Linux 用户, 用户组 权限管理
+
+指定 /usr/sbin/nologin 使用户无法登陆 shelll
+
+useradd userdel usermod
+
+groupadd groupdel groupmod
+
+passwd
+
+> date:2018-08-24 03:59:13
+
+# Linux 添加 sudoer
+
+ 编辑 `/etc/sudoers`
+
+```sh
+chmod 600 /etc/sudoers    #获取写权限
+echo 'username ALL=(ALL) ALL' >> /etc/sudoers
+chmod 200 /etc/sudoers
+```
+
+```
+username ALL=(ALL:ALL) ALL
+        可切换至所有用户, 用户组, 可使用所有命令
+```
+
+> date:2018-08-24 02:30:19
+
+# CSS 选择器
+
+
+`.` 选择类 `class`
+
+`#` 选择 `id`
+
+
+> date:2018-08-24 01:49:01
 
 # PowerShell rm
 
 可以向 -Exclude (忽略) 传递多个值, 使用逗号 , 分割. -Include 同理.
 
 > date:2018-08-24 00:22:24
-
-<!--more-->
 
 # 检查翻墙VPS是否被封的办法
 
