@@ -1,16 +1,26 @@
 ---
 title: 'Tips'
-date: 2018-08-25 00:05:02
+date: 2018-08-25 16:57:29
 categories: Tips
 ---
+
+# Vscode 调试 Python模块时的 launch.json 设置
+
+```
+            cwd: 模块所在路径,
+            module: ModuleName,
+            args: [],
+```
+
+> date:2018-08-25 16:57:29
+
+<!--more-->
 
 # locate找不到数据库的解决办法
 
 `updatedb` 指令生成数据库
 
 > date:2018-08-25 00:05:02
-
-<!--more-->
 
 # FireFox config 设置
 

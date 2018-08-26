@@ -17,23 +17,9 @@
             "group": "test"
         },
         {
-            "label": "format",
-            "type": "process",
-            "command": "python",
-            "args": [
-                "D:\\OneDrive\\Github\\python_practice\\others\\Text_Operation\\blank_line_killer.py",
-                "-d",
-                "D:\\Blog\\public",
-                "-m",
-                ".html"
-            ],
-            "group": "test"
-        },
-        {
             "label": "RunPython",
             "type": "shell",
             "command": "python",
-            "problemMatcher": [],
             "args": [
                 "${file}"
             ],

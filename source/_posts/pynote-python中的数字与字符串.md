@@ -351,3 +351,9 @@ class str(object)
 >>> str('string')
 'string'
 ```
+
+# 小数与分数
+
+在模块 `decimal` 与 `fractions` 中定义了小数与分数类型.
+
+[Python中的小数与分数](/2018/08/python中的小数与分数.html)

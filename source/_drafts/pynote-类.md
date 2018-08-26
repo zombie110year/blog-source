@@ -1,10 +1,11 @@
 ---
-title: '[PyNote]-类的定义与继承'
+title: '[PyNote]-类'
 mathjax: false
 tags:
-  - null
+  - Python
+  - Note
 categories:
-  - null
+  - Python
 date: 2018-08-14 00:35:35
 ---
 

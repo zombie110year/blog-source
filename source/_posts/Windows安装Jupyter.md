@@ -77,4 +77,6 @@ Enjoy!😄
 
 就像在本地上安装并运行 Jupyter NoteBook 一样.
 
-除此之外, 需要讲以下 Jupyter NoteBook 的用户和权限控制.
+除此之外, 需要讲一下 Jupyter NoteBook 的用户和权限控制.
+
+TODO:
