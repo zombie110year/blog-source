@@ -1,8 +1,26 @@
 ---
 title: 'Tips'
-date: 2018-08-25 16:57:29
+date: 2018-08-27 18:23:27
 categories: Tips
 ---
+
+# VsCode中取正则表达式的子表达式
+
+```
+$number
+```
+
+> date:2018-08-27 18:23:27
+
+<!--more-->
+
+# Vim
+
+添加折叠 za
+打开折叠 zo
+关闭折叠 zc
+
+> date:2018-08-27 00:22:28
 
 # Vscode 调试 Python模块时的 launch.json 设置
 
@@ -13,8 +31,6 @@ categories: Tips
 ```
 
 > date:2018-08-25 16:57:29
-
-<!--more-->
 
 # locate找不到数据库的解决办法
 
