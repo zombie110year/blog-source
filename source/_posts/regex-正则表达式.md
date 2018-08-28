@@ -227,6 +227,45 @@ findall(pattern, string, flags=0)
 
 `findall()` 函数会以列表的形式返回 string 中所有与 pattern 向匹配的字符串. 如果在 pattern 中定义了子表达式, 则将会返回以元组的形式组织起来的子表达式匹配项列表.
 
+## sub() 与 subn()
+
+```py
+sub(pattern, repl, string, count=0, flags=0)
+  --> str(替换后字符串)
+subn(pattern, repl, string, count=0, flags=0)
+  --> tuple(str(替换后字符串), int(替换次数))
+```
+
+`sub()` 函数用于搜索替换字符串. 它将 `string` 中被 `pattern` 匹配到的部分用 `repl` 替换. 在 `pattern` 中匹配的子表达式可被 `repl` 取用.
+
+`count` 参数决定替换次数, 若为 0 则会全部替换.
+
+以下为实例:
+
+```py
+In [1]: import re
+   ...: FROM = """\
+   ...: Name:           Mike Donald
+   ...: Age:            18
+   ...: Address:        Earth
+   ...: """
+   ...:
+   ...: pattern = r"Name:\s*([\S ]+)\s*Age:\s*([ \S]+)\s*Address:\s*([\S ]+)"
+   ...: repl    = r"""姓名: \1
+   ...: 年龄: \2
+   ...: 地址: \3
+   ...: """
+   ...:
+   ...: TO = re.sub(pattern, repl, FROM)
+   ...:
+   ...: print(TO)
+   ...:
+   ...:
+姓名: Mike Donald
+年龄: 18
+地址: Earth
+```
+
 TODO: 另外还有一些函数, 留待日后讲解.
 
 ```
@@ -245,24 +284,6 @@ fullmatch(pattern, string, flags=0)
 purge()
     """清除正则表达式缓存"""
 
-sub(pattern, repl, string, count=0, flags=0)
-    """Return the string obtained by replacing the leftmost
-    non-overlapping occurrences of the pattern in string by the
-    replacement repl.  repl can be either a string or a callable;
-    if a string, backslash escapes in it are processed.  If it is
-    a callable, it's passed the match object and must return
-    a replacement string to be used."""
-
-subn(pattern, repl, string, count=0, flags=0)
-    """Return a 2-tuple containing (new_string, number).
-    new_string is the string obtained by replacing the leftmost
-    non-overlapping occurrences of the pattern in the source
-    string by the replacement repl.  number is the number of
-    substitutions that were made. repl can be either a string or a
-    callable; if a string, backslash escapes in it are processed.
-    If it is a callable, it's passed the match object and must
-    return a replacement string to be used."""
-
 template(pattern, flags=0)
     """Compile a template pattern, returning a pattern object"""
 ```
@@ -277,14 +298,14 @@ template(pattern, flags=0)
 A           = <RegexFlag.ASCII: 256>
 ASCII       = <RegexFlag.ASCII: 256>
 DOTALL      = <RegexFlag.DOTALL: 16>
-I           = <RegexFlag.IGNORECASE: 2>
+I           = <RegexFlag.IGNORECASE: 2> # 忽略大小写
 IGNORECASE  = <RegexFlag.IGNORECASE: 2>
 L           = <RegexFlag.LOCALE: 4>
-LOCALE      = <RegexFlag.LOCALE: 4>
+LOCALE      = <RegexFlag.LOCALE: 4>     # 使用本地化时间日期表示法
 M           = <RegexFlag.MULTILINE: 8>
-MULTILINE   = <RegexFlag.MULTILINE: 8>
+MULTILINE   = <RegexFlag.MULTILINE: 8>  # 多行模式
 S           = <RegexFlag.DOTALL: 16>
-U           = <RegexFlag.UNICODE: 32>
+U           = <RegexFlag.UNICODE: 32>   # 使用 Unicode 识别
 UNICODE     = <RegexFlag.UNICODE: 32>
 VERBOSE     = <RegexFlag.VERBOSE: 64>
 X           = <RegexFlag.VERBOSE: 64>

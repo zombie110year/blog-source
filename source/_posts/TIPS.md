@@ -1,8 +1,26 @@
 ---
 title: 'Tips'
-date: 2018-08-27 18:23:27
+date: 2018-08-28 20:05:52
 categories: Tips
 ---
+
+# Python 文档翻译
+
+https://pythoncaff.com/docs/tutorial/3.7.0
+
+> date:2018-08-28 20:05:52
+
+<!--more-->
+
+# encode, decode
+
+```
+str   --encode()--> bytes
+bytes --decode()--> str
+```
+
+
+> date:2018-08-28 15:33:37
 
 # VsCode中取正则表达式的子表达式
 
@@ -11,8 +29,6 @@ $number
 ```
 
 > date:2018-08-27 18:23:27
-
-<!--more-->
 
 # Vim
 

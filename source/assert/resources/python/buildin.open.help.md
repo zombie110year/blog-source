@@ -1,4 +1,4 @@
-[Origin-File](/assert/repos/python/buildin.open.__doc__)
+[Origin-File](/assert/repos/python/buildin.open.help.txt)
 
 Help on built-in function open in module io:
 
