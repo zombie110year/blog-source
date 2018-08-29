@@ -40,11 +40,11 @@ tags:
 
 准备在该博客上发布一些好玩的东西和学习笔记.
 
-0. [x] 更换主题, 感觉 [Next主题](https://github.com/iissnan/hexo-theme-next) 比较好看.
+- [x] 更换主题, 感觉 [Next主题](https://github.com/iissnan/hexo-theme-next) 比较好看.
     - 更换主题, 将下载的主题包解压到 `/theme/` 目录下, 然后在 `/_config.yml` 中配置 `theme: landscape` 项(默认主题是 landscape) 为 `theme: 主题文件夹名` 即可.
-0. [ ] TODO:添加支持 Markdown 甚至是渲染数学公式的评论框.
+- [ ] TODO:添加支持 Markdown 甚至是渲染数学公式的评论框.
     - 选择了 [Gitalk](https://github.com/gitalk/gitalk)
     - [Gitalk 配置过程]()
-0. [x] {2018.7.24更新}GitHub Page 只能显示一页?
+- [x] {2018.7.24更新}GitHub Page 只能显示一页?
     - 哇, 贼坑. 上传到 GitHub 之后, 文件名的大写字母全部变成小写了, 偏偏在 Archive 页面跳转的 url 又区分了大小写, 导致页面 404. 现尝试将文件名改成全小写, 再次尝试.(但是为什么混用中英文时就不会出现区分大小写导致的错误呢?)
         - 问题解决了.

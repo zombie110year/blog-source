@@ -155,7 +155,7 @@ python3 -m ankisyncd ankisyncd.conf
 
 在 Anki 插件目录中创建一个 `myankisync.py` 文件. Anki 插件目录入口在此:
 
-![Snipaste_2018-08-25_00-19-23.png](https://i.loli.net/2018/08/25/5b80302f5bfb8.png)
+![Tools->Add-ons->Open Add-ons Folder...](https://raw.githubusercontent.com/zombie110year/imgstore/master/img/20180828210912.png)
 
 在其中创建 `AnkiSyncMaster.py`, myankisync 太蠢了, 换个帅点的名字. 注意, Anki 运行插件时不允许任何注释.
 

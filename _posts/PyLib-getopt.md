@@ -10,6 +10,10 @@ categories:
 
 > [OriginFile](/assert/resources/python/lib.getopt.help.txt.html)
 
+> 注: Python 提供了比 getopt 功能更强大的命令行参数解析模块 [argparse - 解析命令参数和选项](https://pythoncaff.com/docs/pymotw/argparse-command-line-option-and-argument-parsing/166)
+> 
+> TODO: 择日笔记.
+
 # 函数
 
 ## getopt()

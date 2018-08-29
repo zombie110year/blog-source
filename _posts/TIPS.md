@@ -1,16 +1,34 @@
 ---
 title: 'Tips'
-date: 2018-08-28 20:05:52
+date: 2018-08-29 11:35:56
 categories: Tips
 ---
 
-# Python 文档翻译
+# 字符串 `translate()` 与 `maketrans()` 方法
+
+```py
+string.maketrans(FROM, TO) --> dict(原字符串: 目标字符串)
+
+string.translate(dict(FROM:TO)) --> new_string
+```
+
+> date:2018-08-29 11:35:56
+
+<!--more-->
+
+# 匹配Markdown图片链接的正则表达式
+
+```
+!\[[^\[\]\(\)]+\]\(([\S\./]+)\)
+```
+
+> date:2018-08-28 21:12:58
+
+# Python 文档翻译 (学习资源)
 
 https://pythoncaff.com/docs/tutorial/3.7.0
 
 > date:2018-08-28 20:05:52
-
-<!--more-->
 
 # encode, decode
 
@@ -18,7 +36,6 @@ https://pythoncaff.com/docs/tutorial/3.7.0
 str   --encode()--> bytes
 bytes --decode()--> str
 ```
-
 
 > date:2018-08-28 15:33:37
 
@@ -29,14 +46,6 @@ $number
 ```
 
 > date:2018-08-27 18:23:27
-
-# Vim
-
-添加折叠 za
-打开折叠 zo
-关闭折叠 zc
-
-> date:2018-08-27 00:22:28
 
 # Vscode 调试 Python模块时的 launch.json 设置
 
@@ -102,12 +111,11 @@ username ALL=(ALL:ALL) ALL
 
 `#` 选择 `id`
 
-
 > date:2018-08-24 01:49:01
 
 # PowerShell rm
 
-可以向 -Exclude (忽略) 传递多个值, 使用逗号 , 分割. -Include 同理.
+可以向 -Exclude (忽略) 传递多个值, 使用逗号 `,` 分割. -Include 同理.
 
 > date:2018-08-24 00:22:24
 
@@ -145,8 +153,6 @@ body { background:url(/images/imagename.jpg);}
 
 但是这效果...... 应该需要改 CSS 把 post 部分弄宽一点吧... 但是不会改... 暂时放弃.
 
-![Snipaste_2018-08-24_01-36-38.png](https://i.loli.net/2018/08/24/5b7ef0c9cb183.png)
-
 > date:2018-08-22 18:48:02
 
 # PowerShell 中的转义字符
@@ -158,21 +164,6 @@ PowerShell 使用反引号作为转义字符;
 ```
 
 > date:2018-08-22 18:07:10
-
-# ~/.ssh/config 配置
-
-```
-Host <hostname>
-        HostName <domain or IP adress>
-        PreferredAuthentications publickey
-        IdentityFile ~/.ssh/id_rsa # 使用的私钥
-        Port 22         # 如果使用其他端口, 自行设置
-        User <登陆的用户名>
-```
-
-之后就可以直接使用 `ssh <hostname>` 登陆了.
-
-> date:2018-08-22 13:13:42
 
 # Linux BBR
 
@@ -197,21 +188,13 @@ echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf
 
 > date:2018-08-21 22:11:40
 
-> date:2018-08-21 21:56:46
-
 # Android 刷机包结构?
 
 > date:2018-08-21 10:01:46
 
-# TODO: Vim 内置命令
-
-- 打开模式
-- 分栏操作
-- 打开, 切换编辑文件
-
-> date:2018-08-21 01:28:04
-
 # Python @ Windows 如何处理字符编码
+
+`sys.getdefaultencoding()`.
 
 读到内存中的字符串都是Unicode编码吗?
 

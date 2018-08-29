@@ -79,4 +79,4 @@ Enjoy!😄
 
 除此之外, 需要讲一下 Jupyter NoteBook 的用户和权限控制.
 
-TODO:
+TODO: 应使用 JupyterHub, 此版本才有多用户控制.

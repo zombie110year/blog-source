@@ -245,3 +245,32 @@ TODO: 随时补充新的发现.
 推荐:
 
 - [Vim 中文社区](https://github.com/vim-china)
+
+# Vim 其他用法
+
+## Vim 打开模式与窗口切换
+
+- 打开模式
+  - `-b` 二进制模式
+  - `-o` 多文件模式
+- 分栏操作
+  - `:split`  水平划分窗口
+  - `:vsplit` 竖直划分窗口
+  - `<Ctrl> + <W>` 进入窗口选择模式, 然后使用 `hjkl` 移动窗口焦点来选择窗口.
+- 打开, 切换编辑文件
+  - 插件 `NERDTree`
+
+> date:2018-08-21 01:28:04
+
+- `:!cmd` 执行 Shell 命令 `cmd`, 例如 `:!echo Hello` 将会 **跳出** 编辑器而显示 `Hello`. Windows 系统下 Shell 环境为 Cmd. 要使用 PowerShell, 需要 `:!powershell echo Hello`.
+  - `%` 表示此文件.
+  - `xxd.exe` 用于将文件在文本模式与十六进制模式之间转换. `:%!xxd` 转化为十六进制, `:%!xxd -r` 由十六进制转化为文本.
+
+  
+## 折叠相关
+
+添加折叠 za
+打开折叠 zo
+关闭折叠 zc
+
+> date:2018-08-27 00:22:28

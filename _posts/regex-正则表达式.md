@@ -111,22 +111,21 @@ Common plain text in windows notepad
 
 而且 `\number` 的方法, 在各个编辑器中没有统一的标准. `Vim` 中使用 `\number`, 而 `VsCode` 中使用 `$number`... 对于其他编辑器, 可能各有各的不同.
 
+另外, 在子表达式中可以使用命名, 使用以下语法: `(?P<Name>)` 命名, `\g<Name>` 取用.
+
+```py
+In [1]: import re
+
+In [2]: context = r"FireFox is a web browser"
+
+In [3]: pattern = r"(?P<Name>\b\S{3}\b)"
+
+In [4]: repl = r"Internet \g<Name>"
+
+In [5]: re.sub(pattern, repl, context)
+Out[5]: 'FireFox is a Internet web browser'
 ```
-正在 Ping www.a.shifen.com [61.135.169.121] 具有 32 字节的数据:
-来自 61.135.169.121 的回复: 字节=32 时间=67ms TTL=52
-来自 61.135.169.121 的回复: 字节=32 时间=63ms TTL=52
-来自 61.135.169.121 的回复: 字节=32 时间=60ms TTL=52
-来自 61.135.169.121 的回复: 字节=32 时间=58ms TTL=52
 
-61.135.169.121 的 Ping 统计信息:
-    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，
-往返行程的估计时间(以毫秒为单位):
-    最短 = 58ms，最长 = 67ms，平均 = 62ms
-```
-
-子表达式常用于从某个特定结构中取出对应数据. 例如在一个 `ping.exe` 的标准输出中. 可能需要取出 `IP`, `发包数`, `接受数`, `丢包数`, `丢包率`, `延迟`, `生存期` 等等数据, 就必须仔细设计含有子表达式的 pattern.
-
-针对上面的例子, [这里](/assert/python/ping-analyse.py) 有一点小玩意.
 
 # 在 Python 中使用 re 模块
 
