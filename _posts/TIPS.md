@@ -1,8 +1,30 @@
 ---
 title: 'Tips'
-date: 2018-08-29 11:35:56
+date: 2018-08-31 20:04:58
 categories: Tips
 ---
+
+# Dos clip 程序
+
+可以使用 `string | clip ` 将文本内容放入剪贴板, 但是不能有任何非 ASCII 字符, 否则变为问号 ?
+
+> date:2018-08-31 20:04:58
+
+<!--more-->
+
+# Markdown插入图片Base64
+
+```
+![](data:image/png;base64,ILENFLKSNGEJ...)
+或者
+![][id]
+
+...
+
+[id]: data:image/png;base64,IJLKDFSK...
+```
+
+> date:2018-08-30 21:02:28
 
 # 字符串 `translate()` 与 `maketrans()` 方法
 
@@ -13,8 +35,6 @@ string.translate(dict(FROM:TO)) --> new_string
 ```
 
 > date:2018-08-29 11:35:56
-
-<!--more-->
 
 # 匹配Markdown图片链接的正则表达式
 
