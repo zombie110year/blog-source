@@ -146,3 +146,31 @@ ClassName.method(instance, arg2, arg3, ...)
 ```
 
 具体描述见 [PyNote-类#方法](/2018/08/pynote-类#方法)
+
+# lambda 表达式
+
+`lambda` 表达式的语法为
+
+```py
+lambda 参数:返回值
+```
+
+`lambda` 表达式用于构建简短的函数, 例如:
+
+```py
+>>> add = lambda x,y:x+y
+>>> add(1,2)
+3
+```
+
+`lambda` 返回值中的变量可以是外部变量, 并且根据程序 **当前** 的运行情况赋值. 例如:
+
+```py
+>>> add = lambda y:x+y
+>>> x = 10
+>>> add(10)
+20
+>>> x = 20
+>>> add(20)
+40
+```
