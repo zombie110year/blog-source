@@ -1,8 +1,40 @@
 ---
-title: 'Tips'
-date: 2018-08-31 22:31:32
-categories: Tips
+title: 'TIPS'
+date: 2018-09-02 21:46:22
+categories: Tip
 ---
+
+# Python Import 模块会将模块文件执行一遍
+
+> date: 2018-09-02 21:46:22
+
+<!--more-->
+
+# LaTex 学习资料. 顺便, 在 HTML 中嵌入 PDF
+
+<iframe src="/assert/repos/latex/lnotes2.pdf" style="width:800px; height:600px;" frameborder="0">
+  <p>
+看来你的浏览器不支持 iframe 标签... 咋不更新呢?
+算了, 给你个链接你自己下载吧: <a src="/assert/repos/latex/lnotes2.pdf"></a>
+  </p>
+</iframe>
+
+```html
+<iframe src="/assert/repos/latex/lnotes2.pdf" style="width:800px; height:1200px;" frameborder="0"></iframe>
+```
+
+> date: 2018-09-02 14:49:48
+
+# Python可以使用中文作为变量名
+
+```
+In [8]: 中文变量名 = 1
+
+In [9]: 中文变量名
+Out[9]: 1
+```
+
+> date:2018-09-01 23:57:17
 
 # 拼音注音字符
 
@@ -11,8 +43,6 @@ categories: Tips
 ```
 
 > date:2018-08-31 22:31:32
-
-<!--more-->
 
 # Dos clip 程序
 

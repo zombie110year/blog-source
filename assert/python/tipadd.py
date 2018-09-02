@@ -3,56 +3,73 @@
 
 from sys import argv
 from time import localtime
-import codecs
 from getopt import getopt
+from re import sub
 
 FILE_PATH = "./source/_posts/TIPS.md"
 
-MD_TEMPLATE = [
-    "---\n",                    #  4
-    "title: 'Tips'\n",          # 14
-    "date: %s\n",               # 26
-    "categories: Tips\n",       # 17
-    "---\n",                    #  4
-    "\n",                       #  1
-    "",                         # 新条目插入位置
-    "\n",
-    "<!--more-->\n\n",              # More 分隔符
-    "",                         # 旧内容插入位置
-    ]
+MD_TEMPLATE = \
+"""\
+{front_matter}
 
-def main(file_path=FILE_PATH):
-    options, args = getopt(argv[1:], "m:o:")
-    options = dict(options)
-    #print(options)
-    main_str = options['-m']
-    other_str = options['-o']
-    global MD_TEMPLATE
-    t = localtime()
-    date = "%4d-%02d-%02d %02d:%02d:%02d"%(t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min, t.tm_sec)
-    context = """\
-# %s
+{the_new}
 
-%s
+<!--more-->
 
-> date:%s
-"""%(main_str, other_str, date)
-    with open(file_path, "rt", encoding="utf-8") as f:
-        full_text = f.read()
-        MD_TEMPLATE[2] = MD_TEMPLATE[2]%date
-        MD_TEMPLATE[9] = del_more(full_text[66:])         # yaml 配置的字符数为 66
-        MD_TEMPLATE[6] = context
-    with open(file_path, "wb") as f:
-        out_text = ""
-        for lines in MD_TEMPLATE:
-            out_text += lines
-        # print(out_text, file=f, end='')
-        f.write(out_text.encode("utf-8"))
-    print(context)
+{the_old}"""
 
-def del_more(context):
-    return context.replace("<!--more-->\n\n", "")
+FRONT_MATTER = \
+"""---
+title: 'TIPS'
+date: {date}
+categories: Tip
+---"""
 
+CONTEXT = \
+"""# {title}
+{content}
+> date: {date}"""
+
+def get_date():
+    _ = localtime()
+    date = "{year:0>4d}-{mon:0>2d}-{day:0>2d} {hour:0>2d}:{min:0>2d}:{sec:0>2d}".format(
+        year    =   _.tm_year    ,
+        mon     =   _.tm_mon     ,
+        day     =   _.tm_mday    ,
+        hour    =   _.tm_hour    ,
+        min     =   _.tm_min     ,
+        sec     =   _.tm_sec
+    )
+    return date
+
+def get_front_matter():
+    return FRONT_MATTER.format(date=get_date())
+
+def get_context():
+    options, args = getopt(argv[1:], shortopts="t:c:")
+    opt = dict(options)
+    if '-c' in opt:
+        context = CONTEXT.format(title=opt['-t']+'\n', content=opt['-c']+'\n', date=get_date())
+    else:
+        context = CONTEXT.format(title=opt['-t'], content='', date=get_date())
+    return context
+
+def get_old():
+    with open(FILE_PATH, "rt", encoding="utf-8") as f:
+        the_old = f.read()
+    return sub(pattern="<!--more-->\n\n", repl="", string=the_old[65:]) # Front Matter 部分正好 65 个字符.
+
+def write_file(context):
+    with open(FILE_PATH, "wt", encoding="utf-8") as f:
+        f.write(context)
+
+def main():
+    the_new = get_context()
+    the_old = get_old()
+    front_matter = get_front_matter()
+    to_write = MD_TEMPLATE.format(front_matter=front_matter, the_new=the_new, the_old=the_old)
+    write_file(to_write)
+    print(the_new)
 
 if __name__ == "__main__":
     main()
