@@ -1,14 +1,27 @@
 ---
 title: 'TIPS'
-date: 2018-09-02 21:46:22
+date: 2018-09-04 17:16:42
 categories: Tip
 ---
+
+# LaTeX `\displaystyle` 使行内公式具有行间样式
+
+> date: 2018-09-04 17:16:42
+
+<!--more-->
+
+# Pandoc转换行内公式不允许空格
+
+```
+$This is a in-line math$
+$ 这个不行 $
+```
+
+> date: 2018-09-04 12:51:46
 
 # Python Import 模块会将模块文件执行一遍
 
 > date: 2018-09-02 21:46:22
-
-<!--more-->
 
 # LaTex 学习资料. 顺便, 在 HTML 中嵌入 PDF
 
