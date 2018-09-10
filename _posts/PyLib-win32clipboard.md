@@ -10,7 +10,7 @@ categories:
     - Python
 ---
 
-win32clipboard 是 Python win32api 的一部分, 所在位置为 `lib/site-packages/win32clipboard.pyd` 是一个二进制文件.
+win32clipboard 是 Python win32api 的一部分, 所在位置为 `Lib/site-packages/win32/win32clipboard.pyd` 是一个二进制文件.
 
 <!--more-->
 
