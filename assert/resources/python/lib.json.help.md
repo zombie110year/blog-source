@@ -1,4 +1,4 @@
-[Origin-File](/assert/repos/python/json.__doc__)
+[Origin-File](/assert/repos/python/lib.json.help.txt)
 
 > Help on package json:
 
@@ -116,7 +116,7 @@ $ echo '{ 1.2:3.4}' | python -m json.tool
 Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
 ```
 
-# 包内容
+# PACKAGES
 
 - `decoder`
 - `encoder`
@@ -416,7 +416,7 @@ Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
 
 # FUNCTIONS
 
-```py
+```python
     dump(obj, fp, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
         Serialize ``obj`` as a JSON formatted stream to ``fp`` (a
         ``.write()``-supporting file-like object).

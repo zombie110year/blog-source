@@ -79,6 +79,8 @@ Out[9]: 1
 
 # 字符串 `translate()` 与 `maketrans()` 方法
 
+Python
+
 ```py
 string.maketrans(FROM, TO) --> dict(原字符串: 目标字符串)
 
@@ -121,9 +123,9 @@ $number
 # Vscode 调试 Python模块时的 launch.json 设置
 
 ```
-            cwd: 模块所在路径,
-            module: ModuleName,
-            args: [],
+cwd: 模块所在路径,
+module: ModuleName,
+args: [],
 ```
 
 > date:2018-08-25 16:57:29
@@ -177,10 +179,15 @@ username ALL=(ALL:ALL) ALL
 
 # CSS 选择器
 
+```css
+html {}         /*      选择 HTML 元素          */
+.class {}       /*      选择 class              */
+#id {}          /*      选择 id                 */
+[src] {}        /*      选择属性, 例如 src      */
+@media          /*      at-rule                 */
+```
 
-`.` 选择类 `class`
-
-`#` 选择 `id`
+- [MDN:CSS at-rule](https://developer.mozilla.org/zh-CN/docs/Web/CSS/At-rule)
 
 > date:2018-08-24 01:49:01
 
