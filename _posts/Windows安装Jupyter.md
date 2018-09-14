@@ -41,13 +41,27 @@ $INSTALL/Library/bin
 
 配置文件为 `~/.jupyter/jupyter_notebook_config.py`
 
-在默认配置文件中, 修改默认工作目录. 配置项处于第 214 行.
+比较在意的配置项有:
 
-随后需要生成一个密码用于登陆, 使用 `jupyter notebook password`
+```
+工作目录            c.NotebookApp.notebook_dir 项
+监听的IP地址        c.NotebookApp.ip 项, 默认为 localhost, 无法在非本机访问.
+使用的端口          c.NotebookApp.port 项
+使用的密码          c.NotebookApp.password 项, 应使用由密码生成的 sha1 散列值.
+                    也就是 jupyter_notebook_config.json 中的 password 的值. 如果在 .py 中配置, .json 就不需要了.
+是否自动打开浏览器  c.NotebookApp.open_browser 项
+```
+
+需要生成一个密码用于登陆, 使用 `jupyter notebook password` 命令行, 或者在 Python 环境中使用内部函数生成密码.
+
+```py
+import notebook.auth
+notebook.auth.passwd()
+```
 
 随后会要求在终端输入密码. 输入密码并确认一次之后, 在配置文件目录中生成 `jupyter_notebook_config.json` 文件, 其中存储了密码的 `sha1` 散列值.
 
-使用 `jupyter notebook` 运行服务, 随后可在 `localhost:8888` 使用 `Jupyter NoteBook`. 进去之后会要求输入密码, 只需要输入设置的密码就好(别输散列值).
+使用 `jupyter notebook` 运行服务, 随后可在浏览器中访问 `localhost:8888` (或自定义 IP:端口) 使用 `Jupyter NoteBook`. 进去之后会要求输入密码, 只需要输入设置的密码就好(别输散列值).
 
 Enjoy! 🙂
 
@@ -75,8 +89,10 @@ Enjoy!😄
 
 # 在远程服务器上部署 Jupyter NoteBook
 
-就像在本地上安装并运行 Jupyter NoteBook 一样.
+TODO: 应使用 JupyterHub, 此版本才有多用户控制. 其安装配置与本地的 Jupyter Notebook 基本相同.
 
-除此之外, 需要讲一下 Jupyter NoteBook 的用户和权限控制.
+虽然如此, 但是最基本的 Jupyter Notebook 也可以开放到网络中, 只不过只能使用同一个用户而已:
 
-TODO: 应使用 JupyterHub, 此版本才有多用户控制.
+修改配置文件 `jupyter_notebook_config.py` 中的 `c.NotebookApp.ip` 项. 其默认值为 `localhost`, 也就是 `127.0.0.1` 之类的本机 IP, 是无法通过其他机器访问的, 将其修改为开放的 IP 地址, 就能在局域网进行访问.
+
+如果要在公网访问, 除了需要公网 IP 之外, 还需要有认证的 SSL 证书并且使用 https. 否则浏览器会因为安全问题将它拦下来...

@@ -44,7 +44,7 @@ pip -v
 > ```
 > pip 和 pip3 并存时，只需修改 ~/.pip/pip.conf。
 
-不过他们提供的文件所处的路径有问题, 实际上这个文件的路径应该是 `%AppData%\Roaming\pip\pip.ini` 
+虽然在用户的家目录下就有一个 `APPDATA` 的隐藏文件夹, 但是实际上这个文件的路径应该是 `C:\Users\userhome\AppData\Roaming\pip\pip.ini`, `%APPDATA%` 变量也是指向 `C:\Users\userhome\AppData\Roaming\` 这个路径的.
 
 配置好之后, 先通过 pip 下载 Python 的 lint 程序和代码格式化程序.
 
@@ -67,6 +67,8 @@ Python 安装好了之后, 可以用两种方式使用 Python
   要进入这种模式, 只需要在终端中输入 `Python` 就可以进入 Python 的交互式环境. 在里面可以一句一句地执行代码. 如果输入的是一个表达式, 在计算之后, Python 会自动地把结果 print 出来, 不需要使用 `print()` 函数. 要退出此环境, 需要执行 `exit()` 函数.
 0. 脚本模式
   这个模式就是编写一个 Python 脚本, 文件需要以 `.py` 结尾. 然后以参数的形式传递给 Python 解释器. 在这个模式下, 文件中写了什么, Python 就做什么, 没写的就不会做. 所以, 要在终端中显示内容, 必须使用 `print()` 函数了. 当执行到文件末尾的时候, 程序会自动退出, 不需要 `exit()` 函数. 不过如果需要向系统传递特定的退出参数, 也可以使用 `exit(xxx)` 函数.
+
+Python 更受欢迎的交互式 Shell 是 `IPython`, 可通过 `pip install ipython` 下载.
 
 ## Python 脚本的源代码是怎样的
 

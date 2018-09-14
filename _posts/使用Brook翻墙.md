@@ -76,6 +76,12 @@ print("Done\a")
 
 从结果中选择一个连接成功次数最多, 丢包率最小的区域, 购买此处机房.
 
+> 2018-09-15 04:04:16 更新
+
+回来更新了一波代码. 感觉自己超强 (然而遇上了玄学 BUG, 没法了)...
+
+<script src="https://gist.github.com/zombie110year/c0e26f4b9d7376489688fb264e3d9e3b.js"></script>
+
 ## 部署 Brook 服务
 
 Brook 开发了各个平台的版本, 随便选择一个熟悉的操作系统即可. 我这里选择了 Ubuntu 18.04, 因为我日常使用的就是它. 如果你不差钱的话, 也可以选择 Windows Server ( $16/mon 呢 😏)

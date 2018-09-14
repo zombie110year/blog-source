@@ -1,0 +1,245 @@
+用法：aria2c [OPTIONS] [URI | MAGNET | TORRENTFILEILE | METALINK_FILE]...
+正列出附有标签“#basic”的选项。
+参见“aria2c -h#help”以获知所有可用标签。
+选项：
+ -v, --version                打印版本号并退出。
+
+                              标签： #basic
+
+ -h, --help[=#标签|关键字]    显示用法并退出。
+                              帮助信息按照以“#”开头的标签分类。
+                              例如，输入“--help=#http”会得到带“#http”
+                              标签的各选项的用法。
+                              如果指定了非标签的词，那么打印名字含这个词
+                              的各选项的用法。
+
+                              可能的取值： #basic, #advanced, #http, #https, #ftp, #metalink, #bittorrent, #cookie, #hook, #file, #rpc, #checksum, #experimental, #deprecated, #help, #all
+                              默认： #basic
+                              标签： #basic, #help
+
+ -l, --log=日志               日志文件名称。如果指定“-”，
+                              日志将被写到标准输出。
+
+                              可能的取值： /path/to/file, -
+                              标签： #basic
+
+ -d, --dir=目录               用于存储已下载文件的目录。
+
+                              可能的取值： /path/to/directory
+                              默认： /home/zom
+                              标签： #basic, #file
+
+ -o, --out=FILE   文件保存名字。此文件将以此名字永久保存在 -d 
+                              参数所指定的相对路径下。当 -Z 参数被启用时， 
+                              此选项报废。
+
+                              可能的取值： /path/to/file
+                              标签： #basic, #http, #ftp, #file
+
+ -s, --split=N                使用 N 个连接下载文件。如 N 小于需要下载的 URI 数量，
+                              那么将使用所有连接，剩余的 URL 将作为候补。
+                              如 N 大于需要下载的 URI 数量，多余的 URL 将用于并行下载。
+                              到主机的连接数量受 --max-connection-per-server 选项限制。
+                              参见 --min-split-size 选项。
+
+                              可能的取值： 1-*
+                              默认： 5
+                              标签： #basic, #http, #ftp
+
+ --file-allocation=方式       指定文件分配方式。
+                              “none”选项表示不预分配空间。
+                              “prealloc”选项表示在下载开始前预先分配空间。
+                              根据文件的大小，这可能会花费一些时间。
+                              如果您正在使用新型文件系统如 ext4（启用扩展属性支持），
+                              btrfs，xfs 或 NTFS（仅限 MinGW 环境构建），
+                              “falloc”是您最好的选择。
+                              它几乎能在一瞬间完成很大（几个 GiB）文件的预分配。
+                              但注意在比较旧的文件系统如 ext3 和 FAT32 上不要使用“falloc”
+                              因为在这些文件系统上该选项花费的时间和“prealloc”
+                              不相上下，并且在分配完成前 aria2 进程会被完全阻塞。
+                              如果您的系统中 posix_fallocate() 函数不可用，
+                              “falloc”选项将不适用。
+                              “trunc”将调用 ftruncate() 系统指令或平台的相应功能
+                              来裁剪获得指定大小的文件。
+
+                              可能的取值： none, prealloc, trunc, falloc
+                              默认： prealloc
+                              标签： #basic, #file
+
+ -V, --check-integrity[=true|false]  通过校验文件块或整文件哈希检查文件的完整性。
+                              该选项仅对 BitTorrent、带校验和的 Metalink 和（启用
+                              --checksum 选项时）HTTP(S)/FTP 下载有效。
+                              如提供的是文件块的校验和，在下载时就可自动校验并重试
+                              损坏的部分；换成整文件，就必须等到下载完成才能校验。
+                              （哪种校验值可用？）这取决于文件长度。
+                              如果校验失败，文件将被重新下载。如果同时提供了按块的
+                              校验值和全文件校验值，那么只会使用块哈希。
+
+                              可能的取值： true, false
+                              默认： false
+                              标签： #basic, #metalink, #bittorrent, #file, #checksum
+
+ -c, --continue[=true|false] 继续下载一个仅部分完成的文件。
+                              使用这个选项来继续下载一个由浏览器或其他程序从开头单线程下载的文件。
+                              目前这个选项仅能用于 http(s)/ftp 下载。
+
+                              可能的取值： true, false
+                              默认： false
+                              标签： #basic, #http, #ftp
+
+ -i, --input-file=文件        下载 <文件> 中列出的地址。
+                              可以一次使用多个地址，在同一行里使用制表符分隔多个地址。使用“-”时从标准输入读取。
+                              另外，在每一行地址后可以指定选项。包含选项的行必须以至少一个空格开始，并且每行一个选项。
+                              在 man 手册中查看 INPUT FILE 章节。另见 --deferred-input 选项。
+
+                              可能的取值： /path/to/file, -
+                              标签： #basic
+
+ -j, --max-concurrent-downloads=N 设置每个静态（HTTP/FTP）URL、种子和 metalink 的最大并行
+                              下载速度。
+                              参见 --split 和 --optimize-concurrent-downloads 选项。
+
+                              可能的取值： 1-*
+                              默认： 5
+                              标签： #basic
+
+ -Z, --force-sequential[=true|false] 从命令行顺序获取链接，
+                                     并以单独的会话下载每个链接，
+                                     如同其他常见的命令行下载工具。
+
+                              可能的取值： true, false
+                              默认： false
+                              标签： #basic
+
+ -x, --max-connection-per-server=N   每个下载中对单个服务器的最大连接数。
+
+                              可能的取值： 1-16
+                              默认： 1
+                              标签： #basic, #http, #ftp
+
+ -k, --min-split-size=SIZE aria2 不分割小于 2 * SIZE 字节范围的文件。例如，让我们考虑下载 20MiB 的文件，如果 SIZE 为10M，aria2 可以将文件拆分为2个[0-10MiB]和[10MiB-20MiB]的文件，并使用 2 个源（如果 --split>=2）下载它。如果 SIZE 为 15M，由于 2 * 15M>20MiB，aria2 不会拆分文件并使用 1 个源下载。你可以追加 K 或 M（1K = 1024，1M = 1024K）。
+
+                              可能的取值： 1048576-1073741824
+                              默认： 20M
+                              标签： #basic, #http, #ftp
+
+ --ftp-user=用户              设置 FTP 用户。此设置对所有 URL 有效。
+
+                              标签： #basic, #ftp
+
+ --ftp-passwd=密码            设置 FTP 密码。此设置对所有 URL 有效。
+
+                              标签： #basic, #ftp
+
+ --http-user=用户             设置 HTTP 用户。此设置对所有 URL 有效。
+
+                              标签： #basic, #http
+
+ --http-passwd=密码           设置 HTTP 密码。此设置对所有 URL 有效。
+
+                              标签： #basic, #http
+
+ --load-cookies=文件          从文件载入 Cookies，使用 Firefox3
+                              及 Mozilla/Firefox(1.x/2.x)/Netscape 格式。
+
+                              可能的取值： /path/to/file
+                              标签： #basic, #http, #cookie
+
+ -S, --show-files[=true|false]  打印 .torrent，.meta4 和 .metalink 这类
+                         文件内含的文件列表，然后退出。
+                         如果是 torrent 文件，会给出更详细信息。
+
+                              可能的取值： true, false
+                              默认： false
+                              标签： #basic, #metalink, #bittorrent
+
+ --max-overall-upload-limit=SPEED 设置全局最大上传速度为 SPEED bytes/sec.
+                              0 意味着不限制。使用 K 或 M (1K = 1024, 1M = 1024K) 也是可
+                             以的。您也可以使用 --max-upload-limit 可以为单个 torrent 文件限速。
+
+                              可能的取值： 0-*
+                              默认： 0
+                              标签： #basic, #bittorrent
+
+ -u, --max-upload-limit=速度  设置每个 torrent 的最大上传速度 (Bytes/s)。
+                              0 意味着不限制。
+                              可附加 K 或 M（1K=1024，1M=1024K）。
+                              要限制总体上传速度，请使用 --max-overall-upload-limit 选项。
+
+                              可能的取值： 0-*
+                              默认： 0
+                              标签： #basic, #bittorrent
+
+ -T, --torrent-file=种子文件      指定 .torrent 文件的路径。
+
+                              可能的取值： /path/to/file
+                              标签： #basic, #bittorrent
+
+ --listen-port=端口...        设置 BitTorrent 下载使用的 TCP 端口。
+                              使用“,”可以指定多个端口，例如：
+                              “6881,6885”。您也可以使用“-”指定一个范围：
+                              “6881-6999”。“,”和“-”可以一起使用。
+
+                              可能的取值： 1024-65535
+                              默认： 6881-6999
+                              标签： #basic, #bittorrent
+
+ --enable-dht[=true|false]    启用 IPv4 DHT 功能。
+                              同时也启用 UDP Tracker 服务器支持。
+                              如果种子中设置了“私有 (private)”旗标，无论此项真假，
+                              aria2 都不会使用 DHT。
+
+                              可能的取值： true, false
+                              默认： true
+                              标签： #basic, #bittorrent
+
+ --dht-listen-port=端口...    设置 DHT(IPv4, v6) 和 UDP Tracker 的 UDP 监听端口。
+                              可以使用 "," 指定多个端口（如："6881,6885"），也可用
+                              "-" 指定范围（如："6881-6999"）。"," 和 "-" 可共用。
+
+                              可能的取值： 1024-65535
+                              默认： 6881-6999
+                              标签： #basic, #bittorrent
+
+ --enable-dht6[=true|false]   启用 IPv6 DHT 功能。
+                              使用 --dht-listen-port 选项指定要监听的端口。
+                              参见 --dht-listen-addr6 选项。
+
+                              可能的取值： true, false
+                              默认： false
+                              标签： #basic, #bittorrent
+
+ --dht-listen-addr6=ADDR 指定要绑定的IPv6 DHT套接字地址。
+                             它应该是一个全球单播IPv6地址的主机。
+
+                              标签： #basic, #bittorrent
+
+ -M, --metalink-file=METALINK_文件 .meta4 和 .metalink 的路径。
+                              如果指定了“-”，从标准输入读取。
+
+                              可能的取值： /path/to/file, -
+                              标签： #basic, #metalink
+
+URI, MAGNET, TORRENT_FILE, METALINK_FILE:
+ 您可以指定多个 HTTP(S)/FTP URI。除非您设置了 -Z 选项，所有 URI 必须指向
+ 同一文件，否则下载会失败。
+ 您也可以指定任意数量的 BitTorrent Magnet URI 或储存在本地的 torrent/
+ metalink 文件。请注意，它们总是作为单独的下载处理。
+
+ You can specify both torrent file with -T option and URIs. By doing this,
+ download a file from both torrent swarm and HTTP/FTP server at the same time,
+ while the data from HTTP/FTP are uploaded to the torrent swarm. For single file
+ torrents, URI can be a complete URI pointing to the resource or if URI ends
+ with '/', 'name' in torrent file is added. For multi-file torrents, 'name' and
+ 'path' in torrent are added to form a URI for each file.
+
+ Make sure that URI is quoted with single(') or double(") quotation if it
+ contains "&" or any characters that have special meaning in shell.
+
+About the number of connections
+ Since 1.10.0 release, aria2 uses 1 connection per host by default and has 20MiB
+ segment size restriction. So whatever value you specify using -s option, it
+ uses 1 connection per host. To make it behave like 1.9.x, use
+ --max-connection-per-server=4 --min-split-size=1M.
+
+参见 man 手册页面以获取更多信息。
