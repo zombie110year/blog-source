@@ -1,14 +1,39 @@
 ---
 title: 'TIPS'
-date: 2018-09-04 17:16:42
+date: 2018-09-15 16:05:37
 categories: Tip
 ---
+
+# python子进程与多线程基本用法
+
+分别使用 subprocess 和 threading 模块
+
+```python
+# 使用 run 函数
+x = subprocess.run(*popenargs:tuple, shell:bool[, stdout]) -> Popen
+# popenargs 是通过列表或元组组织起来的命令行, 第 0 项为可执行文件, 其余项为传递给可执行文件的参数.
+# shell=True, 则会新开一个 Shell 运行命令, 否则就只是新开一个进程运行, 不会读取用户为 Shell 设置的配置.
+# 如果要捕获输出, 务必将 stdout=subprocess.PIPE, 这样, 标准输出就会被重定向到 Popen 实例 x 的 stdout 属性中
+## 该属性是字节流类型的, 需要根据字符编码进行解码. x.stdout.decode('gbk')
+
+# 创建线程
+x = threading.Thread(target:<python funcion>, *args:tuple) -> Thread
+# 使用此函数创建一个线程实例, target 函数应该为 Python 中定义的函数, 这会使得该函数在新的线程中运行.
+# 启动线程
+x.start()
+# 线程被创建出来后, 不会立刻运行, 需要使用 start() 方法, 才会启动相应的线程
+# 等待线程
+x.join()
+# 线程启动之后, 会立即执行接下来的 Python 语句, 如果需要在某处等待某线程完成, 就使用 join() 方法
+```
+
+> date: 2018-09-15 16:05:37
+
+<!--more-->
 
 # LaTeX `\displaystyle` 使行内公式具有行间样式
 
 > date: 2018-09-04 17:16:42
-
-<!--more-->
 
 # Pandoc转换行内公式不允许空格
 

@@ -1,7 +1,7 @@
 ---
 title:  py排列与组合
 data:   2018-9-15 15:45:58
-mathjax:  false
+mathjax:  true
 tags:
     - Algorithm
     - Python
@@ -10,6 +10,7 @@ categories:
     - 算法
 ---
 
+<!--more-->
 
 # 排列 Permutation
 
