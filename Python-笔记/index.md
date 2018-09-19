@@ -21,4 +21,10 @@ type: "python"
 0. 类 [Blog](/2018/08/python类/) [Jupyter](https://notebooks.azure.com/Zombie110year/libraries/SyntaxPractice/html/PyNote/%E7%B1%BB.ipynb)
 0. 异常处理 [Blog](/2018/08/python异常处理/)
 
+# Python 模块
+
+- getopt: 处理命令行参数 [Blog](/2018/08/PyLib-getopt/)
+- win32clipboard: 使用 Python 操作 Windows 系统的剪贴板 [Blog](/2018/08/PyLib-win32clipboard/)
+- re: 正则表达式 [Blog](/2018/08/regex-正则表达式/)
+
 > (未完待续...)
