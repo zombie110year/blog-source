@@ -1,8 +1,66 @@
 ---
-title: 'TIPS'
-date: 2018-09-15 16:05:37
-categories: Tip
+title: Tips
+type: "tips"
 ---
+
+# 配置 Hexo NexT Page
+
+在 next 的 `_config.yml` 中的
+
+```yml
+menu:
+  your_page: /path/ || fontawesome-code
+# 该页面使用的代号: 该页面的 index.md 所处路径(相对) || 使用的图标(fontawesome代码)
+```
+
+之后去到使用的页面国际化(翻译) 配置, 如 `themes/next/languages/zh-CN.yml` 中, 也在 `menu:` 项下添加对应代码
+
+```yml
+menu:
+  your_page: 显示名
+```
+
+> date: 2018-09-19 19:32:23
+
+<!--more-->
+
+# #Windows不在乎文件后缀名
+
+所以要注意, 命名脚本文件时去除后缀的部分不要与调用程序的命名相同.
+
+[关于此事的记录](https://www.zhihu.com/question/21747929/answer/494153996)
+
+> date: 2018-09-19 00:04:39
+
+# #Python locals() 函数
+
+此函数将会返回命名空间
+
+> date: 2018-09-18 00:13:21
+
+# # Python代码风格
+
+我认为, 编写代码的时候, 拥有良好的编码风格是很有必要的, 而且越早决定采用的标准越好.
+
+我决定, 采用如下标准:
+
+- 拥有特殊意义的常量: `UPPER_LETTER` 使用大写字母+下划线的组合.
+- 全局变量, `gUPPER_LATTER` 使用 g+大写字母+下划线的组合.
+- 局部变量; 如果为一般对象, 则用 `lowwer_letter` 小写字母+下划线, 如果为容器对象, 则用 `lowwer_Upper_Letter` 小驼峰命名法+下划线
+- 函数, 方法名: `lowwerUpperLetter` 使用小驼峰命名法
+- 类: `UpperUpperLetter` 使用驼峰命名法
+
+> date: 2018-09-17 13:12:20
+
+# Vim 块操作模式
+
+在 Windows 系统, 使用 <kbd>Ctrl</kbd> + <kbd>q</kbd>
+
+在 Linux 系统, 使用 <kbd>Ctrl</kdb> + <kbd>v</kbd>
+
+进入 Vitual-Block 模式
+
+> date: 2018-09-15 17:14:49
 
 # python子进程与多线程基本用法
 
@@ -28,8 +86,6 @@ x.join()
 ```
 
 > date: 2018-09-15 16:05:37
-
-<!--more-->
 
 # LaTeX `\displaystyle` 使行内公式具有行间样式
 
@@ -304,4 +360,3 @@ echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf
 只有在IO时才会编码解码?
 
 > date:2018-08-20 18:08:19
-

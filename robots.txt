@@ -1,0 +1,20 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /Python-笔记/
+Allow: /Tips/
+Disallow: /images/
+Disallow: /about/
+Disallow: /vendors/
+Disallow: /lib/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+Disallow: /assert/
+Sitemap: https://blog.zombie110year.top/sitemap.xml
+Sitemap: https://blog.zombie110year.top/baidusitemap.xml

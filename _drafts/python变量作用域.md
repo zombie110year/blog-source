@@ -1,6 +1,6 @@
 ---
 title:  PyNote-变量作用域
-data:   2018-8-28 21:3:5
+data:   2018-8-28 21:03:05
 mathjax:  false
 tags:
     - Python

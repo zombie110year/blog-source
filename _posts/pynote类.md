@@ -180,6 +180,12 @@ AttributeError: type object 'NewClass' has no attribute 'newitem'
 
 对于实例方法, 参数中的 `self` 其实并不是关键字, 可以是任何合法的变量名. 当调用方法的时候, 实例自身被作为参数传递过去了.
 
+所以, 当调用一个实例方法时, 可以有以下形式:
+
+```python
+test = NewClass()
+test.
+
 ## 类方法
 
 ## 静态方法

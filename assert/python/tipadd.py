@@ -6,7 +6,7 @@ from time import localtime
 from getopt import getopt
 from re import sub
 
-FILE_PATH = "./source/_posts/TIPS.md"
+FILE_PATH = "./source/Tips/index.md"
 
 MD_TEMPLATE = \
 """\
@@ -20,9 +20,8 @@ MD_TEMPLATE = \
 
 FRONT_MATTER = \
 """---
-title: 'TIPS'
-date: {date}
-categories: Tip
+title: Tips
+type: "tips"
 ---"""
 
 CONTEXT = \
@@ -42,9 +41,6 @@ def get_date():
     )
     return date
 
-def get_front_matter():
-    return FRONT_MATTER.format(date=get_date())
-
 def get_context():
     options, args = getopt(argv[1:], shortopts="t:c:")
     opt = dict(options)
@@ -57,7 +53,7 @@ def get_context():
 def get_old():
     with open(FILE_PATH, "rt", encoding="utf-8") as f:
         the_old = f.read()
-    return sub(pattern="<!--more-->\n\n", repl="", string=the_old[65:]) # Front Matter 部分正好 65 个字符.
+    return sub(pattern="<!--more-->\n\n", repl="", string=the_old[34:]) # Front Matter 部分正好 34 个字符.
 
 def write_file(context):
     with open(FILE_PATH, "wt", encoding="utf-8") as f:
@@ -66,8 +62,11 @@ def write_file(context):
 def main():
     the_new = get_context()
     the_old = get_old()
-    front_matter = get_front_matter()
-    to_write = MD_TEMPLATE.format(front_matter=front_matter, the_new=the_new, the_old=the_old)
+    to_write = MD_TEMPLATE.format(
+        front_matter=FRONT_MATTER,
+        the_new=the_new,
+        the_old=the_old
+        )
     write_file(to_write)
     print(the_new)
 

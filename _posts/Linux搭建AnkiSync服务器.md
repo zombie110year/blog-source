@@ -1,6 +1,6 @@
 ---
 title:  Linux搭建AnkiServer
-data:   2018-8-24 20:11:31
+data:   2018-08-24 20:11:31
 mathjax:  false
 tags:
     - Linux

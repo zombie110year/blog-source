@@ -20,8 +20,8 @@ class _PrintableTime(str):
     @staticmethod
     def get_time():
         CRT_TIME = localtime()
-        date = "{year}-{mon}-{mday}".format(year=CRT_TIME.tm_year, mon=CRT_TIME.tm_mon, mday=CRT_TIME.tm_mday)
-        time = "{hour}:{min}:{sec}".format(hour=CRT_TIME.tm_hour, min=CRT_TIME.tm_min, sec=CRT_TIME.tm_sec)
+        date = "{year:0>4d}-{mon:0>2d}-{mday:0>2d}".format(year=CRT_TIME.tm_year, mon=CRT_TIME.tm_mon, mday=CRT_TIME.tm_mday)
+        time = "{hour:0>2d}:{min:0>2d}:{sec:0>2d}".format(hour=CRT_TIME.tm_hour, min=CRT_TIME.tm_min, sec=CRT_TIME.tm_sec)
         return date, time
 
 def frontmatter_writer(title):
