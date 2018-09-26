@@ -80,5 +80,5 @@ $job.begininvoke()              # 开始运行
 
 TODO:
 
-- `[class]::method()` 这样的语法是 C# 里的吗?
-- 去瞅瞅能不能入门 C#.
+- `[class]::method()` 这样的语法是 `.NET` 的内容.
+- [.NET教程](https://docs.microsoft.com/zh-cn/dotnet/standard/tour)

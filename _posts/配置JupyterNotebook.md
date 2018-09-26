@@ -41,6 +41,8 @@ categories:
 
 也可以导出为 `.py` 脚本, 这会去除非 Code 的 Cell.
 
+<!--more-->
+
 # JupyterNotebook配置
 
 对于 [上篇文章](2018/08/Windows%E5%AE%89%E8%A3%85Jupyter/#%E9%85%8D%E7%BD%AE-Jupyter-Notebook) 提到的美化, 需要注意的是最好不要把整个界面的颜色都换掉, 这样的话在作图或者进行其他操作时会很丑...

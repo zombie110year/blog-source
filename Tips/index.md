@@ -3,6 +3,32 @@ title: Tips
 type: "tips"
 ---
 
+# Conda 更换清华镜像
+
+```
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+```
+
+> date: 2018-09-23 17:38:57
+
+<!--more-->
+
+# BiliBili查看失效收藏
+
+在收藏夹页面, 在这个路径下是收藏视频条目, 其下 `class` 属性为 `small-item disabled` 的 `li` 元素就是失效条目.
+
+```
+#page-fav > div.col-full.clearfix.master > div.fav-main.section > div.fav-content.section > ul.fav-video-list.clearfix.content
+```
+
+失效条目依然保留了封面与标题, 可在对应 `li` 元素下的 `li.small-item.disabled > a.cover.cover-normal.disabled > img` 中查看. `src` 属性是封面的路径, 而 `alt` 属性是标题.
+
+不过 B 站收藏夹是动态页面, 无法用静态爬虫获取.
+
+> date: 2018-09-23 16:36:32
+
 # 配置 Hexo NexT Page
 
 在 next 的 `_config.yml` 中的
@@ -21,8 +47,6 @@ menu:
 ```
 
 > date: 2018-09-19 19:32:23
-
-<!--more-->
 
 # #Windows不在乎文件后缀名
 
@@ -56,7 +80,7 @@ menu:
 
 在 Windows 系统, 使用 <kbd>Ctrl</kbd> + <kbd>q</kbd>
 
-在 Linux 系统, 使用 <kbd>Ctrl</kdb> + <kbd>v</kbd>
+在 Linux 系统, 使用 <kbd>Ctrl</kbd> + <kbd>v</kbd>
 
 进入 Vitual-Block 模式
 
@@ -213,7 +237,7 @@ args: [],
 
 # locate找不到数据库的解决办法
 
-`updatedb` 指令生成数据库
+`updatedb` 指令更新数据库
 
 > date:2018-08-25 00:05:02
 
@@ -297,7 +321,6 @@ html {}         /*      选择 HTML 元素          */
 > date:2018-08-23 03:39:16
 
 # 更换Hexo主题的背景图
-
 
 将喜欢的背景图放到 `project-->themes-->next-->source-->images` 目录下。
 打开 `project-->themes-->next-->source-->css-->_custom-->custom.styl` 文件，加入代码

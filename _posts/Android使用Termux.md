@@ -2,7 +2,6 @@
 title: Android使用Termux
 tags:
   - Linux
-  - Android
   - Termux
 categories:
   - 日常

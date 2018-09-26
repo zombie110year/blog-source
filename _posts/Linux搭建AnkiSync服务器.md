@@ -9,7 +9,7 @@ categories:
     - 日常
 ---
 
-[这里](/assert/repos/anki/ankiserver.failed.md) 有一个之前失败了的方法.
+[这里](/assert/repos/anki/ankiserver.failed.html) 有一个之前失败了的方法.
 
 # 下载 AnkiServer
 

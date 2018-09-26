@@ -2,7 +2,6 @@
 title: Termux-Api
 tags:
   - Linux
-  - Android
   - Termux
 categories:
   - 日常
