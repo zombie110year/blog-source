@@ -20,6 +20,7 @@ type: "python"
 0. 函数 [Blog](/2018/08/python函数/) [Jupyter](https://notebooks.azure.com/Zombie110year/libraries/SyntaxPractice/html/PyNote/%E5%87%BD%E6%95%B0.ipynb)
 0. 类 [Blog](/2018/08/python类/) [Jupyter](https://notebooks.azure.com/Zombie110year/libraries/SyntaxPractice/html/PyNote/%E7%B1%BB.ipynb)
 0. 异常处理 [Blog](/2018/08/python异常处理/)
+0. 生成器与可迭代对象 [Blog](/2018/09/python生成器与可迭代对象) [Jupyter](https://notebooks.azure.com/Zombie110year/libraries/SyntaxPractice/html/PyNote/%E7%94%9F%E6%88%90%E5%99%A8%E4%B8%8E%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1.ipynb)
 
 # Python 模块
 
