@@ -114,6 +114,7 @@ gitalk:
         admin: '{{theme.gitalk.admin}}',
         pagerDirection: '{{theme.gitalk.pagerDirection}}',
         id: md5(location.pathname),
+        labels: "Gitalk",
         // facebook-like distraction free mode
         distractionFreeMode: false
       })
@@ -124,6 +125,16 @@ gitalk:
 ```
 
 > `admin` 那一项也是改过的, 去掉了 `.split()`, 因为我在配置文件中传入的是一个字符串, 而非数组.
+
+# 修改 `index.swig`
+
+在 `/themes/next/layout/_third-party/comments/index.swig` 中添加:
+
+```swig
+{% include 'gitalk.swig' %}
+```
+
+在 [这个 PR](https://github.com/iissnan/hexo-theme-next/pull/1814/files) 中竟然没提到, 坑啊, 我是搜到 [这篇文章](https://iochen.com/2018/01/06/use-gitalk-in-hexo/) 才知道的.
 
 # 小结
 
@@ -138,6 +149,10 @@ gitalk:
 
 之后需要手动进入每一个页面, 登陆评论, 才能在 GitHub 上创建 issue. 因为我博文不多, 所以这个过程我就手动完成了.
 
+可喜可贺~
+
+![](https://raw.githubusercontent.com/zombie110year/imgstore/master/img/20181004020620.png)
+
 # 参考
 
 - [Gitalk 中文说明](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)
@@ -145,3 +160,4 @@ gitalk:
 - [Gitalk 选项说明](https://github.com/gitalk/gitalk#options)
 - [JavaScript md5 的一个实现](https://github.com/blueimp/JavaScript-MD5)
 - [如何向 NexT 中添加 js 文件](https://github.com/iissnan/hexo-theme-next/issues/1436)
+- [Hexo中Gitalk配置使用教程-可能是目前最详细的教程](https://iochen.com/2018/01/06/use-gitalk-in-hexo/)
