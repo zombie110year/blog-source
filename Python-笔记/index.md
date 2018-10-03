@@ -6,7 +6,7 @@ type: "python"
 
 # 使用 Jupyter 学习 Python
 
-安装 Jupyter 与 配置 Jupyter 参考这两篇博文: [安装](/2018/08/Windows安装Jupyter/), [配置](/2018/02/配置JupyterNotebook/)
+安装 Jupyter 与 配置 Jupyter 参考这两篇博文: [安装](/2018/08/Windows安装Jupyter/), [配置](/2018/09/配置JupyterNotebook/)
 
 如果不希望自己安装配置 Jupyter Notebook, 也可以使用微软提供的 [Azure Notebooks](https://notebooks.azure.com/).
 
@@ -27,5 +27,9 @@ type: "python"
 - getopt: 处理命令行参数 [Blog](/2018/08/PyLib-getopt/)
 - win32clipboard: 使用 Python 操作 Windows 系统的剪贴板 [Blog](/2018/08/PyLib-win32clipboard/)
 - re: 正则表达式 [Blog](/2018/08/regex-正则表达式/)
+
+# matplotlib
+
+- 中文设置 [Blog](/2018/09/matplotlib中文)
 
 > (未完待续...)

@@ -56,7 +56,7 @@ categories:
 |配置项|作用|备注|
 |:----:|----|----|
 |`c.NotebookApp.notebook_dir='D:/jupyter'`|配置工作目录|默认为启动jupyter的 cwd 路径|
-|`c.NotebookApp.ip='192.168.1.1'`|使用IP|默认为本机 hosts 文件设置的 localhost, 一般为 127.0.0.1, 是其他机器无法访问的. 如果要在局域网中开放, 需要设置为局域网IP|
+|`c.NotebookApp.ip='0.0.0.0'`|使用IP|默认为本机 hosts 文件设置的 localhost, 一般为 127.0.0.1, 是其他机器无法访问的. 如果要在网络中开放, 设置为 `0.0.0.0` 或 `*` 可以通过任何该机器连接的 IP 地址访问|
 |`c.NotebookApp.port=18888`|使用端口|浏览器访问 ip:port 来使用 jupyter notebook|
 |`c.NotebookApp.open_browser=False`|是否自动打开浏览器|在启动 jupyter notebook 时是否自动打开浏览器|
 |`c.NotebookApp.password='sha1:kf454f641sd31df1a2f...'`|登陆密码, 用于单用户|其实最好将生成的密码存放在同目录的 jupyter_notebook_config.json 中|
@@ -96,10 +96,6 @@ jupyter nbextensions_configurator enable --user
 ![插件推荐](https://raw.githubusercontent.com/zombie110year/imgstore/master/img/2018-09-15_23h59m41s731ms.png)
 
 其他插件没怎么使用, 所以不评价.
-
-## 修改字体
-
-TODO:
 
 # JupyterNotebook版本控制
 

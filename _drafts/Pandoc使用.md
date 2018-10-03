@@ -8,10 +8,6 @@ categories:
     - Context
 ---
 
-# 帮助文件
-
-<iframe src="/assert/resources/pandoc/pandoc.help.txt.html" style="width=800px; height=500px"></iframe>
-
 # pandoc 转换 Markdown 到其他格式
 
 通过 Pandoc 可以将 Markdown 转换为许多格式, 例如 PDF, Docx, 或者 html 与 tex.
