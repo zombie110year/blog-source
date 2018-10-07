@@ -17,6 +17,8 @@ Jupyter Notebook 可以更换笔记本使用的内核, 除了 Python 之外, 还
 
 详细的方法见 [此文档](https://jupyter-client.readthedocs.io/en/latest/wrapperkernels.html).
 
+<!--more-->
+
 # 安装 xeus-cling
 
 [xeus-cling@GitHub](https://github.com/QuantStack/xeus-cling).
@@ -38,7 +40,7 @@ apt install python3 python3-pip
 pip3 install ipykernel --user   # 将 ipython 内核安装到 Jupyter 中
 ```
 
-然后就从源码构建 Cling 内核, 需要机器上安装由 cmake, git 工具. 如果没有就用 `apt` 安装.
+然后就从源码构建 Cling 内核, 需要机器上安装有 cmake, git 工具. 如果没有就用 `apt` 安装.
 
 0. 克隆代码仓库
 

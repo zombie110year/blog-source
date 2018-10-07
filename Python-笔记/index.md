@@ -27,6 +27,8 @@ type: "python"
 - getopt: 处理命令行参数 [Blog](/2018/08/PyLib-getopt/)
 - win32clipboard: 使用 Python 操作 Windows 系统的剪贴板 [Blog](/2018/08/PyLib-win32clipboard/)
 - re: 正则表达式 [Blog](/2018/08/regex-正则表达式/)
+- hashlib: 计算散列值 [Blog](/2018/10/PyLib-hashlib/) [Jupyter](https://notebooks.azure.com/Zombie110year/libraries/SyntaxPractice/html/PyNote/lib.hashlib.tutorial.ipynb)
+- pyautogui: 操纵键盘鼠标, 以及简单的图形界面 [Blog](/2018/10/PyLib-pyautogui/)
 
 # matplotlib
 

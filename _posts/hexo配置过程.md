@@ -15,8 +15,8 @@ categories:
 
 - [x] 启用 `tag`, `category` 等页面.
 - [x] 使用 `MathJax` 渲染 LaTeX 公式.
-- [ ] 使用 `Gitalk` 作为评论系统.
-  - [ ] 使用 [MD5](https://github.com/blueimp/JavaScript-MD5/blob/master/js/md5.min.js#L1) 的标签, 以规避由于文章标题过长而无法正常创建 GitHub issue 的问题.
+- [x] 使用 `Gitalk` 作为评论系统.
+  - [x] 使用 [MD5](https://github.com/blueimp/JavaScript-MD5/blob/master/js/md5.min.js#L1) 的标签, 以规避由于文章标题过长而无法正常创建 GitHub issue 的问题.
 
 **二期目标**
 
@@ -56,7 +56,7 @@ menu:
   #commonweal: /404/ || heartbeat
 ```
 
-`||` 前的部分表示路径, 后面表示在页面上的显示内容, 最好不要改动.
+`||` 前的部分表示路径, 后面表示在页面上显示的图标, 使用的是 [font-awesome](http://fontawesome.dashgame.com/).
 
 然后, 需要创建一个 "Page" 类型的页面.
 
@@ -101,7 +101,7 @@ tags:
 
 其他同理.
 
-### 启用 MathJax 
+### 启用 MathJax
 
 根据 NexT 提供的 [文档](https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/MATH.md)
 
@@ -109,7 +109,7 @@ $$ Hello \; MathJax $$
 
 ### 启用 Gitalk
 
-TODO:
+[Blog](/2018/10/配置Hexo-Gitalk/)
 
 ## 参考资料
 
