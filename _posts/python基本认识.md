@@ -38,10 +38,12 @@ pip -v
 
 > **设为默认**
 > 修改 %APPDATA%\\pip\\pip.ini (Windows 10) (没有就创建一个)， 修改 index-url至tuna，例如
-> ```ini
-> [global]
-> index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-> ```
+
+```ini
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
 > pip 和 pip3 并存时，只需修改 ~/.pip/pip.conf。
 
 虽然在用户的家目录下就有一个 `APPDATA` 的隐藏文件夹, 但是实际上这个文件的路径应该是 `C:\Users\userhome\AppData\Roaming\pip\pip.ini`, `%APPDATA%` 变量也是指向 `C:\Users\userhome\AppData\Roaming\` 这个路径的.
