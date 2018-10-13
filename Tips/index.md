@@ -3,6 +3,26 @@ title: Tips
 type: "tips"
 ---
 
+# 使用 `refreshenv` 刷新Windows环境变量
+
+> date: 2018-10-11 22:48:19
+
+# 猜测GBK还是UTF8?
+
+使用汉字 "的" 的UTF8编码来判断. 
+
+的 的 UTF8 编码为 `0xe79a84`, 而 GBK 字符集中只有 "鐨" `0xe79a`, "殑" `0x9a84` 可能造成误判, 而此两个生僻字出现频率极低, 可以忽略.
+
+缺点: 万一 "的" 字不出现就没用了.
+
+> date: 2018-10-10 17:08:47
+
+# 使用 xelatex 而非 xetex
+
+`xelatex` 和 `xetex` 将以不同方式调用 XeLaTeX 引擎, 后者将使用 LaTeX 格式, 使用 GBK 编码
+
+> date: 2018-10-07 19:54:55
+
 # Conda 更换清华镜像
 
 ```
@@ -12,8 +32,6 @@ conda config --set show_channel_urls yes
 ```
 
 > date: 2018-09-23 17:38:57
-
-<!--more-->
 
 # BiliBili查看失效收藏
 
