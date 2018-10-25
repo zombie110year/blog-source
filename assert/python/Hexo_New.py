@@ -54,7 +54,7 @@ def main():
     file_path = r"{source}\{folder}\{file}.md".format(
         source=BLOG_PATH,
         folder="_drafts",
-        file=title
+        file=title.lower().replace(' ', '-')
         )
 
     front_matter = writeFrontMatter(title).encode("utf-8")
