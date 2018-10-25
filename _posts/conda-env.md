@@ -10,6 +10,8 @@ categories:
 
 **不知道什么原因, 在 Windows 上, 必须在 cmd 中才能使用 conda 命令来管理虚拟环境, 在 PowerShell 中无法使用.**
 
+<!--more-->
+
 # 查看
 
 使用 `conda list` 查看当前环境下安装的包, 使用 `conda env list` 查看已有的虚拟环境.
