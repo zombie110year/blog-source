@@ -3,6 +3,71 @@ title: Tips
 type: "tips"
 ---
 
+# Pandoc 提取 docx 中媒体文件
+
+使用参数 `--extract-media=DIR` 提取 source 中的媒体文件.
+
+会在指定的 `DIR` 下创建一个 `media` 目录. 例如
+
+```sh
+pandoc test.docx -f docx+style -t markdown --extract-media=DIR -o test.md
+```
+
+将会产生以下文件
+
+```
+cwd/
+    test.md
+    DIR/
+        media/
+            figure1.png
+            figure2.png
+            ...
+```
+
+根据需要指定, 一般 `--extract-media=.` 即可.
+
+> date: 2018-10-21 17:40:46
+
+<!--more-->
+
+# 一些 css 样式
+
+- `opacity` 控制元素透明度, 子元素必定继承父元素的透明度, 无法切断继承. 可以考虑: 用插入透明图片的方式代替透明背景.
+- `border-radius` 控制边框圆角, 应有一个圆角半径值.
+- 将 `background-size` 设为 `cover`, 使背景图片完全展开, 覆盖当前页面.
+
+## css 盒子模型
+
+- `margin` 外边距. 处于最外层, 用于控制元素与元素之间的间隔.
+- `border` 边框. 处于外边距与内边距之间.
+- `padding` 内边距. 处于内容与边框之间, 用于控制父元素与子元素块的间隔.
+- `content` 内容. 盒子的内容, 可嵌入图片, 文本, 子元素等等.
+
+一个盒子的 `width`, `height` 等属性的值, 是 `margin`, `border`, `padding`, `content` 各元素的尺寸之和. (一个盒子有两个边距,边框, 只有一个内容)
+
+> date: 2018-10-18 00:22:47
+
+# Python 出现 PermissionError [Errno 13]
+
+一个数据科学的同学试图将一个 DataFrame 保存到一个目录中:
+
+```python
+daylinedates.to_csv("D:\新建文件夹")
+```
+
+而 Python 也毫不怜惜地报了错:
+
+```
+PermissionError: [Errno 13] Permission denied : 'D:\\新建文件夹'
+```
+
+问题原因就是 **试图将一个文件夹打开为一个目录**.
+
+在 Windows 下, 这将报错 `PermissionError [Errno 13]`, 在 Linux 下, 将报错 `IsADirectoryError: [Errno 21] Is a directory: './xxx'`.
+
+> date: 2018-10-16 12:56:10
+
 # 使用 `refreshenv` 刷新Windows环境变量
 
 > date: 2018-10-11 22:48:19
@@ -66,7 +131,7 @@ menu:
 
 > date: 2018-09-19 19:32:23
 
-# #Windows不在乎文件后缀名
+# Windows不在乎文件后缀名
 
 所以要注意, 命名脚本文件时去除后缀的部分不要与调用程序的命名相同.
 
@@ -219,12 +284,6 @@ string.translate(dict(FROM:TO)) --> new_string
 ```
 
 > date:2018-08-28 21:12:58
-
-# Python 文档翻译 (学习资源)
-
-https://pythoncaff.com/docs/tutorial/3.7.0
-
-> date:2018-08-28 20:05:52
 
 # encode, decode
 
@@ -398,6 +457,10 @@ echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf
 
 读到内存中的字符串都是Unicode编码吗?
 
+> 是的.
+
 只有在IO时才会编码解码?
+
+> Python3 在读写文件时的默认编码是 `utf-8`
 
 > date:2018-08-20 18:08:19
