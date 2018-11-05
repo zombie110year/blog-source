@@ -29,6 +29,7 @@ type: "python"
 - re: 正则表达式 [Blog](/2018/08/regex-正则表达式/)
 - hashlib: 计算散列值 [Blog](/2018/10/PyLib-hashlib/) [Jupyter](https://notebooks.azure.com/Zombie110year/libraries/SyntaxPractice/html/PyNote/lib.hashlib.tutorial.ipynb)
 - pyautogui: 操纵键盘鼠标, 以及简单的图形界面 [Blog](/2018/10/PyLib-pyautogui/)
+- argparse: 解析命令行参数 [Blog](/2018/10/PyLib-argparse/)
 
 # matplotlib
 

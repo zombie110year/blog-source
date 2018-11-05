@@ -22,6 +22,8 @@ parser.add_argument(...)
 args = parser.parseargs()
 ```
 
+<!--more-->
+
 # 使用时, 先创建一个解析器实例
 
 ```python
