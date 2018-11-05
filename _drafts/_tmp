@@ -1,0 +1,11 @@
+
+# windows.h 中的代码风格
+
+`windows.h` 为标准数据类型定义了别名, 例如 `typedef unsigned int UINT` 等等, 这些定义可以在 `minwindef.h` 中看到.
+
+数据类型名有这些规律:
+
+开头的字符
+
+- `P` 或 `LP` 表示一个指针类型.
+- `H`: 表示一个句柄(handle)

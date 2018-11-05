@@ -3,6 +3,27 @@ title: Tips
 type: "tips"
 ---
 
+# Linux rename 指令
+
+Linux rename 指令用于重命名文件
+
+```sh
+rename <pattern> <target>
+```
+
+- `<pattern>` 是重命名时的模式字符串, 采用正则表达式:
+    - `s/原名/更名/作用域` 作用域留空则只更改匹配到的第一个文件, `g` 则表示更改所有.
+- `<target>` 指明操作目标文件, 支持通配符.
+
+```sh
+rename 's/(.*)\.c/\.cpp/g' *
+# 将当前目录下所有 .c 文件重命名为 .cpp文件
+```
+
+> date: 2018-11-01 21:33:26
+
+<!--more-->
+
 # Pandoc 提取 docx 中媒体文件
 
 使用参数 `--extract-media=DIR` 提取 source 中的媒体文件.
@@ -28,8 +49,6 @@ cwd/
 根据需要指定, 一般 `--extract-media=.` 即可.
 
 > date: 2018-10-21 17:40:46
-
-<!--more-->
 
 # 一些 css 样式
 
