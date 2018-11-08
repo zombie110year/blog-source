@@ -1,4 +1,5 @@
 ---
+comments: true
 title: '[PyNote]-2-Python控制结构'
 mathjax: False
 tags:

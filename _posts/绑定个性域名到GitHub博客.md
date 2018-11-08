@@ -1,4 +1,5 @@
 ---
+comments: true
 title: 绑定个性域名到GitHub博客
 categories:
   - 网站

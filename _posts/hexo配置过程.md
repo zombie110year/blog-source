@@ -1,4 +1,5 @@
 ---
+comments: true
 title: Hexo配置过程
 date: 2018-07-25 21:30:45
 mathjax: true

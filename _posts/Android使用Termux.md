@@ -1,4 +1,5 @@
 ---
+comments: true
 title: Android使用Termux
 tags:
   - Linux

@@ -1,4 +1,5 @@
 ---
+comments: true
 title: Vim 入门-终端记事本
 tags:
   - Vim

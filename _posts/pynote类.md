@@ -1,4 +1,5 @@
 ---
+comments: true
 title: '[PyNote]-类'
 mathjax: false
 tags:

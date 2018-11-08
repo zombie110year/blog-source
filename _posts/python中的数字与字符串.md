@@ -1,4 +1,5 @@
 ---
+comments: true
 title: '[PyNote]-3.1-Python中的数字与字符串'
 mathjax: false
 tags:

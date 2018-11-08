@@ -1,4 +1,5 @@
 ---
+comments: true
 title: '[PyNote]-0-Python基础认识'
 mathjax: false
 tags:

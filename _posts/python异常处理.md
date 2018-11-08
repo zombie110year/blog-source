@@ -1,4 +1,5 @@
 ---
+comments: true
 title: '[PyNote]-try..except..raise异常处理'
 mathjax: false
 tags:

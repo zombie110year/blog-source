@@ -1,4 +1,5 @@
 ---
+comments: true
 title: '[PyNote]-3.2-Python集合类型'
 mathjax: false
 tags:

@@ -1,4 +1,5 @@
 ---
+comments: true
 title:  Linux搭建AnkiServer
 data:   2018-08-24 20:11:31
 mathjax:  false

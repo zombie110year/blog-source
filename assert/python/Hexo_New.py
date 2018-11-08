@@ -14,6 +14,7 @@ TEMP = """\
 ---
 title:  {title}
 data:   {date} {time}
+comments: true
 mathjax:  false
 tags:
     - null

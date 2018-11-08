@@ -1,4 +1,5 @@
 ---
+comments: true
 title:  python生成器与可迭代对象
 data:   2018-09-22 23:43:30
 mathjax:  false

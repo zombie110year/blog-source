@@ -1,4 +1,5 @@
 ---
+comments: true
 title: PowerShell创建链接文件
 date: 2018-07-24 21:01:59
 tags:

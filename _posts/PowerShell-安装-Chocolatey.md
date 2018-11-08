@@ -1,4 +1,5 @@
 ---
+comments: true
 title: PowerShell 安装 Chocolatey
 date: 2018-08-19 17:23:15
 tags:

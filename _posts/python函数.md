@@ -1,4 +1,5 @@
 ---
+comments: true
 title: '[PyNote]-函数'
 mathjax: false
 tags:

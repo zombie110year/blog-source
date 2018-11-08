@@ -1,4 +1,5 @@
 ---
+comments: true
 title: Termux-Api
 tags:
   - Linux

@@ -1,4 +1,5 @@
 ---
+comments: true
 title: '[PyNote]-1-Python运算符'
 mathjax: True
 tags:

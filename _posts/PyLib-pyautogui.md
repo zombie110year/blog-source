@@ -1,4 +1,5 @@
 ---
+comments: true
 title:  使用 PyAutoGUI 操纵键鼠
 data:   2018-10-06 20:33:01
 mathjax:  false
