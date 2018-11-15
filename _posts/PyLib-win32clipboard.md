@@ -1,7 +1,7 @@
 ---
 comments: true
 title:  PyLib-win32clipboard
-data:   2018-8-31 13:44:8
+date:   2018-8-31 13:44:8
 mathjax:  false
 tags:
     - Python

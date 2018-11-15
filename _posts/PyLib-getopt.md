@@ -1,7 +1,7 @@
 ---
 comments: true
 title:  PyLib-getopt
-data:   2018-8-26 2:39:13
+date:   2018-8-26 2:39:13
 mathjax:  false
 tags:
     - Python

@@ -1,7 +1,7 @@
 ---
 comments: true
 title:  py排列与组合
-data:   2018-9-15 15:45:58
+date:   2018-9-15 15:45:58
 mathjax:  true
 tags:
     - Algorithm

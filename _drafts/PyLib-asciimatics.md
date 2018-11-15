@@ -1,6 +1,6 @@
 ---
 title:  PyLib-asciimatics
-data:   2018-10-15 18:31:20
+date:   2018-10-15 18:31:20
 mathjax:  false
 tags:
     - null

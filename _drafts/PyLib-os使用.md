@@ -1,6 +1,6 @@
 ---
 title:  PyLib-os使用
-data:   2018-8-28 22:36:14
+date:   2018-8-28 22:36:14
 mathjax:  false
 tags:
     - PythonLibrary

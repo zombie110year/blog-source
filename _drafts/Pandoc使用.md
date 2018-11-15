@@ -1,6 +1,6 @@
 ---
 title:  Pandoc使用
-data:   2018-9-6 11:51:41
+date:   2018-9-6 11:51:41
 mathjax:  false
 tags:
     - Pandoc

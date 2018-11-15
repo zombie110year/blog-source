@@ -1,6 +1,6 @@
 ---
 title: "Python 小程序: SimpleTTYNote"
-data:   2018-10-15 16:09:36
+date:   2018-10-15 16:09:36
 mathjax:  false
 tags:
     - Python

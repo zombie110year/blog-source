@@ -1,7 +1,7 @@
 ---
 comments: true
 title:  Jupyter添加C++内核
-data:   2018-09-23 11:47:11
+date:   2018-09-23 11:47:11
 mathjax:  false
 tags:
     - Jupyter

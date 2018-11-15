@@ -1,7 +1,7 @@
 ---
 comments: true
 title:  配置matplotlib
-data:   2018-09-29 01:25:26
+date:   2018-09-29 01:25:26
 mathjax:  false
 tags:
     - Python

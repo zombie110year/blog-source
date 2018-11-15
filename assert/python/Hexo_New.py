@@ -13,7 +13,7 @@ BLOG_PATH = r"D:/Blog/source"
 TEMP = """\
 ---
 title:  {title}
-data:   {date} {time}
+date:   {date} {time}
 comments: true
 mathjax:  false
 tags:

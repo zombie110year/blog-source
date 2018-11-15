@@ -1,7 +1,7 @@
 ---
 comments: true
 title:  命令行调用 MSVC Tools
-data:   2018-11-05 15:52:13
+date:   2018-11-05 15:52:13
 mathjax:  false
 tags:
     - C/C++

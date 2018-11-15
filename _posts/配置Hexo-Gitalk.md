@@ -1,6 +1,6 @@
 ---
 title:  Hexo 配置 Gitalk 的过程
-data:   2018-10-03 23:36:45
+date:   2018-10-03 23:36:45
 mathjax:  false
 comments: true
 tags:

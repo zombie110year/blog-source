@@ -1,6 +1,6 @@
 ---
 title:  Aria2 WebUI 加 NextCloud 打造远程文件服务器
-data:   2018-10-22 20:00:51
+date:   2018-10-22 20:00:51
 mathjax:  false
 tags:
     - Linux

@@ -1,6 +1,6 @@
 ---
 title:  JupyterHub+JupyterLab
-data:   2018-10-01 15:49:44
+date:   2018-10-01 15:49:44
 mathjax:  false
 tags:
     - Python

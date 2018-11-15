@@ -1,7 +1,7 @@
 ---
 comments: true
 title:  使用 conda 创建与管理虚拟环境
-data:   2018-10-11 22:13:37
+date:   2018-10-11 22:13:37
 mathjax:  false
 tags:
     - Python

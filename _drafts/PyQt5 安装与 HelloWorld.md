@@ -1,6 +1,6 @@
 ---
 title:  PyQt5 安装与 HelloWorld
-data:   2018-10-12 09:16:15
+date:   2018-10-12 09:16:15
 mathjax:  false
 tags:
     - Python
