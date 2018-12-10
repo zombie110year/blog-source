@@ -3,6 +3,47 @@ title: Tips
 type: "tips"
 ---
 
+# Git Log 乱码
+
+Git 默认使用 less 作为 log 的查看器, 在有中文时乱码, 一般都是因为字符编码对不上的原因.
+
+乱码看起来是这样:
+
+```
+\123\321 ......
+<A3><E8> ......
+```
+
+1. 设置 git 的 i18n
+
+```sh
+git config --global i18n.commitencoding = utf-8
+git config --global i18n.logoutputencoding utf-8
+```
+
+2. 设置环境变量 LESSCHARSET
+
+```
+export LESSCHARSET=utf-8 # Bash
+
+$env:LESSCHARSET = "utf-8" # PowerShell
+# 或者直接在设置环境变量的 GUI 中设置
+```
+
+问题解决
+
+> date: 2018-12-08 00:18:34
+
+<!--more-->
+
+# Python 运行一个包
+
+```sh
+python -m package.__main__ ...args
+```
+
+> date: 2018-11-17 21:15:41
+
 # Linux rename 指令
 
 Linux rename 指令用于重命名文件
@@ -21,8 +62,6 @@ rename 's/(.*)\.c/\.cpp/g' *
 ```
 
 > date: 2018-11-01 21:33:26
-
-<!--more-->
 
 # Pandoc 提取 docx 中媒体文件
 
