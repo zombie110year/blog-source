@@ -3,6 +3,27 @@ title: Tips
 type: "tips"
 ---
 
+# 使用 icacls 批量修改 Windows 文件权限
+
+> date: 2018-12-23 15:06:53
+
+<!--more-->
+
+# gcc -MM 生成 Makefile 目标
+
+使用 `gcc -MM *.c` 为项目中的源代码生成对应的 Makefile 目标.
+
+```sh
+$ gcc -MM .\readfile.c
+readfile.o: readfile.c
+```
+
+如果使用 `-M` 参数, 则会包含标准库路径下的头文件, 一般不需要.
+
+`g++` 也可使用这个参数.
+
+> date: 2018-12-10 18:43:11
+
 # Git Log 乱码
 
 Git 默认使用 less 作为 log 的查看器, 在有中文时乱码, 一般都是因为字符编码对不上的原因.
@@ -33,8 +54,6 @@ $env:LESSCHARSET = "utf-8" # PowerShell
 问题解决
 
 > date: 2018-12-08 00:18:34
-
-<!--more-->
 
 # Python 运行一个包
 
