@@ -22,7 +22,7 @@ nmake.exe   Makefile 的解析器
 ```
 
 但是, 即便找到了这些可执行文件的路径, 还需要解决一大堆 include, lib 等等的搜索路径, 非常麻烦.
-
+<!--more-->
 # 使用官方提供的 bat 脚本
 
 [微软为开发者准备了命令提示符](https://msdn.microsoft.com/zh-cn/library/f2ccy3wt.aspx?f=255&MSPPError=-2147217396)不过, 这些命令提示符打开的是 cmd, 没有 tab 补全, 体验还是不太好, 在进入后通过 `powershell -NoExit` 进入 PowerShell 环境就舒服多了.
@@ -98,7 +98,7 @@ WIN_SDK=C:\Program Files (x86)\Microsoft SDKs
 ```
                -预处理器-
 
-/AI<dir> 添加到程序集搜索路径           /FU<file> 强制使用程序集/模块 
+/AI<dir> 添加到程序集搜索路径           /FU<file> 强制使用程序集/模块
 /C 不抽出注释                           /D<name>{=|#}<text> 定义宏
 /E 预处理到 stdout                      /EP 预处理到 stdout，无行号
 /P 预处理到文件                         /Fx 将插入的代码合并到文件中
@@ -128,7 +128,7 @@ WIN_SDK=C:\Program Files (x86)\Microsoft SDKs
 /LN 创建 .netmodule                     /F<num> 设置堆栈大小
 /link [链接器选项和库]                  /MD 与 MSVCRT.LIB 链接
 /MT 与 LIBCMT.LIB 链接                  /MDd 与 MSVCRTD.LIB 调试库链接
-/MTd 与 LIBCMTD.LIB 调试库链接          
+/MTd 与 LIBCMTD.LIB 调试库链接
 ```
 
 ## 杂项
@@ -147,7 +147,7 @@ WIN_SDK=C:\Program Files (x86)\Microsoft SDKs
 /showIncludes 显示包含文件名            /Tc<source file> 将文件编译为 .c
 /Tp<source file> 将文件编译为 .cpp      /TC 将所有文件编译为 .c
 /TP 将所有文件编译为 .cpp               /V<string> 设置版本字符串
-/utf-8 集源和到 UTF-8 的执行字符集      
+/utf-8 集源和到 UTF-8 的执行字符集
 /validate-charset[-] 验证 UTF-8 文件是否只有合法字符
 
 /Wall 启用所有警告                      /w   禁用所有警告

@@ -51,17 +51,15 @@ $env:LESSCHARSET = "utf-8" # PowerShell
 # 或者直接在设置环境变量的 GUI 中设置
 ```
 
+3. 关闭 core.quotepath 选项
+
+```
+git config --global core.quotepath false
+```
+
 问题解决
 
 > date: 2018-12-08 00:18:34
-
-# Python 运行一个包
-
-```sh
-python -m package.__main__ ...args
-```
-
-> date: 2018-11-17 21:15:41
 
 # Linux rename 指令
 
@@ -114,8 +112,7 @@ cwd/
 - `border-radius` 控制边框圆角, 应有一个圆角半径值.
 - 将 `background-size` 设为 `cover`, 使背景图片完全展开, 覆盖当前页面.
 
-## css 盒子模型
-
+## css 盒
 - `margin` 外边距. 处于最外层, 用于控制元素与元素之间的间隔.
 - `border` 边框. 处于外边距与内边距之间.
 - `padding` 内边距. 处于内容与边框之间, 用于控制父元素与子元素块的间隔.
@@ -151,7 +148,7 @@ PermissionError: [Errno 13] Permission denied : 'D:\\新建文件夹'
 
 # 猜测GBK还是UTF8?
 
-使用汉字 "的" 的UTF8编码来判断. 
+使用汉字 "的" 的UTF8编码来判断.
 
 的 的 UTF8 编码为 `0xe79a84`, 而 GBK 字符集中只有 "鐨" `0xe79a`, "殑" `0x9a84` 可能造成误判, 而此两个生僻字出现频率极低, 可以忽略.
 
