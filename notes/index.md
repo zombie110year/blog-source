@@ -10,8 +10,4 @@ type: "python"
 
 如果不希望自己安装配置 Jupyter Notebook, 也可以使用微软提供的 [Azure Notebooks](https://notebooks.azure.com/).
 
-<a href="https://github.com/zombie110year/Learn-Python/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="Jupyter" width="600px" align="center" />
-</a>
-
 [![learn-py.png](https://i.loli.net/2019/02/17/5c68fe4d827ac.png)](http://learn-py.zombie110year.top)
