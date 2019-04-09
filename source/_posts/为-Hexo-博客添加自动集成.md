@@ -77,3 +77,22 @@ script 阶段则是配置构建当前项目的命令, 比如测试, 打包, 发�
 
 另外, 还有一个 env 项, 可以在 global 子项下配置一组键值对, 设置为可被其他项使用的环境变量.
 在 Travis 网页中配置的环境变量也可以使用.
+
+# 还能在 Hexo 的 config 里增加一个 Travis 的小徽章
+
+被我用 html 的形式添加到 _config.yml 里了, 用于查看构建状态:
+
+```yml
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: ZomHub
+subtitle: Mo
+description: '<a src="https://travis-ci.org/zombie110year/blog-source.svg?branch=master"><img alt="Travis Status" src="https://travis-ci.org/zombie110year/blog-source.svg?branch=master"</a>'
+keywords:
+author: Zombie110year
+language: zh-CN # themes/next/language/zh-CN.yml
+timezone: Asia/Shanghai
+```

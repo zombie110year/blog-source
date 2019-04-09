@@ -5,7 +5,7 @@
 # Site
 title: ZomHub
 subtitle: Mo
-description: Zombie110year's Blog
+description: '<a src="https://travis-ci.org/zombie110year/blog-source.svg?branch=master"><img alt="Travis Status" src="https://travis-ci.org/zombie110year/blog-source.svg?branch=master"</a>'
 keywords:
 author: Zombie110year
 language: zh-CN # themes/next/language/zh-CN.yml
