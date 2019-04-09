@@ -1,7 +1,7 @@
 ---
-title: Python 笔记
+title: 外部笔记本
 date: 2018-09-19 16:17:14
-type: "python"
+type: "notes"
 ---
 
 # 使用 Jupyter 学习 Python
