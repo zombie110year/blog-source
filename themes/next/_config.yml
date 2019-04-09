@@ -93,15 +93,15 @@ footer:
 # Valid values of language: deed.zh, deed.fr, deed.de, etc.
 creative_commons:
   license: by-nc-sa
-  sidebar: false
+  sidebar: true
   post: false
   language:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
-  title: Follow me on GitHub
+  enable: true
+  permalink: https://github.com/zombie110year
+  title: play with me on GitHub
 
 
 # ---------------------------------------------------------------
@@ -124,7 +124,7 @@ seo: false
 index_with_subtitle: false
 
 # Automatically add external URL with BASE64 encrypt & decrypt.
-exturl: false
+exturl: true
 
 # Google Webmaster tools verification.
 # See: https://www.google.com/webmasters
@@ -158,10 +158,12 @@ baidu_push: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
+  note: /notes/ || book
+  Tips: /Tips/ || edit
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -177,9 +179,9 @@ menu_settings:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+# scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 
@@ -197,8 +199,8 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  GitHub: https://github.com/zombie110year || github
+  E-Mail: mailto:zombie110year@outlook.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -229,11 +231,11 @@ avatar:
   # You can also use other linking images.
   url: #/images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
-  rounded: false
+  rounded: true
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
   opacity: 1
   # If true, the avatar would be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Table Of Contents in the Sidebar
 toc:
@@ -341,11 +343,11 @@ codeblock:
   border_radius:
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result
-    show_result: false
+    show_result: true
     # Style: only 'flat' is currently available, leave it blank if you prefer default theme
-    style:
+    style: flat
 
 # Wechat Subscriber
 wechat_subscriber:
@@ -495,7 +497,7 @@ font:
 
 # Math Equations Render Support
 math:
-  enable: false
+  enable: true
 
   # Default (true) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front Matter.
@@ -574,7 +576,7 @@ bookmark:
 # Reading progress bar
 # Dependencies: https://github.com/theme-next/theme-next-reading-progress
 reading_progress:
-  enable: false
+  enable: true
   color: "#37c6c0"
   height: 2px
 
@@ -640,7 +642,7 @@ valine:
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
-  language: # language, available values: en, zh-cn
+  language: zh-CN # language, available values: en, zh-cn
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # if false, comment count will only be displayed in post page, not in home page
 

@@ -8,7 +8,7 @@ subtitle: Mo
 description: Zombie110year's Blog
 keywords:
 author: Zombie110year
-language: zh-Hans
+language: zh-CN # themes/next/language/zh-CN.yml
 timezone: Asia/Shanghai
 
 # URL
