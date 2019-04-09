@@ -18,3 +18,7 @@ type: "notes"
 
 - [宋劲彬 原版](http://akaedu.github.io/book/)
 - [Zombie110year 改版](http://learn-c.zombie110year.top/)
+
+# Blog Issue
+
+[记录了未写入博客的一些小内容](https://github.com/zombie110year/blog-source/issues/)
