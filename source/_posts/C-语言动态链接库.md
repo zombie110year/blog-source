@@ -9,6 +9,8 @@ tags:
 
 DLL(Dynamic Linked Library) 是一种可在运行时被其他程序链接并执行的代码.
 
+<!--more-->
+
 # GNU 工具链
 
 ## 如何创建动态链接库
@@ -56,8 +58,8 @@ void swap(int* a, int* b)
 ```c
 #include <stdio.h>
 
-// 函数声明, 就和普通情况下一样
-void swap(int*, int*);
+// 外部引用函数声明, 这会创建一个在链接时指向 libswap.so 中 swap 函数的符号.
+extern void swap(int*, int*);
 
 int main(void)
 {
@@ -181,8 +183,11 @@ gcc -L. -lswap main.c -o main.exe
 
 MSVC 编译 C 程序的最小要求是 "C++ 桌面开发" 以及 "单个组件 -> SDK 库和框架 -> Windows 通用 C 运行时"
 
-TODO
+你可能会看到 `_declspec(dllexport)` 或者 `_declspec(dllimport)` 这两种声明, 它们是 Microsoft 的 C++ 扩展, 不在 C 或 C++ 的标准之内. 如果要求代码平台无关, 使用标准的 `extern` 声明就好了.
+
+`dllMain`?
 
 # 参考
 
 -   https://medium.com/@Cu7ious/how-to-use-dynamic-libraries-in-c-46a0f9b98270
+-   https://docs.microsoft.com/en-us/cpp/cpp/declspec
