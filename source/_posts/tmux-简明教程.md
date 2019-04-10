@@ -82,10 +82,10 @@ bind-key l select-pane -R
     tmux rename-session -t <session-di> new-id
 ```
 
-例如已有 session
+列出已有 session
 
 ```sh
-    tmux list-session
+    tmux list-sessions
 ```
 
 > 参考:
