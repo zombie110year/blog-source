@@ -39,6 +39,11 @@ Travis CI 是 GitHub 上非常流行的 CI 工具, 虽然不开源, 但是免费
 language: node_js
 node_js: stable
 
+# 保存每次 npm install 的缓存.
+cache:
+  directories:
+    - node_modules
+
 # install 阶段
 install:
   - npm install

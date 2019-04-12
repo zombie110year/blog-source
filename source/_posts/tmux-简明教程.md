@@ -11,12 +11,7 @@ categories:
 
 Tmux 是一个可在 Linux, MacOS 中运行的终端复用工具. 最直观的效果就是将终端一个屏幕划分成多个屏幕使用.
 
-Tmux 的划分涉及到四个层次:
-
-1. Server
-2. Session
-3. Window
-4. Pane
+Tmux 的划分涉及到四个层次: Server, Session, Window, Pane.
 
 其中, 一个 Linux 主机只能运行一个 Server, 其他的则是按照层次有着 一对多 的关系:
 
@@ -40,10 +35,7 @@ set -g prefix C-x
 unbind C-b
 
 # 模仿 Vim 键位
-bind-key k select-pane -U
-bind-key j select-pane -D
-bind-key h select-pane -L
-bind-key l select-pane -R
+set -g mode-keys vi
 ```
 
 > `<prefix>` 是 tmux 的快捷键前缀, 大多数功能键都是以它开始, 默认为 Ctrl+b, 在上面的配置文件中被修改为 Ctrl+x (用过 Emacs 的都懂)
@@ -53,27 +45,46 @@ bind-key l select-pane -R
 
 操作 | 指令
 -|-
-水平分割，创建新 pane | prefix + %
-竖直分割，创建新 pane | prefix + "
-在 pane 间切换 | prefix + o，或 prefix + 方向键
-删除 pane | 在 panel 中的 shell 里输入 exit 即可
-切换 pane 的全屏/非全屏 | prefix + z
-调整 pane 的大小 | prefix + C-方向键
-调整 pane 的大小(一次 5 个单位) | prefix + M-方向键
-显示 pane 编号 | prefix p
-按号码跳转至 pane | prefix 号码
+水平分割，创建新 pane | `<prefix> %`
+竖直分割，创建新 pane | `<prefix> "`
+在 pane 间切换 | `<prefix> o，或` `<prefix> 方向键`
+删除 pane | `<prefix> x` 或者在 shell 里执行 exit 命令
+切换 pane 的全屏/非全屏 | `<prefix> z`
+调整 pane 的大小 | `<prefix> C-方向键`
+调整 pane 的大小(一次 5 个单位) | `<prefix> M-方向键`
+显示 pane 编号 | `<prefix> p`
+按号码跳转至 pane | `<prefix> 号码`
+交换 pane 的位置 | `<prefix> {` 或者 `<prefix> }`
 
-<!-- # Window(TODO) -->
+# Window
+
+Window 是 session 之下的一个层级. 一个屏幕一次只能显示一个 Window, 在 Window 中又可以划分多个 pane.
+有点类似 "标签页" 的概念.
+
+操作 | 指令
+-----|-----
+创建新的 Window | `<prefix> c`
+列出所有 Window | `<prefix> w`
+切换 Window | `<prefix> n` 或 `<prefix> p`
+重命名当前 Window | `<prefix> ,`
+删除当前 Window | `<prefix> &`
 
 # Session
 
-将当前 session 转移到后台运行: `<prefix> d`
+操作 | 指令
+-----|-----
+将当前 session 转移到后台运行 | `<prefix> d`
+列出所有 session | `<prefix> s`
+重命名当前 session | `<prefix> $`
+
+由于 session 是连接 tmux 与普通 shell 的第一层概念, 因此, 也有许多操作可以通过命令行参数来进行.
 
 重新进入后台 session:
 
 ```sh
     tmux a  # 进入上一个 session
     tmux attach-session -t <session-id> # 进入指定的 session
+    tmux at -t <session-id> # at 是 attach-session 的简写
 ```
 
 给 session 重命名
@@ -88,6 +99,28 @@ bind-key l select-pane -R
     tmux list-sessions
 ```
 
+# tmux 子命令
+
+tmux 子命令可以在 Shell 中使用:
+
+```sh
+    tmux <subcmd> <args> ...
+```
+
+也可以在 tmux session 中, 通过内置命令行使用:
+
+```sh
+# 按下 <prefix> : 进入内置命令行, 就像 Vim 一样
+<subcmd> <args> ...
+```
+
+可用的子命令可参考文档 (`man tmux`) . 快捷键都是对这些命令的封装.
+这些功能不一定会用, 因此用到了再查.
+
+Tmux 中有一系列 `new-` `kill-` `list-` 开头的命令, 用于操作 Session, Window, pane.
+
 > 参考:
 > - https://gist.github.com/MohamedAlaa/2961058
 > - http://mingxinglai.com/cn/2012/09/tmux/
+> - https://suixinblog.cn/2018/12/tmux.html
+> - http://louiszhai.github.io/2017/09/30/tmux/
