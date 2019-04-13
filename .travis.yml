@@ -5,6 +5,14 @@ cache:
   directories:
     - node_modules
 
+git:
+  depth: 1
+  quiet: true
+
+branches:
+  only:
+  - master
+
 install:
   - npm install
 
