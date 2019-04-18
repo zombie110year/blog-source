@@ -8,7 +8,7 @@ tags:
 
 # Travis CI
 
-Travis CI 是 GitHub 上非常流行的 CI 工具, 虽然不开源, 但是免费.
+Travis CI 是 GitHub 上非常流行的 CI 工具.
 
 在 Travis 中添加项目, 可以直接登录 GitHub 并添加公开仓库.
 除了在 Travis 中配置项目之外, 还需要在仓库中添加 `.travis.yml` 配置文件.
