@@ -151,8 +151,6 @@ gitalk:
 
 可喜可贺~
 
-![](https://raw.githubusercontent.com/zombie110year/imgstore/master/img/20181004020620.png)
-
 # 参考
 
 - [Gitalk 中文说明](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)

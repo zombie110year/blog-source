@@ -60,7 +60,7 @@ powershell -NoExit Start-ConEmu
 
 ## 使用 chocolatey 安装
 
-[我的上篇文章](/2018/08/PowerShell-安装-Chocolatey/#先安装一个-vim-试试)
+[我的上篇文章](/2018/PowerShell-安装-Chocolatey/#先安装一个-vim-试试)
 
 # oh-my-posh
 
@@ -70,7 +70,7 @@ powershell -NoExit Start-ConEmu
 
 安装该模块, 先在 PowerShell 中使用 `Find-Module oh-my-posh` 查找是否能连接上 [PowerShell Gallery](https://www.powershellgallery.com).
 
-如果输出以下信息, 
+如果输出以下信息,
 
 ```powershell
 Version    Name                                Repository           Description
@@ -78,7 +78,7 @@ Version    Name                                Repository           Description
 2.0.223    oh-my-posh                          PSGallery            Theming capabilities for the PowerShell prompt in ConEmu
 ```
 
-就直接使用 `Install-Module oh-my-posh` 安装. 之后可以使用 `Import-Module oh-my-posh` 载入模块, 使用 `Set-Theme XXX` 设置主题. 
+就直接使用 `Install-Module oh-my-posh` 安装. 之后可以使用 `Import-Module oh-my-posh` 载入模块, 使用 `Set-Theme XXX` 设置主题.
 
 <!--最好看的主题是 Agnoster-->
 
@@ -105,7 +105,7 @@ Set-ExecutionPolicy XXX
 
 ## 编辑 $PROFILE
 
-PowerShell 的 `$PROFILE` 变量存储它的配置文件路径(这个配置文件对本机所有用户生效, 不过很多 Windows 都是单用户吧), 在 PowerShell 启动时便会运行. 如果没动过它的话, 它就是空的. 
+PowerShell 的 `$PROFILE` 变量存储它的配置文件路径(这个配置文件对本机所有用户生效, 不过很多 Windows 都是单用户吧), 在 PowerShell 启动时便会运行. 如果没动过它的话, 它就是空的.
 
 最好将自己的设置项放在用户目录中, `$PROFILE` 里只需要放一句 "执行对应脚本" 就好了.
 

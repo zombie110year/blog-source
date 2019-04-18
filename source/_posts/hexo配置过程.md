@@ -74,7 +74,7 @@ date: 2018-07-25 21:21:00
 ---
 ```
 
-需要稍微修改一下, 
+需要稍微修改一下,
 
 ```markdown
 ---
@@ -110,7 +110,7 @@ $$ Hello \; MathJax $$
 
 ### 启用 Gitalk
 
-[Blog](/2018/10/配置Hexo-Gitalk/)
+[Blog](/2018/配置Hexo-Gitalk/)
 
 ## 参考资料
 

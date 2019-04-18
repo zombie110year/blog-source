@@ -77,8 +77,6 @@ jupyter nbextensions_configurator enable --user
 
 重启 Jupyter Notebook 后, 就可以在主页面看到额外的标签了.
 
-![主界面的插件管理标签页](https://raw.githubusercontent.com/zombie110year/imgstore/master/img/2018-09-15_23h44m39s484ms.png)
-
 推荐启用的插件:
 
 - Nbextensions dashboard tab 插件管理标签页, 如果禁用了, 就只能丢掉鼠标, 去找配置文件了...
@@ -94,17 +92,15 @@ jupyter nbextensions_configurator enable --user
 - LaTeX environments for Jupyter        如果启用它, 会导致 MathJax 反复渲染公式, 根本停不下来, 导致页面胡乱跳动...
 - Live Markdown Preview         实时预览会导致 Markdown Cell 在编辑时占用双倍空间, 如果文档写长了, 就会很难受...
 
-![插件推荐](https://raw.githubusercontent.com/zombie110year/imgstore/master/img/2018-09-15_23h59m41s731ms.png)
-
 其他插件没怎么使用, 所以不评价.
 
 # JupyterNotebook版本控制
 
 由于 `.ipynb` 是一个二进制文件, 所以版本控制相对困难, 不过可以用一定的方法规避:
 
-0. 为一个 `.ipynb` 创建一个目录
-0. 在目录下创建许多 `.py` 文件或其他资源
-0. 在 `.ipynb` 中使用 magic 指令 `%load ...` 来导入 `.py` 文件的内容.
+1. 为一个 `.ipynb` 创建一个目录
+2. 在目录下创建许多 `.py` 文件或其他资源
+3. 在 `.ipynb` 中使用 magic 指令 `%load ...` 来导入 `.py` 文件的内容.
 
 这样, 就可以控制外面的 `.py` 文件的版本, 而 `.ipynb` 文件基本上不会有太多的更改...
 

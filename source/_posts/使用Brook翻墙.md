@@ -51,7 +51,7 @@ vultr 机房一览:
 
 下面这个脚本会将这些机房的域名挨个 ping 20次, 使用 python3 运行它. 不是我不提供操作系统自带的脚本, 只是因为我不会 bash 编程, 也不会 PowerShell 或 Batch. 不过幸好 Python 有 os 与 sys 模块可以调用外部命令.
 
-- (Windows PowerShell) `Start-Job -ScriptBlock {python3 ./ping-vultr.py >> ./ping-vultr-out.txt}` 将这个脚本放到后台运行, 输出重定向至 `ping-vultr-out.txt` 文件. (实测发现在 Windows 下后台无法运行, 一开启则停止, 使用绝对路径也不行, 不知道是什么问题, 还是使用前台进程吧, 大不了多开个窗口) 
+- (Windows PowerShell) `Start-Job -ScriptBlock {python3 ./ping-vultr.py >> ./ping-vultr-out.txt}` 将这个脚本放到后台运行, 输出重定向至 `ping-vultr-out.txt` 文件. (实测发现在 Windows 下后台无法运行, 一开启则停止, 使用绝对路径也不行, 不知道是什么问题, 还是使用前台进程吧, 大不了多开个窗口)
 - (Linux) 使用 `nohup python3 ./ping-vultr.py >> ./ping-vultr-out.txt &` 将这个脚本放到后台运行, 输出重定向至 `ping-vultr-out.txt` 文件.
 	- 注意, 需要将第 15 行的 `os.system("ping " + domains[a] + " -n 20")` 改为 `os.system("ping " + domains[a] + " -c 20")`
 
@@ -147,7 +147,7 @@ sudo ufw allow 9999/udp
 
 PS: 我可喜欢这本小说了.😀
 
-[密码: 3dpu](https://pan.baidu.com/s/1iXs5S_2i5m2_IZQT_0R66A)
+[链接已失效](https://pan.baidu.com/s/1iXs5S_2i5m2_IZQT_0R66A)
 
 该 GUI 界面傻瓜式操作, 将对应值填进输入栏里, 然后点击 Save 就可以用了. 在托盘区会有一个小钥匙的图标, 右键 `troggle` 可以开关. 不过 GUI 程序没有设计作为服务端的功能.
 
@@ -155,7 +155,7 @@ PS: 我可喜欢这本小说了.😀
 
 ### Android GUI
 
-一样的, 安装了 apk 包, 把服务器 IP 地址, 端口, 用户名和密码一填, 点击"开始" 就可以用了. 
+一样的, 安装了 apk 包, 把服务器 IP 地址, 端口, 用户名和密码一填, 点击"开始" 就可以用了.
 
 ### Linux CLI
 
