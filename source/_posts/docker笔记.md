@@ -23,8 +23,9 @@ Docker 和虚拟机有所相似也有所不同:
 
 引用官方提供的示意图:
 
-![Docker](https://www.docker.com/sites/default/files/Container%402x.png)
-![Vitual Machine](https://www.docker.com/sites/default/files/VM%402x.png)
+|                                       Docker                                        |                                VM                                |
+| :---------------------------------------------------------------------------------: | :--------------------------------------------------------------: |
+| ![Docker Container](/assert/img/docker-containerized-appliction-blue-border_2.webp) | ![Vitual Machine](/assert/img/container-vm-whatcontainer_2.webp) |
 
 <!--more-->
 
