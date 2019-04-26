@@ -142,6 +142,12 @@ int regexec (const regex_t *restrict compiled, const char *restrict string, size
 
 `regmatch_t` 的 `rm_so`, `rm_eo` 两个成员都是 `regoff_t` 类型, 这个类型其实就是 `int` 的别名. 用于确定捕获组在源字符串中的位置, 其值为匹配到的捕获组的起始索引值. 如果匹配失败, 则此结构体中的成员值是无意义的垃圾值.
 
+### 进行捕获
+
+1. 构造一个长度等于 `compiled.re_nsub` 的 `matchptr` 数组. 
+2. 将 `compiled.re_nsub` 与 `matchptr` 传入. 经过 `regexec` 执行后, `matchptr` 中的每一个 `regmatch_t` 都会储存匹配到的字符串在源字符串中的位置信息. 
+3. 通过 `string.h` 中的 `memcpy` 函数, 将对应字节复制到另一个字符串中. 注意,  传入的字符串首地址为 `string + regmatch_t.rm_so`, 而字节长度为 `regmatch_t.rm_eo - regmatch_t.rm_so`.
+
 ### regfree 函数
 
 释放编译后的正则表达式结构体.
