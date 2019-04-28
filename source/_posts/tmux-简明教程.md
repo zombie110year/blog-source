@@ -43,39 +43,38 @@ set -g mode-keys vi
 
 # pane 相关的操作
 
-操作 | 指令
--|-
-水平分割，创建新 pane | `<prefix> %`
-竖直分割，创建新 pane | `<prefix> "`
-在 pane 间切换 | `<prefix> o，或` `<prefix> 方向键`
-删除 pane | `<prefix> x` 或者在 shell 里执行 exit 命令
-切换 pane 的全屏/非全屏 | `<prefix> z`
-调整 pane 的大小 | `<prefix> C-方向键`
-调整 pane 的大小(一次 5 个单位) | `<prefix> M-方向键`
-显示 pane 编号 | `<prefix> p`
-按号码跳转至 pane | `<prefix> 号码`
-交换 pane 的位置 | `<prefix> {` 或者 `<prefix> }`
+| 操作                                 | 指令                                       | 记忆方法 |
+| ------------------------------------ | ------------------------------------------ | -------- |
+| 水平分割，创建新 pane                | `<prefix> %`                               |          |
+| 竖直分割，创建新 pane                | `<prefix> "`                               |          |
+| 在 pane 间切换                       | `<prefix> o，或` `<prefix> 方向键`         |          |
+| 删除 pane                            | `<prefix> x` 或者在 shell 里执行 exit 命令 | exit     |
+| 切换 pane 的全屏/非全屏              | `<prefix> z`                               | zoom     |
+| 调整 pane 的大小                     | `<prefix> C-方向键`                        |          |
+| 调整 pane 的大小(一次 5 个单位)      | `<prefix> M-方向键`                        |          |
+| 显示 pane 编号, 并在之后输入编号跳转 | `<prefix> q <num>`                         |          |
+| 交换 pane 的位置                     | `<prefix> {` 或者 `<prefix> }`             |          |
 
 # Window
 
 Window 是 session 之下的一个层级. 一个屏幕一次只能显示一个 Window, 在 Window 中又可以划分多个 pane.
 有点类似 "标签页" 的概念.
 
-操作 | 指令
------|-----
-创建新的 Window | `<prefix> c`
-列出所有 Window | `<prefix> w`
-切换 Window | `<prefix> n` 或 `<prefix> p`
-重命名当前 Window | `<prefix> ,`
-删除当前 Window | `<prefix> &`
+| 操作              | 指令                         | 记忆方法       |
+| ----------------- | ---------------------------- | -------------- |
+| 创建新的 Window   | `<prefix> c`                 | create         |
+| 列出所有 Window   | `<prefix> w`                 | window         |
+| 切换 Window       | `<prefix> n` 或 `<prefix> p` | next, previous |
+| 重命名当前 Window | `<prefix> ,`                 |                |
+| 删除当前 Window   | `<prefix> &`                 |                |
 
 # Session
 
-操作 | 指令
------|-----
-将当前 session 转移到后台运行 | `<prefix> d`
-列出所有 session | `<prefix> s`
-重命名当前 session | `<prefix> $`
+| 操作                          | 指令         | 记忆方法 |
+| ----------------------------- | ------------ | -------- |
+| 将当前 session 转移到后台运行 | `<prefix> d` | daemon   |
+| 列出所有 session              | `<prefix> s` | session  |
+| 重命名当前 session            | `<prefix> $` |          |
 
 由于 session 是连接 tmux 与普通 shell 的第一层概念, 因此, 也有许多操作可以通过命令行参数来进行.
 
@@ -119,8 +118,14 @@ tmux 子命令可以在 Shell 中使用:
 
 Tmux 中有一系列 `new-` `kill-` `list-` 开头的命令, 用于操作 Session, Window, pane.
 
+# tmux 256 色
+
+- 首先, 需要设置环境变量 `export TERM=screen-256color`
+- 然后, 启动 tmux 时附加 `-2` 参数: `tmux -2 new ...`, 可以将此设为一个别名: `alias tmux='tmux -2'`.
+
 > 参考:
 > - https://gist.github.com/MohamedAlaa/2961058
 > - http://mingxinglai.com/cn/2012/09/tmux/
 > - https://suixinblog.cn/2018/12/tmux.html
 > - http://louiszhai.github.io/2017/09/30/tmux/
+> - http://www.wutianqi.com/blog/3681.html
