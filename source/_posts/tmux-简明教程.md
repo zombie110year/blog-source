@@ -123,9 +123,34 @@ Tmux 中有一系列 `new-` `kill-` `list-` 开头的命令, 用于操作 Sessio
 - 首先, 需要设置环境变量 `export TERM=screen-256color`
 - 然后, 启动 tmux 时附加 `-2` 参数: `tmux -2 new ...`, 可以将此设为一个别名: `alias tmux='tmux -2'`.
 
+# 查看历史输出
+
+在 Tmux 中, 无法使用鼠标滚轮等操作滚动当前窗口以查看历史输出的信息.
+但是可以在 **Copy Mode** 中查看历史输出, 并且可选择并复制其中的内容:
+
+|     操作     | 行为                                                   |
+| :----------: | ------------------------------------------------------ |
+| `<prefix> [` | 进入 copy 模式                                         |
+|     `q`      | 在 copy 模式中按下此键以退出                           |
+|  `<space>`   | 进入选择模式                                           |
+|  `<enter>`   | 复制并退出选择模式, 同时会将复制内容存储在剪贴板历史中 |
+| `<prefix> ]` | 粘贴复制的内容                                         |
+| `<prefix> =` | 在剪贴板历史中选择内容进行粘贴                         |
+
+如果想要删除剪贴板历史中的某条记录, 可以选中目标记录并使用命令 `delete-buffer` 将其删除;
+如果要修改目标记录, 则使用命令 `set-buffer` 将当前记录重写为输入的参数:
+
+```
+    : set-buffer "新的内容"
+```
+
 > 参考:
 > - https://gist.github.com/MohamedAlaa/2961058
 > - http://mingxinglai.com/cn/2012/09/tmux/
 > - https://suixinblog.cn/2018/12/tmux.html
 > - http://louiszhai.github.io/2017/09/30/tmux/
 > - http://www.wutianqi.com/blog/3681.html
+
+# 速查表
+
+<script src="https://gist.github.com/zombie110year/1f02c500eae2006f2d0fd958a242aece.js"></script>
