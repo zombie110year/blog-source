@@ -41,7 +41,8 @@ Core Dump 是 Linux 系统在进程出现错误而中断时会产生的一种文
 这个选项其实是查看或设定 core dump 文件大小限制, 单位是 KB.
 可以设置为 `unlimited`, 从而产生不限大小的 core dump.
 
-可以在 `/proc/sys/kernel/core_pattern` 文件中设置 core dump 的保存路径.
+可以在 `/proc/sys/kernel/core_pattern` 文件中设置 core dump 的保存路径
+(每次重启, 这个文件都会被重置).
 以 `|` 开头的行会被认为是要执行的命令.
 设置将 core dump 文件保存为:
 
@@ -65,10 +66,51 @@ mkdir /tmp/coredump
 首先, 保证 `/proc/sys/kernel/core_pattern` 的内容为
 
 ```
-|/usr/lib/systemd/systemd-coredump %p %u %g %s %e %d %i
+|/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h %e
+```
+
+每次发生 coredump 时, 都会在 systemd 所管理的日志中增加一条记录.
+可以使用 coredumpctl 进行管理, 基本指令如下:
+
+```sh
+# 查看记录
+coredumpctl -r
+# 或 coredumpctl list -r
+# 使用 -r 选项是为了把最新记录排前面
+
+# 将最后一条记录保存到文件 name.core 中
+coredumpctl dump -o name.core
+
+# 打开 GDB 开始调试最后一次 coredump
+coredumpctl debug
+
+# 查看最后一次 coredump 的详细信息
+coredumpctl info
+
+# 操作指定的记录
+coredumpctl <cmd> [MATCHS...]
+# MATCHS 可以是 PID 或 可执行文件名
 ```
 
 # Core Dump 怎么用
+
+coredump 只保留了中断前的状态, 不可能当成一个运行至断点的程序, 所以它只适合用 debugger 查看以下本地变量, 调用栈, 寄存器状态等等.
+
+对于 gdb, 使用命令加载可执行文件与 coredump, (编译时需开启 `-g` 选项):
+
+```sh
+gdb ./a.out ./a.out.coredump
+```
+
+然后, 使用 `info` 指令查看想要观察的信息.
+
+如果使用 Visual Studio Code, 并且安装了 C/C++ 插件的话, 可以将 vscode 与 gdb 连起来, 在 `launch.json` 中的调试配置中增加:
+
+```json
+    "coreDumpPath": "${fileDirname}/a.out.coreDump",
+```
+
+就会在调试器启动时加载 coredump 文件.
 
 # 参考
 
