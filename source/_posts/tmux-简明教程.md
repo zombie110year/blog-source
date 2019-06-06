@@ -39,7 +39,7 @@ set -g mode-keys vi
 ```
 
 > `<prefix>` 是 tmux 的快捷键前缀, 大多数功能键都是以它开始, 默认为 Ctrl+b, 在上面的配置文件中被修改为 Ctrl+x (用过 Emacs 的都懂)
-> `C-` 表示 Ctrl 键, `M-` 表示 Alt 键.
+> `C-` 表示 Ctrl 键, `M-` 表示 Alt 键, `S-` 表示 Shift 键, `SPC` 表示空格键, `RET` 表示回车键
 
 # pane 相关的操作
 
@@ -147,6 +147,37 @@ Tmux 中有一系列 `new-` `kill-` `list-` 开头的命令, 用于操作 Sessio
 - 首先, 需要设置环境变量 `export TERM=screen-256color`
 - 然后, 启动 tmux 时附加 `-2` 参数: `tmux -2 new ...`, 可以将此设为一个别名: `alias tmux='tmux -2'`.
 
+# 插件
+
+Tmux 也可以使用插件, 并且官方提供了插件管理器 [github.com/tmux-plugins/tpm](https://github.com/tmux-plugins/tpm)
+使用 git 安装:
+
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+然后, 编辑配置文件 `.tmux.conf`:
+
+```conf
+# 插件声明中的 url 项是 github 中的 username/reponame
+set -g @plugin 'tmux-plugins/tpm' # 声明 tpm 插件
+set -g @plugin 'tmux-plugins/tmux-resurrect'  # 声明 resurrect 插件, 这个插件用于保存与加载 session
+
+# ... 配置文件底部
+run -b '~/.tmux/plugins/tpm/tpm'
+```
+
+在配置文件中声明的插件可以通过 tpm 自动管理, 需要 `tmux source ~/.tmux.conf` 重新加载配置文件.
+然后通过三组快捷键进行插件的安装,更新与卸载:
+
+```
+<prefix> S-i      # 安装声明的插件
+<prefix> S-u      # 更新声明的插件
+<prefix> M-u      # 卸载已安装但又未被声明的插件
+```
+
+各插件的使用方法直接去 github.com/tmux-plugins 下的仓库 README 里找吧.
+
 # 参考
 
 > 参考:
@@ -156,6 +187,7 @@ Tmux 中有一系列 `new-` `kill-` `list-` 开头的命令, 用于操作 Sessio
 > - https://suixinblog.cn/2018/12/tmux.html
 > - http://louiszhai.github.io/2017/09/30/tmux/
 > - http://www.wutianqi.com/blog/3681.html
+> - https://liam.page/2016/09/10/tmux-plugin-resurrect/
 
 # 速查表
 
