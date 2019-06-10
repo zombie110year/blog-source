@@ -191,4 +191,4 @@ run -b '~/.tmux/plugins/tpm/tpm'
 
 # 速查表
 
-<script src="https://gist.github.com/zombie110year/1f02c500eae2006f2d0fd958a242aece.js"></script>
+<script src="https://gist.github.com/zombie110year/1f02c500eae2006f2d0fd958a242aece.js">你无法访问 gist.github.com</script>
