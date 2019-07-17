@@ -36,6 +36,8 @@ powershell -NoExit Start-ConEmu
 
 这样, 执行完我自定义的函数后, PowerShell 就不会退出了.
 
+> 2019 年, 微软也要做个新终端了, 来看看吧: https://github.com/microsoft/terminal
+
 # Git
 
 ## Git Windows version
@@ -115,7 +117,7 @@ PowerShell 的 `$PROFILE` 变量存储它的配置文件路径(这个配置文�
 . $HOME\.psconfig\poshrc.ps1
 ```
 
-意思是执行 `poshrc.ps1` 脚本, 那是个自己编辑的文件. (注意有个点号 `.`, 这是为了共享变量的作用域!)
+意思是执行 `poshrc.ps1` 脚本, 那是个自己编辑的文件. (注意有个点号 `.`, 这是为了导出变量的作用域!)
 
 ## 组织配置目录
 
@@ -196,3 +198,5 @@ function Make-Blog() {
   Set-Location $origin_location
 }
 ```
+
+> 因为用了 Travis-CI {% post_link 为-Hexo-博客添加自动集成 为 Hexo 博客添加了自动集成 %}, 这个函数被弃用了.
