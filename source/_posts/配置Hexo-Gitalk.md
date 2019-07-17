@@ -24,20 +24,25 @@ Gitalk 官方提到的一种安装方式是通过 npm install 安装, 但是我�
 Gitalk 是利用 GitHub 的 issue 工作的, 要使用 Gitalk, 需要先在 GitHub 创建一个仓库(博客仓库可以, 空仓库也可以), 并注册一个 [Github Application](https://github.com/settings/applications/new), 需要填写以下项目:
 
 - `Application Name`: 填写应用名称, 可以随便填.
-- `Homepage URL`: 此应用使用的域名, 需要把使用的协议也写上(http 或 https). 可以填 GitHub 仓库对应的 `https://xxx.github.io`, 如果自己注册了域名, 也可以填注册的域名.
+- `Homepage URL`: 用于展示此应用的主页, 因为我们是用的别人开发的 Gitalk, 可以随便填.
 - `Application Description`: 填写对该应用的描述, 将会展示给别人看, 不过反正是自己用, 随便写.
-- `Authorization callback URL`: 授权回调, 填写和 `Homepage URL` 一样的地址.
+- `Authorization callback URL`: 授权回调, 也就是允许此应用运行的页面, 只有在这个授权的页面中, 才允许应用访问 GitHub.
+
+URL 是包含了 协议, 域名, 路径 的, 不要只填域名, 需要填诸如 `https://zombie110year.top` 这样的值.
+(路径默认为 `/`, 可以省略).
 
 以上信息在创建后都可以改, 随意.
 
-最重要的两个信息:
+GitHub 会生成两个信息:
 
 - `Client ID`
 - `Client Secret`
 
-将在之后填入到配置文件中.
+这两个信息很重要, 将在之后填入到配置文件中.
 
 ## 修改文件
+
+> {2019 年更新}: 目前 NexT 已经将改动合并了, 不需要手动更改.
 
 在 Google 时, 发现 [官方 wiki](https://github.com/gitalk/gitalk/wiki/在hexo-next主题上使用gitalk) 提示 [根据这个 Pull Request 改动](https://github.com/iissnan/hexo-theme-next/pull/1814/files).
 
@@ -45,28 +50,32 @@ Gitalk 是利用 GitHub 的 issue 工作的, 要使用 Gitalk, 需要先在 GitH
 
 ### 在 NexT 主题的 `_config.yml` 配置中添加 Gitalk 的设置项
 
+> {2019 年更新}: 目前 NexT 的配置文件中已经提供了此模板
+
 文件位于 `/themes/next/_config.yml`. 不是 `/_config.yml`, 根目录下的是 Hexo 的配置, 不是 NexT 主题的.
 
 这个更改不要求位置如何, 添加到文件最后就行:
 
 ```yml
 # Gitalk
-# more info please open https://github.com/gitalk/gitalk
+# Demo: https://gitalk.github.io
 gitalk:
   enable: true
-  # 之前申请的应用 ID 与 Secret
-  clientID:
-  clientSecret:
-  # 存放评论 issue 的仓库地址
-  repo:
-  # 存放评论 issue 的仓库的所有者
-  owner:
-  # 管理员, 填自己就好(应该不会用共有仓库存评论吧)
-  admin:
-  pagerDirection: first
+  github_id: zombie110year # Github repo owner
+  repo: blog-source # Repository name to store issues
+  client_id: "***********" # Github Application Client ID
+  client_secret: "**************" # Github Application Client Secret
+  admin_user: zombie110year # GitHub repo owner and collaborators, only these guys can initialize github issues
+  distraction_free_mode: true # Facebook-like distraction free mode
+  # Gitalk's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value
+  # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
+  language: zh-CN
 ```
 
 ### 在 `comments.swig` 模板文件中添加 Gitalk 的 HTML 容器元素
+
+> {2019 年更新}: 官方支持, 无需再改.
 
 文件位于 `/themes/next/layout/_partials/comments.swig`.
 
@@ -87,6 +96,8 @@ gitalk:
 按照我的猜想, 应该可以把其他不用的删掉, 只要不破坏 `if .... endif` 结构就好. 不过我并不知道会不会导致超出我认知世界范围的 Bug, 所以就不妄动了.
 
 ### 新增 Gitalk 的 swig 文件
+
+> {2019 年更新}: 官方支持, 无需再改.
 
 文件位于 `/theme/next/layout/_third-party/comments/gitalk.swig`.
 
@@ -128,6 +139,8 @@ gitalk:
 
 # 修改 `index.swig`
 
+> {2019 年更新}: 官方支持, 无需再改.
+
 在 `/themes/next/layout/_third-party/comments/index.swig` 中添加:
 
 ```swig
@@ -140,10 +153,10 @@ gitalk:
 
 经过了
 
-0. 申请 Github 应用
-0. 修改 `_config.yml`
-0. 修改 `comments.swig`
-0. 增添 `gitalk.swig`
+1. 申请 Github 应用
+2. 修改 `_config.yml`
+3. 修改 `comments.swig`
+4. 增添 `gitalk.swig`
 
 等操作后, 只需要 `hexo clean`, `hexo generate` 重新生成静态页面, 部署到 GitHub 上就可以配置评论系统了.
 
