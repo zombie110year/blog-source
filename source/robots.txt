@@ -16,5 +16,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /assert/
-Sitemap: https://blog.zombie110year.top/sitemap.xml
-Sitemap: https://blog.zombie110year.top/baidusitemap.xml
+Sitemap: https://zombie110year.top/sitemap.xml

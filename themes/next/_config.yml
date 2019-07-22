@@ -45,7 +45,7 @@ favicon:
 # Set rss to false to disable feed link.
 # Leave rss as blank to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: true
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -117,7 +117,7 @@ disable_baidu_transformation: false
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -132,7 +132,7 @@ exturl: true
 
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmaster
-#bing_site_verification:
+bing_site_verification: "CFA2731648AB61918DA25EEAF1C90175"
 
 # Yandex Webmaster tools verification.
 # See: https://webmaster.yandex.ru
@@ -145,6 +145,8 @@ exturl: true
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: false
 
+sitemap:
+    path: sitemap.xml
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -166,7 +168,7 @@ menu:
   Tips: /Tips/ || edit
   collection: /collection/ || file-zip-o
   #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
+  sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
 # Enable / Disable menu icons / item badges.
@@ -505,8 +507,8 @@ math:
   # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
   per_page: true
 
-  engine: mathjax
-  #engine: katex
+  # engine: mathjax
+  engine: katex
 
   # hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
   mathjax:
@@ -524,7 +526,7 @@ math:
 
     copy_tex:
       # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-      enable: false
+      enable: true
       copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
       copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
 
@@ -862,7 +864,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
