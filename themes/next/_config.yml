@@ -132,7 +132,7 @@ exturl: true
 
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmaster
-bing_site_verification: "CFA2731648AB61918DA25EEAF1C90175"
+# bing_site_verification:
 
 # Yandex Webmaster tools verification.
 # See: https://webmaster.yandex.ru
