@@ -49,39 +49,12 @@ vultr 机房一览:
 |Silicon Valley|[sjo-ca-us-ping.vultr.com](sjo-ca-us-ping.vultr.com)|
 |Sydney|[syd-au-ping.vultr.com](syd-au-ping.vultr.com)|
 
-下面这个脚本会将这些机房的域名挨个 ping 20次, 使用 python3 运行它. 不是我不提供操作系统自带的脚本, 只是因为我不会 bash 编程, 也不会 PowerShell 或 Batch. 不过幸好 Python 有 os 与 sys 模块可以调用外部命令.
-
-- (Windows PowerShell) `Start-Job -ScriptBlock {python3 ./ping-vultr.py >> ./ping-vultr-out.txt}` 将这个脚本放到后台运行, 输出重定向至 `ping-vultr-out.txt` 文件. (实测发现在 Windows 下后台无法运行, 一开启则停止, 使用绝对路径也不行, 不知道是什么问题, 还是使用前台进程吧, 大不了多开个窗口)
-- (Linux) 使用 `nohup python3 ./ping-vultr.py >> ./ping-vultr-out.txt &` 将这个脚本放到后台运行, 输出重定向至 `ping-vultr-out.txt` 文件.
-	- 注意, 需要将第 15 行的 `os.system("ping " + domains[a] + " -n 20")` 改为 `os.system("ping " + domains[a] + " -c 20")`
-
-```py
-# !/usr/bin/python
-# -*- coding: utf-8 -*-
-import sys
-import os
-# 创建一个列表, 储存 vultr 各机房的域名.
-names = ["Tokyo", "Singapore", "Amsterdam", "Paris", "Frankfurt", "London", "New York",
-         "Chicago", "Dallas", "Atlanta", "Los Angeles", "Miami", "Seattle", "Silicon Valley", "Sydney", ]
-domains = ["hnd-jp-ping.vultr.com", "sgp-ping.vultr.com", "ams-nl-ping.vultr.com", "par-fr-ping.vultr.com", "fra-de-ping.vultr.com", "lon-gb-ping.vultr.com", "nj-us-ping.vultr.com",
-           "il-us-ping.vultr.com", "tx-us-ping.vultr.com", "ga-us-ping.vultr.com", "lax-ca-us-ping.vultr.com", "fl-us-ping.vultr.com", "wa-us-ping.vultr.com", "sjo-ca-us-ping.vultr.com", "syd-au-ping.vultr.com"]
-j = 0
-while j < 14:
-    print("\n\n========================")
-    print("正在 ping 位于 \"%s\" 的机房" % names[j], end='\n')
-    sys.stdout.flush()
-    os.system("ping " + domains[j] + " -n 20")
-    j = j + 1
-print("Done\a")
-```
-
-从结果中选择一个连接成功次数最多, 丢包率最小的区域, 购买此处机房.
-
-> 2018-09-15 04:04:16 更新
-
-回来更新了一波代码. 感觉自己超强 (然而遇上了玄学 BUG, 没法了)...
+用下面这个脚本:
 
 <script src="https://gist.github.com/zombie110year/c0e26f4b9d7376489688fb264e3d9e3b.js"></script>
+
+先把这个文件保存到本地的 `vultr_ping.py`，或者直接在 REPL 中运行，在按照文档注释中的例子用就可以了。
+因为 `show_ping` 函数是用 ANSI Color Sequence 将结果在终端里打印成表的，如果终端不支持，可能会很难看。
 
 ## 部署 Brook 服务
 
@@ -107,7 +80,7 @@ wget "https://github.com/txthinking/brook/releases/download/v20180707/brook_linu
 sudo snap install brook
 ```
 
-### 运行 Brook
+### 运行 Brook 服务端
 
 brook 在安装完成之后, 就可以使用 `brook <args>` 启动运行, 最简单的方法是
 
@@ -129,7 +102,7 @@ Brook 还有其他的运行模式. 比如 `raw Socks5`, `shadowsocks` 等. 具�
 
 注意, 如果你的系统有防火墙, 需要允许 brook 通过设置的端口, 并且需要同时允许 TCP/UDP 端口.
 
-例如 Ubuntu 使用的防火墙是 `ufw` , 使用以下指令对 `9999` 端口(就是你运行 brook 使用的端口) 放行:
+例如 Ubuntu 使用的防火墙是 `ufw` , 使用以下指令对 `9999` 端口(就是运行 brook 时设定的端口) 放行:
 
 ```sh
 sudo ufw allow 9999
@@ -137,21 +110,29 @@ sudo ufw allow 9999/tcp
 sudo ufw allow 9999/udp
 ```
 
-## 使用 Brook
+## 使用 Brook 客户端
 
 ### Windows GUI
-
-在 GitHub 项目主页上下载时经常遇到莫名失败, 并且速度奇慢无比, 我好不容易下载好了, 在这里放一个度盘吧. (不保证最新) 事实上, 这里提到的使用方法对应的可执行文件我都放到了一个压缩包里, 上传到度盘.
-
-解压密码是: 执掌好运的黑黄之王
-
-PS: 我可喜欢这本小说了.😀
-
-[链接已失效](https://pan.baidu.com/s/1iXs5S_2i5m2_IZQT_0R66A)
 
 该 GUI 界面傻瓜式操作, 将对应值填进输入栏里, 然后点击 Save 就可以用了. 在托盘区会有一个小钥匙的图标, 右键 `troggle` 可以开关. 不过 GUI 程序没有设计作为服务端的功能.
 
 ![Brook Windows GUI 界面](https://i.loli.net/2018/07/13/5b48411dba980.png)
+
+实际上，目前我更喜欢使用命令行版客户端。用法和 [Linux CLI](#linux-cli) 几乎一样，只是不能用 Linux 特性：
+
+```powershell
+brook client -l 127.0.0.1:1080 -i 127.0.0.1 -s server_address:port -p password
+```
+
+之后得一直开着命令行窗口。
+
+或者用 PowerShell 提供的进程管理指令：
+
+```powershell
+Start-Process -FilePath brook.exe -ArgumentList "client","-i","localhost","-l","localhost:1080","-s","远程:9999","-p","********" -WindowStyle Hidden
+```
+
+这样将不会有窗口。
 
 ### Android GUI
 
