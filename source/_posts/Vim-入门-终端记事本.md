@@ -318,3 +318,7 @@ TODO: 随时补充新的发现.
 
 1. 总是新起一行粘贴内容，之后再通过 `S->` 来调整缩进。
 2. 设置 `:set pastetoggle` 来切换为粘贴模式，将会禁用 autoindent 等干扰内容的功能，之后用同样的命令切换回来。
+
+# 我的 Vim 配置文件
+
+<script src="https://gist.github.com/zombie110year/7e6855ac01e3fbb012a8dd853bbc4285.js"></script>
