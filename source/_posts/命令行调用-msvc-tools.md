@@ -10,6 +10,14 @@ categories:
     - 日常
 ---
 
+# 2019 8 月更新
+
+实际上如果不想要整个 IDE，可以仅安装 Build Tools。
+下载链接位于 [https://aka.ms/buildtools](https://aka.ms/buildtools) 中的
+"所有下载" -> "Visual Studio 20xx 工具" -> "VS 20xx 生成工具"
+
+---
+
 > Visual Studio 2017 Comunity 版
 
 在学习 C/C++ 时, 需要编译源文件, 但是不希望为此而打开这个庞大的 IDE, 所以研究如何在命令行中调用它的编译工具链:
