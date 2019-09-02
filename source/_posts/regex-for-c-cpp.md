@@ -163,3 +163,115 @@ int regexec (const regex_t *restrict compiled, const char *restrict string, size
 ```c
 int regfree(const regex_t *restrict compiled);
 ```
+
+# C++ 的正则表达式
+
+> 参考 https://zh.cppreference.com/w/cpp/regex
+
+C++ 在 C++ 11 之后提供了 `regex` 头文件，其中定义了正则表达式相关的功能。这里有四个主要概念：
+
+- 源字串：将被正则表达式匹配的字符串，可以是两个字符串迭代器所限定的范围，一个 C-Style 字符串或 `std::string` 。
+- 模式：正则表达式本身，是由特定语法的字符串构造的 `std::basic_regex` 。支持一些语法变体，见 [syntax_option_type](https://zh.cppreference.com/w/cpp/regex/syntax_option_type) 。
+- 捕获组：正则表达式所匹配到的捕获组将被 `std::match_results` 存储。
+- 替换字串：确定如何替换匹配的字符串，支持一些语法变体，见 [syntax_option_type](https://zh.cppreference.com/w/cpp/regex/syntax_option_type) 。
+
+## 基本用例
+
+这里以从文本中检索出电子邮箱地址为例
+
+```cpp
+#include <cassert>
+#include <iostream>
+#include <regex>
+#include <string>
+using namespace std;
+
+string text = "这里有一些文本，但 zombie110year@example.com 是一个电子邮件地址";
+
+int main(void) {
+  /* 构造 regex 实例 */
+  regex pattern("([a-z0-9A-Z]{1,})@([a-z\\.]{1,})", regex_constants::ECMAScript);
+
+  /* 确认匹配/搜索 */
+  cout << regex_search(text, pattern) << endl;
+
+  /* 提取匹配文本 */
+  smatch matches;
+  regex_search(text, matches, pattern);
+
+  for (auto m: matches) {
+    cout << m.str() << endl;
+  }
+  return 0;
+}
+```
+
+总结一下：
+
+1. 构造 regex 实例。第一个参数是表达式语法，第二个则是语法选项。注意选择 `ECMAScript`（C++11可用），这将使用 JavaScript 的正则引擎，其他引擎也有，例如 awk, basic, grep 等等，但是由于和 ECMAScript 语法存在差异，没有学习，所以未使用。语法选项支持用位运算组合，它实际上也是一个无符号整数，用 bit 位进行设定，因此常用 `|` 位或运算组合一些选项，常用的有：
+   1. `icase` 忽略大小写，默认不忽略。
+   2. `nosubs` 不捕获子表达式。
+2. 搜索/匹配。使用 `regex_search` 或 `regex_match` 函数进行搜索/匹配。这两个函数只会返回布尔值，即表达式是否能匹配源字串。`search` 是当模式在源字串中存在时便返回 true，`match` 则要求完全匹配。
+3. 要提取捕获组，可以利用 `regex_search` 或 `regex_match` 的重载，将捕获组结果储存在 `smatch` （基类为 `match_results` ）实例中，对于得到的 match 对象，可以用 `.str()` 方法转换为 `std::string`。
+
+这两个函数有 7 个重载（match 和 search 是对应的，下面只放 search）：
+
+```cpp
+/* 类型名这么长，真令人眼花缭乱啊 */
+template <class BidirIt, class Alloc, class CharT, class Traits>
+bool regex_search(BidirIt first /* 源串迭代器-首 */, BidirIt last /* 源串迭代器-尾 */,
+                  std::match_results<BidirIt, Alloc> &m/* 收集捕获组的 match_results */,
+                  const std::basic_regex<CharT, Traits> &e /* 正则表达式 */,
+                  std::regex_constants::match_flag_type flags =
+                      std::regex_constants::match_default/* 位设置项 */);
+// (1) 	(C++11 起)
+template <class CharT, class Alloc, class Traits>
+bool regex_search(const CharT *str/* C-Style 字符串 */, 
+                  std::match_results<const CharT *, Alloc> &m,
+                  const std::basic_regex<CharT, Traits> &e,
+                  std::regex_constants::match_flag_type flags =
+                      std::regex_constants::match_default);
+// (2) 	(C++11 起)
+template <class STraits, class SAlloc, class Alloc, class CharT, class Traits>
+bool regex_search(
+    const std::basic_string<CharT, STraits, SAlloc> &s/* std::string 类型的源串 */,
+    std::match_results<
+        typename std::basic_string<CharT, STraits, SAlloc>::const_iterator,
+        Alloc> &m,
+    const std::basic_regex<CharT, Traits> &e,
+    std::regex_constants::match_flag_type flags =
+        std::regex_constants::match_default);
+// (3) 	(C++11 起)
+template <class BidirIt, class CharT, class Traits>
+bool regex_search(BidirIt first, BidirIt last,
+                  /* 省略掉 match_results 参数，不进行捕获组的捕获 */
+                  const std::basic_regex<CharT, Traits> &e,
+                  std::regex_constants::match_flag_type flags =
+                      std::regex_constants::match_default);
+// (4) 	(C++11 起)
+template <class CharT, class Traits>
+bool regex_search(const CharT *str,
+                  /* 同上，不捕获 */
+                  const std::basic_regex<CharT, Traits> &e,
+                  std::regex_constants::match_flag_type flags =
+                      std::regex_constants::match_default);
+// (5) 	(C++11 起)
+template <class STraits, class SAlloc, class CharT, class Traits>
+bool regex_search(const std::basic_string<CharT, STraits, SAlloc> &s,
+                  const std::basic_regex<CharT, Traits> &e,
+                  std::regex_constants::match_flag_type flags =
+                      std::regex_constants::match_default);
+// (6) 	(C++11 起)
+template <class STraits, class SAlloc, class Alloc, class CharT, class Traits>
+bool regex_search(
+    const std::basic_string<CharT, STraits, SAlloc> &&,
+    std::match_results<
+        typename std::basic_string<CharT, STraits, SAlloc>::const_iterator,
+        Alloc> &,
+    const std::basic_regex<CharT, Traits> &,
+    std::regex_constants::match_flag_type flags =
+        std::regex_constants::match_default) = delete;
+// (7) 	(C++14 起)
+```
+
+> 后面的内容看得人脑壳痛，有需求再去查吧。
