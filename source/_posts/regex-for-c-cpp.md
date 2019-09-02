@@ -24,11 +24,11 @@ int main(int argc, char* argv[])
 {
     /* 类型定义 */
     regex_t compiled_pattern;
-    char* const pattern = "[0-9]{1,}"; // 正则表达式
-    char* string = (char*)calloc(bufsize, sizeof(char));
     regmatch_t match_body[1];
     int regex_exec_error;
 
+    char* const pattern = "[0-9]{1,}"; // 正则表达式
+    char* string = (char*)calloc(bufsize, sizeof(char));
     fgets(string, bufsize, stdin);
 
     /* 编译表达式 */
@@ -53,6 +53,14 @@ int main(int argc, char* argv[])
 ```
 
 在使用正则表达式之前, 必须先编译它. 这并不是将正则表达式编译成汇编指令, 而是产生一个可被 `regexec` 等函数解析的结构体.
+
+总结一下上述流程：
+
+1. 提前准备存储正则表达式以及匹配结果的变量 `compiled_pattern` 和 `match_body`。
+2. 使用 `regcomp` 函数将表达式编译，得到一个可用于 `regexec` 的结构体。
+3. 调用 `regexec` 函数以在字符串中匹配字符串，成功结果将存储在 `match_body` 中，而函数的返回值为状态码。
+4. 释放 `regex_t` 结构体。
+5. 验收结果：每一个成功的匹配将会存储在 `match_body` 中，其类型为 `regmatch_t`，最重要的两个成员是 `rm_so`, `rm_eo`，分别存储了匹配区域的 开始索引与结束索引。可理解为是 `regex match start offset` 以及 `regex match end offset`。并且，子表达式将按顺序存储在 `match_body` 的各个元素中。
 
 ## 详解
 
