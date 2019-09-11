@@ -10,6 +10,8 @@ tags:
 可以使用标准库模块 `smtplib`, 但这个只是一个客户端, 仍然需要登录到服务器.
 例如 Outlook, Gmail 等, 需要开启 POP3 或 IMAP 支持.
 
+<!-- more -->
+
 ## 配置邮件服务器
 
 以 Outlook 为例, 登录 Outlook 网页端, 参考
