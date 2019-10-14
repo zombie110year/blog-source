@@ -169,6 +169,7 @@ docker container run [image] [command]
 
 - `docker container run` 如果成功, 就会创建一个容器, 此容器基于 `image` 建立. `command` 是在容器中执行的指令.
 - 如果未在本地找到 `image` , docker 会自动前往官方仓库下载. 每次运行此命令都会生成新的容器.
+- 通过 run 新建的容器会保存下来, 如果停止后希望恢复, 应当使用 `start` 命令启动, 而不是 run 再创建一个.
 
 一些持久运行的服务类容器, 需要手动 [停止](#停止容器)
 
@@ -297,7 +298,32 @@ docker container start -p 80:8080 [ID]
 
 ## 列出容器
 
-使用 `docker container ls --all` 列出所有容器.
+使用 `docker container ls --all` 列出所有容器. 默认列出 容器 ID, 使用的 image, 启动使用的命令, 创建时间, 当前状态, 命名 这几个参数.
+
+```
+$ docker container ls --all
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+```
+
+如果希望列出更详细的信息, 或者过滤一些无用的信息, 可以使用 `--format` 或 `--filter` 参数.
+
+`--format` 参数接受的模板字符串使用 Go Template 语法. 传入的 `formatter.containerContext` 结构体具有以下字段:
+
+- `Command`: 启动的命令
+- `CreatedAt`: 容器创建时间
+- `ID`: 容器 ID
+- `Image`: 容器使用的镜像 ID
+- `Labels`: 该容器的标签, 一般是镜像维护者编辑的
+- `LocalVolumes`: 绑定的宿主数据卷数目
+- `Mounts`: 数据卷挂载点
+- `Names`: 该容器的命名
+- `Networks`: (与宿主机的)网络连接模式
+- `Ports`: 端口映射信息
+- `RunningFor`: 运行时间
+- `Size`: 容器占用空间
+- `Status`: 当前状态
+
+
 
 ## 移除容器
 
@@ -341,6 +367,18 @@ docker image rm -f [images]     # 强制删除镜像
 Error response from daemon:
 conflict: unable to remove repository reference "hello-world:latest" (must force) - container 79a139769099 is using its referenced image 2cb0d9787c4d
 ```
+
+# docker-compose
+
+docker-compose 是一个 Python 编写的 docker 命令解析器，用于将一些 docker 命令写为 yaml 格式的配置文件，以便复制、保存、和方便地执行。
+
+将 docker 命令以一定的形式保存到 `docker-compose.yml` 文件中，然后执行 `docker-compose up` 命令解析并运行它们。也可以将文件命名为其他名称，然后使用 `-f <filename>` 参数来指定。
+
+```sh
+docker-compose -f <filename> <command> [options...]
+```
+
+注意顺序，docker-compose 解析参数是有一定顺序的， `-f` 参数必须在 `command` 参数之前。
 
 # 推荐阅读
 
