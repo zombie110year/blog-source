@@ -190,7 +190,7 @@ docker container logs [ID]
 ## 进入一个非交互式容器
 
 ```sh
-docker container exec [ID]
+docker container exec -it [ID] /bin/bash
 ```
 
 如果容器在运行时没有指定 `-it`(`--interactive` 和 `--tty`) 参数, 那么需要手动进入容器的 Shell.
