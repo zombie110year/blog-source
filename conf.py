@@ -97,7 +97,7 @@ DEFAULT_LANG = "zh_cn"
 # The format is {"translationcode" : "path/to/translation" }
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
-    DEFAULT_LANG: "zh_cn",
+    DEFAULT_LANG: "",
     # Example for another language:
     # "es": "./es",
 }
@@ -141,7 +141,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "文章归档"),
         ("/categories/", "标签"),
-        ("/zh_cn/rss.xml", "RSS 源"),
+        ("/rss.xml", "RSS 源"),
     ),
 }
 
@@ -153,7 +153,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+THEME = "zombie110year"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.

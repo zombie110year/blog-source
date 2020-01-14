@@ -11,6 +11,14 @@
 .. include:: refs/aliases.ref
 .. include:: refs/links.ref
 
+.. role:: file
+    :class: literal
+
+.. sidebar:: 本文目录
+
+    .. contents::
+
+
 Nikola 博客系统的特点
 #####################
 
@@ -104,13 +112,119 @@ Nikola 的安装问题
 
 像 :code:`equation`, :code:`cases` 等环境也是支持的，具体的列表可以参考 |a_katex| 的 `文档 <https://katex.org/docs/supported.html>`_ 。
 
-..  打造 Nikola 的新主题
-    ####################
+打造 Nikola 的新主题
+####################
 
-    Nikola 的模板系统
-    -----------------
+在 |a_rst| 中，可以使用 :code:`container` 和 :code:`class` 来快速地创建 html :code:`div` 元素，并且用相比 Markdown 直接嵌入 HTML 更好的表达能力。
 
-    为 Nikola 编写扩展
-    ##################
+为了方便地制作各种样式的 class，可以自己制作一个新的主题，在 CSS 中编写相关类的样式。
+例如
 
-    先使用 :code:`nikola --version` 确认版本，目前的最新版应当是 :code:`8.0.3`。
+.. code:: css
+
+    .zom-banner {
+        display: flex;
+        justify-content: center;
+        text-align: justify;
+        font-size: xx-large;
+    }
+
+.. code:: rst
+
+    .. class:: zom-banner
+
+        Hello, Zombie110year!
+
+.. class:: zom-banner
+
+    Hello, Zombie110year!
+
+如果不出意外的话，上面将是一个超大的，横穿屏幕的欢迎词。
+
+要管理样式，可以使用 nikola 命令行：
+
+.. code:: sh
+
+    nikola theme -n zombie110year
+    # 创建一个新的命名为 zombie110year 的主题
+
+nikola 将会在 :code:`themes/zombie110year` 目录中创建主题所需的一切资源。
+
+主题管理系统
+------------
+
+在 :code:`themes/zombie110year` 中，会有一个 :code:`zombie110year.theme` 文件，这是
+一个 ini 格式的配置文件。需要配置以下键值对：
+
+.. code:: ini
+
+    [Theme]
+    # 模板引擎
+    engine = jinja
+    # 继承关系，缺失的资源将会从父主题获取
+    parent = bootstrap4-jinja
+    author = Zombie110year
+    author_url = https://zombie110year.top/
+    license = MIT
+    based_on = Bootstrap 4 <http://getbootstrap.com/>, Bootstrap 4 blog example <http://getbootstrap.com/docs/4.0/examples/blog/>
+    tags = bootstrap
+
+为了支持 jinja2 模板引擎，需要在 nikola 所在的 Python 环境中安装 Jinja2。
+bootstrap 是一个流行的前端框架。在构建后，所有的 CSS 都会打包到 :file:`all-nocdn.css` 文件中去。
+
+暂时，先从 bootblog-jinja 复制文件过来，然后在 :file:`bootblog.css` 中 :code:`@import ("custom.css")` 来引入自定的样式文件。
+
+bootblog 是基于 bootstrap 的一个主题，可以使用 bootstrap 预先提供的样式。例如
+
+.. container:: row
+
+    .. class:: col-md-6
+
+        .. code:: rst
+
+            .. container:: row
+
+                .. class:: col-md-6
+
+                    左边
+
+                .. class:: col-md-6
+
+                    右边（col-md 将屏幕分成 12 份）
+
+    .. class:: col-md-6
+
+        .. container:: row
+
+            .. class:: col-md-6
+
+                左边
+
+            .. class:: col-md-6
+
+                右边（col-md 将屏幕分成 12 份）
+
+为 Nikola 编写扩展
+##################
+
+先🕊️了。
+
+使用 :code:`nikola --version` 确认版本，目前的最新版应当是 :code:`8.0.3`。
+
+参考文献
+########
+
+想要在写博客时能用 bibtex 格式化参考文件。
+例如
+
+.. code:: rst
+
+    此处参考了 :cite:`nikola-documentation`。
+
+    .. bibgraphy::
+
+        @misc{nikola-documentation,
+            note={https://getnikola.com/theming.html},
+        }
+
+先😴️。
