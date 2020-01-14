@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "zombie110year"  # (translatable)
-BLOG_TITLE = "编程, 翻译, 材料学"  # (translatable)
+BLOG_TITLE = "ZomHub"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://blog.zombie110year.top/"
@@ -25,7 +25,7 @@ SITE_URL = "https://blog.zombie110year.top/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://blog.zombie110year.top/"
 BLOG_EMAIL = "zombie110year@outlook.com"
-BLOG_DESCRIPTION = "反正没人看，就随便写写咯"  # (translatable)
+BLOG_DESCRIPTION = "编程,翻译,材料学等"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -141,7 +141,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "文章归档"),
         ("/categories/", "标签"),
-        ("/rss.xml", "RSS 源"),
+        ("/zh_cn/rss.xml", "RSS 源"),
     ),
 }
 
@@ -880,7 +880,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # This list MAY be incomplete since pygments adds styles every now and then.
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
 #
-# CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = 'default'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
@@ -1055,13 +1055,13 @@ USE_KATEX = True
 
 # KaTeX auto-render settings. If you want support for the $.$ syntax (which may
 # conflict with running text!), just use this config:
-KATEX_AUTO_RENDER = """
+KATEX_AUTO_RENDER = r"""
 delimiters: [
     {left: "$$", right: "$$", display: true},
-    {left: "\\\\[", right: "\\\\]", display: true},
-    {left: "\\\\begin{equation*}", right: "\\\\end{equation*}", display: true},
+    {left: "\\[", right: "\\]", display: true},
+    {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
     {left: "$", right: "$", display: false},
-    {left: "\\\\(", right: "\\\\)", display: false}
+    {left: "\\(", right: "\\)", display: false}
 ]
 """
 
@@ -1333,12 +1333,12 @@ MARKDOWN_EXTENSIONS = [
 
 # If set to True, the tags 'draft', 'mathjax' and 'private' have special
 # meaning. If set to False, these tags are handled like regular tags.
-USE_TAG_METADATA = False
+USE_TAG_METADATA = True
 
 # If set to True, a warning is issued if one of the 'draft', 'mathjax'
 # and 'private' tags are found in a post. Useful for checking that
 # migration was successful.
-WARN_ABOUT_TAG_METADATA = False
+WARN_ABOUT_TAG_METADATA = True
 
 # Templates will use those filters, along with the defaults.
 # Consult your engine's documentation on filters if you need help defining
