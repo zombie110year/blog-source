@@ -82,12 +82,17 @@ deploy:
 
 # marked 设置
 marked:
-  gfm: true # 使用 [GitHub flavored markdown](https://help.github.com/articles/github-flavored-markdown)
+  gfm: true       # 使用 [GitHub flavored markdown](https://help.github.com/articles/github-flavored-markdown)
   pedantic: false
-  sanitize: false
-  tables: true
-  breaks: false # 使用空行来划分段落
+  breaks: false
   smartLists: true
   smartypants: true
-  modifyAnchors: ''
+  modifyAnchors: 1
   autolink: true
+  sanitizeUrl: false
+  headerIds: true
+  prependRoot: false
+  external_link:
+    enable: true
+    exclude: []
+    nofollow: false
