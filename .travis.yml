@@ -1,0 +1,30 @@
+language: python
+python:
+  - "3.7"
+
+git:
+  depth: 1
+  quiet: true
+
+branches:
+  only:
+    - master
+
+install:
+  - pip install nikola
+
+script:
+  - nikola build
+
+after_script:
+  - cd ./output
+  - git init
+  - git config user.name "zombie110year"
+  - git config user.email "zombie110year@outlook.com"
+  - git add -A
+  - git commit -m "update blog"
+  - git push --force --quiet "https://${github_token}@${github_url}" master:master
+
+env:
+  global:
+    - github_url: github.com/zombie110year/zombie110year.github.io.git

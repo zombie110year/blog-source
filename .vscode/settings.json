@@ -1,0 +1,7 @@
+{
+    "restructuredtext.confPath": "",
+    "files.associations": {
+        "*.ref": "restructuredtext",
+        "*.tmpl": "jinja",
+    }
+}

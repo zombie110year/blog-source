@@ -1,0 +1,8 @@
+[Theme]
+engine = jinja
+parent = bootstrap4-jinja
+author = Zombie110year
+author_url = https://zombie110year.top/
+license = MIT
+based_on = Bootstrap 4 <http://getbootstrap.com/>, Bootstrap 4 blog example <http://getbootstrap.com/docs/4.0/examples/blog/>
+tags = bootstrap

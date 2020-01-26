@@ -1,0 +1,22 @@
+h1::before {
+  content: "#";
+  color: lightgrey;
+  margin-right: 0.6em;
+}
+h2::before {
+  content: "##";
+  color: lightgrey;
+  margin-right: 0.4em;
+}
+h3::before {
+  content: "###";
+  color: lightgrey;
+  margin-right: 0.2em;
+}
+
+.zom-banner {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  font-size: xxx-large;
+}
