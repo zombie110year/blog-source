@@ -228,3 +228,16 @@ bootblog 是基于 bootstrap 的一个主题，可以使用 bootstrap 预先提�
         }
 
 似乎没有实现此功能的库，先😴️。
+
+Travic CI 与 GitHubPages 部署
+#############################
+
+nikola 是基于 Python 开发的应用，这个博客也可以采用 Python 的 CI 文件来自动化构建：
+
+Travis CI 集成 Python 工程的文档为 https://docs.travis-ci.com/user/languages/python/，
+参考之，编写 :code:`.travis.yml` 为
+
+.. include:: .travis.yml
+    :encoding: utf-8
+    :code: yml
+    :literal:
