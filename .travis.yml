@@ -18,6 +18,7 @@ install:
 script:
   - nikola build
   - cp CNAME output/CNAME
+  - touch output/.nojekyll
 
 after_script:
   - cd ./output
