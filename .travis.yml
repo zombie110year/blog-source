@@ -11,7 +11,9 @@ branches:
     - master
 
 install:
-  - pip install nikola jinja2
+  - pip install nikola
+  - pip install jinja2
+  - pip install ruamel.yaml
 
 script:
   - nikola build
