@@ -227,4 +227,4 @@ bootblog 是基于 bootstrap 的一个主题，可以使用 bootstrap 预先提�
             note={https://getnikola.com/theming.html},
         }
 
-先😴️。
+似乎没有实现此功能的库，先😴️。
