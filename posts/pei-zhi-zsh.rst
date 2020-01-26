@@ -22,6 +22,7 @@
 总之，编写 :code:`.zshrc` 脚本如下：
 
 .. code:: zsh
+    :number-lines:
 
     # LAST MOD: 2020-01-10
     # LESS COLOR
