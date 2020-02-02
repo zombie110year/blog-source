@@ -3,15 +3,8 @@ comments: true
 title:  使用 conda 创建与管理虚拟环境
 date:   2018-10-11 22:13:37
 mathjax:  false
-tags:
-    - Python
-categories:
-    - Python
+tags: python
 ---
-
-**不知道什么原因, 在 Windows 上, 必须在 cmd 中才能使用 conda 命令来管理虚拟环境, 在 PowerShell 中无法使用.**
-
-<!--more-->
 
 # 查看
 

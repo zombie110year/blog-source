@@ -2,8 +2,7 @@
 layout: posts
 title: JavaScript ajax
 date: 2019-06-25 20:12:47
-tags:
--   JavaScript
+tags: javascript
 ---
 
 # Asynchronous Javascript And XML

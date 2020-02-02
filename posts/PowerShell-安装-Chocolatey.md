@@ -2,14 +2,11 @@
 comments: true
 title: PowerShell 安装 Chocolatey
 date: 2018-08-19 17:23:15
-tags:
-    - PowerShell
-categories:
-    - 日常
+tags: powershell
 ---
 
 > Windows10:1803.17134.228
-> 
+>
 > PowerShell:5.1.17134.228
 
 [Chocolatey](https://chocolatey.org/)
@@ -27,18 +24,18 @@ Get-ExecutionPolicy     # 查看当前政策
 ```powershell
 有效值包括:
 
--- Restricted:不加载配置文件或运行脚本. 默认值为"Restricted". 
+-- Restricted:不加载配置文件或运行脚本. 默认值为"Restricted".
 
--- AllSigned:要求所有脚本和配置文件由可信发布者签名, 包括在本地计算机编写的脚本. 
+-- AllSigned:要求所有脚本和配置文件由可信发布者签名, 包括在本地计算机编写的脚本.
 
--- RemoteSigned:要求从 Internet 下载的所有脚本和配置文件均由可信发布者签名. 
+-- RemoteSigned:要求从 Internet 下载的所有脚本和配置文件均由可信发布者签名.
 
 # 我喜欢设置为 Unrestricted
--- Unrestricted:加载所有配置文件并运行所有脚本. 如果运行从 Internet 下载的未签名脚本, 则系统将提示您需要相关权限才能运行该脚本. 
+-- Unrestricted:加载所有配置文件并运行所有脚本. 如果运行从 Internet 下载的未签名脚本, 则系统将提示您需要相关权限才能运行该脚本.
 
--- Bypass:不阻止任何执行项, 不显示警告和提示. 
+-- Bypass:不阻止任何执行项, 不显示警告和提示.
 
--- Undefined:从当前作用域删除当前分配的执行策略. 此参数将不会删除在组策略作用域中设置的执行策略. 
+-- Undefined:从当前作用域删除当前分配的执行策略. 此参数将不会删除在组策略作用域中设置的执行策略.
 ```
 
 之后就运行 [官方提供的命令行](https://chocolatey.org/install#install-with-powershellexe)

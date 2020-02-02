@@ -2,8 +2,8 @@
 title: 为 Hexo 博客添加自动集成
 date: 2019-04-09 10:49:53
 tags:
-    - CI
-    - Travis
+    - ci
+    - travis
 ---
 
 # Travis CI

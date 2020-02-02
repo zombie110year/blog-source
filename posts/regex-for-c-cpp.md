@@ -2,8 +2,8 @@
 title: C 与 C++ 使用正则表达式
 date: 2019-04-25 23:25:22
 tags:
-- regex
-- C/C++
+  - 正则表达式
+  - c/c++
 ---
 
 # C 语言的正则表达式
@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
 ```c
 int regcomp (regex_t* restrict compiled, const char* restrict pattern, int cflags);
 /**
- * 由于 C 编译器会转义一次转义符 `\`, 而正则表达式中又会转义一次, 
+ * 由于 C 编译器会转义一次转义符 `\`, 而正则表达式中又会转义一次,
  * 因此, 注意使用双反斜杠 `\\` 来作为正则表达式的转义字符, 如:
  *
  *     pattern = "\\d";
@@ -144,7 +144,7 @@ int regexec (const regex_t *restrict compiled, const char *restrict string, size
 
 #### regmatch_t 结构体
 
-在 [`regexec`](#regexec-函数) 中使用的 `regmatch_t matchptr[restrict]` 是一个存储子捕获组的数组. 有 `rm_so`, `rm_eo` 两个成员. 分别存储了子捕获组在整个字符串中的起点和终点索引. 在调用 `regexec` 函数时, 用 `nmatch` 参数指定 `matchptr[]` 的长度, 如果实际的子捕获组比长度多, 那么多余的子捕获组将被忽略. 
+在 [`regexec`](#regexec-函数) 中使用的 `regmatch_t matchptr[restrict]` 是一个存储子捕获组的数组. 有 `rm_so`, `rm_eo` 两个成员. 分别存储了子捕获组在整个字符串中的起点和终点索引. 在调用 `regexec` 函数时, 用 `nmatch` 参数指定 `matchptr[]` 的长度, 如果实际的子捕获组比长度多, 那么多余的子捕获组将被忽略.
 
 #### regoff_t 结构体
 
@@ -152,8 +152,8 @@ int regexec (const regex_t *restrict compiled, const char *restrict string, size
 
 ### 进行捕获
 
-1. 构造一个长度等于 `compiled.re_nsub` 的 `matchptr` 数组. 
-2. 将 `compiled.re_nsub` 与 `matchptr` 传入. 经过 `regexec` 执行后, `matchptr` 中的每一个 `regmatch_t` 都会储存匹配到的字符串在源字符串中的位置信息. 
+1. 构造一个长度等于 `compiled.re_nsub` 的 `matchptr` 数组.
+2. 将 `compiled.re_nsub` 与 `matchptr` 传入. 经过 `regexec` 执行后, `matchptr` 中的每一个 `regmatch_t` 都会储存匹配到的字符串在源字符串中的位置信息.
 3. 通过 `string.h` 中的 `memcpy` 函数, 将对应字节复制到另一个字符串中. 注意,  传入的字符串首地址为 `string + regmatch_t.rm_so`, 而字节长度为 `regmatch_t.rm_eo - regmatch_t.rm_so`.
 
 ### regfree 函数
@@ -226,7 +226,7 @@ bool regex_search(BidirIt first /* 源串迭代器-首 */, BidirIt last /* 源�
                       std::regex_constants::match_default/* 位设置项 */);
 // (1) 	(C++11 起)
 template <class CharT, class Alloc, class Traits>
-bool regex_search(const CharT *str/* C-Style 字符串 */, 
+bool regex_search(const CharT *str/* C-Style 字符串 */,
                   std::match_results<const CharT *, Alloc> &m,
                   const std::basic_regex<CharT, Traits> &e,
                   std::regex_constants::match_flag_type flags =

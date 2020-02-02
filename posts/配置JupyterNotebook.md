@@ -4,9 +4,9 @@ title:  配置 Jupyter Notebook
 date:   2018-09-15 22:39:08
 mathjax:  false
 tags:
-    - Python
-    - Anaconda
-    - Jupyter
+    - python
+    - anaconda
+    - jupyter
 categories:
     - 日常
 ---

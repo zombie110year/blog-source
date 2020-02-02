@@ -1,10 +1,7 @@
 ---
 comments: true
 title: Vim 入门-终端记事本
-tags:
-  - Vim
-categories:
-  - 日常
+tags: vim
 date: 2018-08-20 18:38:07
 ---
 

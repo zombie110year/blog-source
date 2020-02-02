@@ -4,10 +4,8 @@ title:  Linux搭建AnkiServer
 date:   2018-08-24 20:11:31
 mathjax:  false
 tags:
-    - Linux
-    - Anki
-categories:
-    - 日常
+  - linux
+  - anki
 ---
 
 [这里](/assert/repos/anki/ankiserver.failed.html) 有一个之前失败了的方法.
@@ -16,7 +14,7 @@ categories:
 
 [AnkiServer](https://pypi.org/project/AnkiServer/2.0.6/) 基于 Python2 运行, 但幸好有人写了 Python3 的版本.
 
-[tsudoko/anki-sync-server](https://github.com/tsudoko/anki-sync-server). 不过作者没有提供简单的安装办法, 
+[tsudoko/anki-sync-server](https://github.com/tsudoko/anki-sync-server). 不过作者没有提供简单的安装办法,
 
 <!--more-->
 

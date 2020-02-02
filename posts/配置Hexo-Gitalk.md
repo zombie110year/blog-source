@@ -4,7 +4,7 @@ date:   2018-10-03 23:36:45
 mathjax:  false
 comments: true
 tags:
-    - Hexo
+    - hexo
 categories:
     - 网站
 ---

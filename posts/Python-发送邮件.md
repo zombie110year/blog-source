@@ -1,8 +1,7 @@
 ---
 title: Python 发送邮件
 date: 2019-08-13 12:43:42
-tags:
-- Python
+tags: python
 ---
 
 # Python 发送邮件

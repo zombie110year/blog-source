@@ -2,7 +2,8 @@
 title: SQLite3
 date: 2019-06-10 15:18:17
 tags:
--   SQL
+  - sqlite3
+  - sql
 ---
 
 本文记录了 SQLite3 的命令行工具用法, 以及一些常用的 SQL 语句.

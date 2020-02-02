@@ -2,8 +2,8 @@
 title: CMake 简单笔记
 date: 2019-04-15 12:01:53
 tags:
-    - C/C++
-    - CMake
+    - c/c++
+    - cmake
 ---
 
 > CMake 3.14.0
