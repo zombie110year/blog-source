@@ -3,10 +3,7 @@ comments: true
 title: Hexo配置过程
 date: 2018-07-25 21:30:45
 mathjax: true
-tags:
-  - Hexo
-categories:
-  - 网站
+tags: hexo
 ---
 # Hexo 配置过程
 

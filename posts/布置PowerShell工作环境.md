@@ -2,7 +2,7 @@
 comments: true
 title: 布置PowerShell工作环境
 tags:
-  - PowerShell
+  - powershell
 categories:
   - 日常
 date: 2018-08-21 14:00:46

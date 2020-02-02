@@ -2,9 +2,9 @@
 title: Shell 脚本简明教程
 date: 2019-07-20 10:36:22
 tags:
-- Shell
-- Linux
-categories: Linux
+  - bash
+  - linux
+  - 运维
 ---
 
 # Shell 脚本简明教程

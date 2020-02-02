@@ -3,7 +3,7 @@ comments: true
 title: 使用Brook翻墙
 date: 2018-07-24 18:12:38
 tags:
-  - Brook
+  - brook
   - 翻墙
 categories:
   - 日常

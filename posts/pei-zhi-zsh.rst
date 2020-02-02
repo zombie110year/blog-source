@@ -1,7 +1,7 @@
 .. title: 配置 Zsh
 .. slug: pei-zhi-zsh
 .. date: 2020-01-14 19:22:50 UTC+08:00
-.. tags:
+.. tags: zsh
 .. category:
 .. link:
 .. description:

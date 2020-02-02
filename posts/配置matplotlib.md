@@ -4,8 +4,8 @@ title:  配置matplotlib
 date:   2018-09-29 01:25:26
 mathjax:  false
 tags:
-    - Python
-    - Matplotlib
+    - python
+    - matplotlib
 categories:
     - 日常
 ---
@@ -61,7 +61,7 @@ font.family: Inziu Iosevka SC, other fonts,
 
 ### 程序内动态设置
 
-matplotlib 中提供了几个函数, 用于动态设置. 
+matplotlib 中提供了几个函数, 用于动态设置.
 
 #### `matplotlib.rcParams['font.family'] = 'Inziu Iosevka SC'`
 
@@ -159,7 +159,7 @@ fc-list :lang=zh
 
 # 在 Jupyter Notebook 中的设置
 
-在 `ipython_config.py` 中添加 
+在 `ipython_config.py` 中添加
 
 ```python
 c.InteractiveShellApp.matplotlib = 'inline'     # 自动显示图片

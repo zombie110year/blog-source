@@ -3,11 +3,7 @@ title:  git 中文出现乱码的解决方案
 date:   2019-02-17 19:26:54
 comments: true
 mathjax:  false
-tags:
-    - git
-    - encoding
-categories:
-    - null
+tags: git
 ---
 
 `git log` 与 `git status` 时, 如果文件与 commit message 中含有中文,

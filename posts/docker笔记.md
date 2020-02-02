@@ -1,10 +1,8 @@
 ---
 title: Docker笔记
 mathjax: false
-tags:
-  - Docker
-categories:
-  - Linux
+tags:  docker
+category: 运维
 date: 2019-04-18 12:54:11
 ---
 

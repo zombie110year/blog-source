@@ -3,7 +3,7 @@ layout: posts
 title: 段错误与Coredump
 date: 2019-05-25 16:14:23
 tags:
--   C/C++
+-   c/c++
 ---
 
 # Core Dump 是什么

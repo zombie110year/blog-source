@@ -1,7 +1,7 @@
 ---
 title: ANSI 转义序列
 date: 2019-07-07 10:37:13
-tags: Terminal
+tags: terminal
 ---
 
 # ANSI 转义序列(ANSI Escape Sequence)

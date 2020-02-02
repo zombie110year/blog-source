@@ -4,7 +4,7 @@ date:   2019-02-17 19:11:08
 comments: true
 mathjax:  false
 tags:
-    - Anaconda
+    - anaconda
 ---
 
 在我重装了一次系统之后,

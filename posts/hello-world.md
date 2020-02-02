@@ -3,8 +3,7 @@ comments: true
 title: Hello World
 date: 2018-07-23 22:12:38
 mathjax: true
-tags:
-  - Hexo
+tags: hexo
 ---
 
 # Hello World!

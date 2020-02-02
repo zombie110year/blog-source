@@ -1,8 +1,7 @@
 ---
 comments: true
 title: User-Script 简易爬虫
-tags:
-categories:
+tags: javascript
 date: 2019-09-11 16:22:44
 ---
 
@@ -37,7 +36,7 @@ date: 2019-09-11 16:22:44
 
 本文的使用环境为：
 
-- 浏览器：FireFox 68.*
+- 浏览器：FireFox 68.\*
 - 脚本管理器：Tampermonkey
 
 <!-- more -->
@@ -68,18 +67,20 @@ fetch API 是异步并且 Promise 风格的，它接受两个参数，第一个�
 
 ```javascript
 fetch("http://example.com/", {
-    method: "GET"
-}).then(response => {
+  method: "GET"
+})
+  .then(response => {
     // 每一次 .then 方法中，参数是自动解析的上个 Promise 的数据，
     // 返回值会自动打包进当前 Promise 的数据中。
     return response.text();
-}).then(html => {
+  })
+  .then(html => {
     // 将当前页面的 body 替换为请求的页面
     let x = document.createElement("html");
     x.innerHTML = html;
     let body = x.querySelector("body");
     document.body = body;
-})
+  });
 ```
 
 `fetch` 规范与 `jQuery.ajax` 在规范上有两点不同：
@@ -87,7 +88,7 @@ fetch("http://example.com/", {
 1. 只要服务器响应了，不管是 40x 还是 50x， fetch 都会 resolve （但是 resolve 的 ok 属性被设为 false），只有等待超时也没有收到响应才会 reject。
 2. fetch 默认不会发送或接收 cookies，如果需要通过 cookies 进行认证，必须设置 credentials 选项，并且遵守同源政策。
 
-如果能 resolve， fetch 将返回一个 Response 对象，一般可以通过调用 `.text()` 方法解析为纯文本、`.json()` 方法解析为 JSON 对象、`.blob() ` 解析二进制数据、`.arrayBuffer()` 解析为字节数组或者 `.formData()` 解析为 FormData。
+如果能 resolve， fetch 将返回一个 Response 对象，一般可以通过调用 `.text()` 方法解析为纯文本、`.json()` 方法解析为 JSON 对象、`.blob()` 解析二进制数据、`.arrayBuffer()` 解析为字节数组或者 `.formData()` 解析为 FormData。
 
 要发送定制的请求，可以设置 `init` 参数的值，这是一个 JSON，可以设置这些键值：
 
@@ -96,11 +97,11 @@ fetch("http://example.com/", {
 - `body`: 请求的 body 信息：可能是一个 [`Blob`](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)、[`BufferSource`](https://developer.mozilla.org/zh-CN/docs/Web/API/BufferSource)、[`FormData`](https://developer.mozilla.org/zh-CN/docs/Web/API/FormData)、[`URLSearchParams`](https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams) 或者 [`USVString`](https://developer.mozilla.org/zh-CN/docs/Web/API/USVString) 对象。注意 GET 或 HEAD 方法的请求不能包含 body 信息。
 - `mode`: 请求的模式，如 `cors`、 `no-cors` 或者 `same-origin`。
 - `credentials`: 请求的 credentials，如 `omit`、`same-origin` 或者 `include`。为了在当前域名内自动发送 cookie， 必须提供这个选项，从 Chrome 50 开始， 这个属性也可以接受 [`FederatedCredential`](https://developer.mozilla.org/zh-CN/docs/Web/API/FederatedCredential) 实例或是一个 [`PasswordCredential`](https://developer.mozilla.org/zh-CN/docs/Web/API/PasswordCredential) 实例。
-- `cache`:  请求的 cache 模式: `default `、 `no-store` 、 `reload `、 `no-cache` 、 `force-cache` 或者 `only-if-cached`。
-- `redirect`: 可用的 redirect 模式: `follow` (自动重定向), `error` (如果产生重定向将自动终止并且抛出一个错误), 或者 `manual` (手动处理重定向). 在Chrome中，Chrome 47之前的默认值是 follow，从 Chrome 47开始是 manual。
+- `cache`: 请求的 cache 模式: `default`、 `no-store` 、 `reload`、 `no-cache` 、 `force-cache` 或者 `only-if-cached`。
+- `redirect`: 可用的 redirect 模式: `follow` (自动重定向), `error` (如果产生重定向将自动终止并且抛出一个错误), 或者 `manual` (手动处理重定向). 在 Chrome 中，Chrome 47 之前的默认值是 follow，从 Chrome 47 开始是 manual。
 - `referrer`: 一个 [`USVString`](https://developer.mozilla.org/zh-CN/docs/Web/API/USVString) 可以是 `no-referrer`、`client`或一个 URL。默认是 `client`。
 - `referrerPolicy`: 如何指定 HTTP 头中的 `referer` 字段。可以是 `no-referrer`、 `no-referrer-when-downgrade`、 `origin`、 `origin-when-cross-origin`、 `unsafe-url`。
-- `integrity`: 包括请求的  [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) 值 （ 例如： `sha256-BpfBw7ivV8q2jLiT13fxDYAe2tJllusRSZ273h2nFSE=`）。
+- `integrity`: 包括请求的 [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) 值 （ 例如： `sha256-BpfBw7ivV8q2jLiT13fxDYAe2tJllusRSZ273h2nFSE=`）。
 
 ### 读取当前页面的 HTTP 头信息并设定请求头
 
@@ -114,7 +115,7 @@ fetch("http://example.com/", {
 
 #### Cookie
 
-此字段的值保存在 `document.cookie` 中，是一个用 `; ` 分隔的键值对（`k=v`）。
+此字段的值保存在 `document.cookie` 中，是一个用 `;` 分隔的键值对（`k=v`）。
 
 #### User-Agent
 
@@ -126,12 +127,13 @@ fetch("http://example.com/", {
 
 ```js
 let init = {
-    headers: {
-        "referer": document.referrer,
-        "cookie": document.cookie,
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0"
-    }
-}
+  headers: {
+    referer: document.referrer,
+    cookie: document.cookie,
+    "user-agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0"
+  }
+};
 ```
 
 其他头也可以这么设置在其中。
@@ -144,8 +146,8 @@ body 的值可以是 [`Blob`](https://developer.mozilla.org/zh-CN/docs/Web/API/B
 
 ```js
 let init = {
-    body: JSON.stringify({"a": "b"})
-}
+  body: JSON.stringify({ a: "b" })
+};
 ```
 
 对于用 JSON 传输数据的请求、可以用 `JSON.stringify` 将对象打包成字符串。
@@ -178,13 +180,13 @@ fetch("http://example.com/")
 
 ```js
 let obj = {
-    name: "object",
-    value: 10,
-    lists: [1,2,3,4,5,6,7,8,9]
+  name: "object",
+  value: 10,
+  lists: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 };
 JSON.stringify(obj);
 // "{\"name\":\"object\",\"value\":10,\"lists\":[1,2,3,4,5,6,7,8,9]}"
-JSON.parse("{\"name\":\"object\",\"value\":10,\"lists\":[1,2,3,4,5,6,7,8,9]}");
+JSON.parse('{"name":"object","value":10,"lists":[1,2,3,4,5,6,7,8,9]}');
 // Object { name: "object", value: 10, lists: (9) […] }
 ```
 
@@ -212,7 +214,7 @@ m[1];
 - `i`: 忽略大小写
 - `m`: 多行模式， `^`, `$` 将匹配行的首尾，而不是整个字符串的首尾
 - `u`: Unicode 模式
-- `y`: 粘性匹配; 仅匹配目标字符串中此正则表达式的lastIndex属性指示的索引(并且不尝试从任何后续的索引匹配)
+- `y`: 粘性匹配; 仅匹配目标字符串中此正则表达式的 lastIndex 属性指示的索引(并且不尝试从任何后续的索引匹配)
 - [`dotAll`模式](https://github.com/tc39/proposal-regexp-dotall-flag)，匹配任何字符（包括终止符 `\n`）
 
 ## 获取结果
@@ -227,11 +229,11 @@ File 对象的构造函数的形参为
 File(bits, name[, options]);
 ```
 
-- *bits* [`ArrayBuffer`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)，[`ArrayBufferView`](https://developer.mozilla.org/zh-CN/docs/Web/API/ArrayBufferView)，[`Blob`](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)，或者 [`DOMString`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString) 对象的 [`Array`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Array) — 或者任何这些对象的组合。这是 UTF-8 编码的文件内容。对于文本文件，
-- *name* [`USVString`](https://developer.mozilla.org/zh-CN/docs/Web/API/USVString)，表示文件名称，或者文件路径。
-- *options* （可选） 选项对象，包含文件的可选属性。可用的选项如下：    
-  -  `type`: [`DOMString`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString)，表示将要放到文件中的内容的 MIME 类型。默认值为 `""` 。  
-  - `lastModified`: 数值，表示文件最后修改时间的 Unix 时间戳（毫秒）。默认值为 [`Date.now()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/now)。    
+- _bits_ [`ArrayBuffer`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)，[`ArrayBufferView`](https://developer.mozilla.org/zh-CN/docs/Web/API/ArrayBufferView)，[`Blob`](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)，或者 [`DOMString`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString) 对象的 [`Array`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Array) — 或者任何这些对象的组合。这是 UTF-8 编码的文件内容。对于文本文件，
+- _name_ [`USVString`](https://developer.mozilla.org/zh-CN/docs/Web/API/USVString)，表示文件名称，或者文件路径。
+- _options_ （可选） 选项对象，包含文件的可选属性。可用的选项如下：
+  - `type`: [`DOMString`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString)，表示将要放到文件中的内容的 MIME 类型。默认值为 `""` 。
+  - `lastModified`: 数值，表示文件最后修改时间的 Unix 时间戳（毫秒）。默认值为 [`Date.now()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/now)。
 
 得到了 File 对象，接下来考虑下载的问题。可以利用 `a` 元素，构造这样的 HTML 元素插入页面：
 
@@ -242,7 +244,7 @@ File(bits, name[, options]);
 然后点击它，就能触发浏览器的下载功能。JavaScript 无法触发，应该是浏览器的安全功能。下面是一个实例，blob URL 的创建方法是 `URL.createObjectURL`。
 
 ```js
-let myfile = new File(["Hello World"], "hello.txt", {type: "text/plain"});
+let myfile = new File(["Hello World"], "hello.txt", { type: "text/plain" });
 let blob_url = URL.createObjectURL(myfile); // 生成 UUID 风格的路径
 let a = document.createElement("a");
 a.href = blob_url;
@@ -284,10 +286,10 @@ let btn = document.createElement("button");
 btn.innerText = "复制";
 document.body.appendChild(btn);
 btn.addEventListener("click", function(event) {
-    let ta = document.querySelector("#zxcv_textarea");
-    ta.focus();
-    ta.select();
-    document.execCommand("copy");
+  let ta = document.querySelector("#zxcv_textarea");
+  ta.focus();
+  ta.select();
+  document.execCommand("copy");
 });
 ```
 
@@ -314,9 +316,9 @@ zip_root.folder("example_menu").remove("bbbbb.txt");
 
 JSZip 中的 `file` 函数可以传入可选参数以指定文件的类型：https://stuk.github.io/jszip/documentation/api_jszip/file_data.html 这里列举一些在写入二进制数据时可能用到的参数：
 
-| name   | type    | default | description                                                  |
-| ------ | ------- | ------- | ------------------------------------------------------------ |
-| base64 | boolean | `false` | 如果数据已经用 base64 编码，则设置为 `true`。例如由 `<canvas>` 元素生成的图像数据。文本数据不需要此选项。 [More](https://stuk.github.io/jszip/documentation/api_jszip/file_data.html#base64-option). |
+| name   | type    | default | description                                                                                                                                                                                                                                                                     |
+| ------ | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| base64 | boolean | `false` | 如果数据已经用 base64 编码，则设置为 `true`。例如由 `<canvas>` 元素生成的图像数据。文本数据不需要此选项。 [More](https://stuk.github.io/jszip/documentation/api_jszip/file_data.html#base64-option).                                                                            |
 | binary | boolean | `false` | 如果数据需要被当作原始数据处理，则设置为 `true`，如果是文本，则设置为 `false`。如果使用了 base64 选项，则此选项也默认为 true。如果输入的 data 参数不是字符串，此项也自动设为 `true`。[More](https://stuk.github.io/jszip/documentation/api_jszip/file_data.html#binary-option). |
 
 ## 其他工具的使用方法
@@ -324,8 +326,8 @@ JSZip 中的 `file` 函数可以传入可选参数以指定文件的类型：htt
 ### DOM API
 
 1. CSS 选择器
-	- 第一个匹配的元素： `.querySelector`，
-	- 所有匹配的元素（列表）： `.querySelectorAll`。
+   - 第一个匹配的元素： `.querySelector`，
+   - 所有匹配的元素（列表）： `.querySelectorAll`。
 2. 当前节点的属性： `.attributes`（映射）
 3. 子节点：`.children` 中是有 HTML 标签的子节点，`.childNodes` 还包含了标签之外的文本。
 4. 父节点：`.parentNode` 或 `.parentElement`，是一样的。
@@ -338,9 +340,10 @@ JSZip 中的 `file` 函数可以传入可选参数以指定文件的类型：htt
 在对 GET 请求的参数处理，或者 Cookie 的处理，都涉及到字符串与分隔符的问题。可以使用 **字符串** 的 `.split` 方法，把字符串按分隔符分割成列表。要将列表中的元素组合成字符串，也可以调用 **列表** 的 `.join` 方法，用分隔符隔开每一项。
 
 ```js
-"1,2,3".split(",")
-// ["1,", "2", "3"]
-["1", "2", "3"].join(".")
+"1,2,3".split(",")[
+  // ["1,", "2", "3"]
+  ("1", "2", "3")
+].join(".");
 // "1.2.3"
 ```
 

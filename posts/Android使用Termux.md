@@ -2,8 +2,8 @@
 comments: true
 title: Android使用Termux
 tags:
-  - Linux
-  - Termux
+  - linux
+  - termux
 categories:
   - 日常
 date: 2018-08-22 23:22:44

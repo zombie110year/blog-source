@@ -2,12 +2,11 @@
 title: 远程下载站配置
 slug: yuan-cheng-xia-zai-zhan-pei-zhi
 date: 2020-02-02 02:36:38 UTC+08:00
-tags: 
-  - linux
-  - 运维
+tags:
   - aria2
+  - linux
   - rclone
-category: 服务
+  - 运维
 link:
 description: |
   通过 aria2 与 rclone 配合，实现将 VPS 下载文件自动上传至 OneDrive 的功能。
@@ -391,7 +390,7 @@ For this to work, you will need rclone available on a machine that has a web bro
 Execute the following on your machine (same rclone version recommended) :
         rclone authorize "onedrive"
 Then paste the result below:
-result> {******* 敏感信息，已隐藏 ********} 
+result> {******* 敏感信息，已隐藏 ********}
 ```
 
 10. 选择 OneDrive 服务类型，个人版就选 1，persional 或 bussiness 这一类。
