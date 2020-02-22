@@ -96,3 +96,9 @@ marked:
     enable: true
     exclude: []
     nofollow: false
+# local search
+search:
+  path: search.json
+  field: post
+  content: true
+  format: html
