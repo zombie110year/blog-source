@@ -13,8 +13,10 @@ branches:
   only:
   - master
 
+pre_install:
+  - npm i yarn
 install:
-  - npm install
+  - yarn
 
 script:
   - hexo g
