@@ -80,25 +80,40 @@ theme: next
 deploy:
   type:
 
-# marked 设置
-marked:
-  gfm: true       # 使用 [GitHub flavored markdown](https://help.github.com/articles/github-flavored-markdown)
-  pedantic: false
-  breaks: false
-  smartLists: true
-  smartypants: true
-  modifyAnchors: 1
-  autolink: true
-  sanitizeUrl: false
-  headerIds: true
-  prependRoot: false
-  external_link:
-    enable: true
-    exclude: []
-    nofollow: false
 # local search
 search:
   path: search.json
   field: post
   content: true
   format: html
+
+# markdown-it
+markdown:
+  # 渲染
+  render:
+    # 是否将内嵌 HTML 原样渲染
+    html: true
+    # 是否符合 XHTML 规范
+    xhtmlOut: true
+    # 是否将任意换行都处理为段落，若为 false 则只将被空行分隔的行处理为段落
+    break: false
+    # 是否自动语义化链接文本（将符合链接格式的文字渲染为 <a> 标签）
+    linkify: true
+    typographer: false
+    # 定义括号的渲染形式，先定义一对双括号，然后是一段单括号
+    quotes: "『』「」"
+  # 标题 锚点
+  anchors:
+    # 生成锚点的最低标题等级
+    level: 1
+    # 如果锚点 ID 重复，则添加后缀
+    collisionSuffix: 'z'
+  # 插件
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-katex
+

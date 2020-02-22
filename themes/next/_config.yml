@@ -524,7 +524,7 @@ math:
   katex:
     enable: true
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-    copy_tex: true
+    copy_tex: false
 
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
@@ -925,7 +925,7 @@ vendors:
   # katex: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css
   # copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
   # copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
-  katex:
+  katex: //cdn.jsdelivr.net/npm/katex@0.6.0/dist/katex.min.css
   copy_tex_js:
   copy_tex_css:
 

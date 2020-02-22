@@ -17,8 +17,12 @@
     "hexo-generator-sitemap": "^2.0.0",
     "hexo-generator-tag": "^1.0.0",
     "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^2.0.0",
+    "hexo-renderer-markdown-it": "^4.0.0",
     "hexo-renderer-stylus": "^1.1.0",
+    "markdown-it-deflist": "^2.0.3",
+    "markdown-it-katex": "^2.0.3"
+  },
+  "devDependencies": {
     "hexo-server": "^1.0.0"
   }
 }
