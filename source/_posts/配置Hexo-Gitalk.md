@@ -30,8 +30,6 @@ Gitalk 是利用 GitHub 的 issue 工作的, 要使用 Gitalk, 需要先在 GitH
 URL 是包含了 协议, 域名, 路径 的, 不要只填域名, 需要填诸如 `https://zombie110year.top` 这样的值.
 (路径默认为 `/`, 可以省略).
 
-以上信息在创建后都可以改, 随意.
-
 GitHub 会生成两个信息:
 
 - `Client ID`
