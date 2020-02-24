@@ -4,9 +4,8 @@ date:   2018-10-03 23:36:45
 mathjax:  false
 comments: true
 tags:
-    - Hexo
-categories:
-    - 网站
+  - hexo
+categories: 记录
 ---
 
 # 在 Hexo 站点上布置 Gitalk

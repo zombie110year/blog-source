@@ -2,7 +2,10 @@
 comments: true
 title: User-Script 简易爬虫
 tags:
-categories:
+    - javascript
+    - userscript
+    - browser
+categories: 记录
 date: 2019-09-11 16:22:44
 ---
 
@@ -229,9 +232,9 @@ File(bits, name[, options]);
 
 - *bits* [`ArrayBuffer`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)，[`ArrayBufferView`](https://developer.mozilla.org/zh-CN/docs/Web/API/ArrayBufferView)，[`Blob`](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)，或者 [`DOMString`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString) 对象的 [`Array`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Array) — 或者任何这些对象的组合。这是 UTF-8 编码的文件内容。对于文本文件，
 - *name* [`USVString`](https://developer.mozilla.org/zh-CN/docs/Web/API/USVString)，表示文件名称，或者文件路径。
-- *options* （可选） 选项对象，包含文件的可选属性。可用的选项如下：    
-  -  `type`: [`DOMString`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString)，表示将要放到文件中的内容的 MIME 类型。默认值为 `""` 。  
-  - `lastModified`: 数值，表示文件最后修改时间的 Unix 时间戳（毫秒）。默认值为 [`Date.now()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/now)。    
+- *options* （可选） 选项对象，包含文件的可选属性。可用的选项如下：
+  -  `type`: [`DOMString`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString)，表示将要放到文件中的内容的 MIME 类型。默认值为 `""` 。
+  - `lastModified`: 数值，表示文件最后修改时间的 Unix 时间戳（毫秒）。默认值为 [`Date.now()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/now)。
 
 得到了 File 对象，接下来考虑下载的问题。可以利用 `a` 元素，构造这样的 HTML 元素插入页面：
 

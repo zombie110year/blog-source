@@ -4,11 +4,10 @@ title:  配置 Jupyter Notebook
 date:   2018-09-15 22:39:08
 mathjax:  false
 tags:
-    - Python
-    - Anaconda
-    - Jupyter
-categories:
-    - 日常
+    - python
+    - anaconda
+    - jupyter
+categories: 记录
 ---
 
 # 概览

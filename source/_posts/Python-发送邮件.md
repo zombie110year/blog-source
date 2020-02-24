@@ -2,7 +2,8 @@
 title: Python 发送邮件
 date: 2019-08-13 12:43:42
 tags:
-- Python
+  - python
+categories: 记录
 ---
 
 # Python 发送邮件

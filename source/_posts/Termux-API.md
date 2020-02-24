@@ -2,10 +2,8 @@
 comments: true
 title: Termux-Api
 tags:
-  - Linux
-  - Termux
-categories:
-  - 日常
+  - termux
+categories: 日常
 date: 2018-08-23 23:55:44
 ---
 
@@ -27,7 +25,7 @@ date: 2018-08-23 23:55:44
 
 ```sh
 pkg install termux-api
-# 或者使用 apt 
+# 或者使用 apt
 apt install termux-api
 ```
 

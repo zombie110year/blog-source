@@ -1,8 +1,11 @@
 ---
 comments: true
 title: 绑定个性域名到GitHub博客
-categories:
-  - 网站
+tags:
+  - dns
+  - cname
+  - github
+categories: 记录
 date: 2018-08-24 01:08:09
 ---
 

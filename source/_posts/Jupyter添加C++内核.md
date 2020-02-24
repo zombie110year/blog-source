@@ -4,10 +4,9 @@ title:  Jupyter添加C++内核
 date:   2018-09-23 11:47:11
 mathjax:  false
 tags:
-    - Jupyter
+    - jupyter
     - C/C++
-categories:
-    - 日常
+categories: 日常
 ---
 
 Jupyter Notebook 可以更换笔记本使用的内核, 除了 Python 之外, 还可以支持 C++!

@@ -6,7 +6,7 @@ tags:
   - aria2
   - linux
   - rclone
-link:
+categories: 日常
 description: |
   通过 aria2 与 rclone 配合，实现将 VPS 下载文件自动上传至 OneDrive 的功能。
 type: text

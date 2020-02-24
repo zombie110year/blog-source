@@ -1,7 +1,8 @@
 ---
 comments: true
 title: latex2png
-tags: LaTeX
+tags:
+  - latex
 categories: 日常
 date: 2019-11-10 18:28:40
 ---

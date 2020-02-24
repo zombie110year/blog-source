@@ -4,10 +4,8 @@ title:  py排列与组合
 date:   2018-9-15 15:45:58
 mathjax:  true
 tags:
-    - Algorithm
-    - Python
-categories:
-    - 算法
+    - python
+categories: 笔记
 ---
 
 <!--more-->

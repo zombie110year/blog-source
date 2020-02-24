@@ -5,9 +5,8 @@ comments: true
 mathjax:  false
 tags:
     - git
-    - encoding
-categories:
-    - null
+    - 字符编码
+categories: 记录
 ---
 
 `git log` 与 `git status` 时, 如果文件与 commit message 中含有中文,

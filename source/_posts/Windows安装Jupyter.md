@@ -2,11 +2,10 @@
 comments: true
 title: Windows安装Jupyter
 tags:
-  - Python
-  - Anaconda
-  - Jupyter
-categories:
-  - 日常
+  - python
+  - anaconda
+  - jupyter
+categories: 日常
 date: 2018-08-23 16:12:38
 ---
 

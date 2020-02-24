@@ -4,10 +4,9 @@ title:  Python转换图片Base64编码并存入Windows剪贴板
 date:   2018-8-30 21:12:54
 mathjax:  false
 tags:
-    - Python
-    - Windows
-categories:
-    - 日常
+    - python
+    - win32api
+categories: 记录
 ---
 
 # 主要使用的库

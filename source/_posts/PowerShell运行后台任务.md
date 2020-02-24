@@ -4,10 +4,9 @@ title:  PowerShell运行后台任务
 date:   2018-9-10 19:33:31
 mathjax:  false
 tags:
-    - PowerShell
-    - Windows
-categories:
-    - 日常
+    - powershell
+    - windows
+categories: 记录
 ---
 
 在 Linux 下, 我知道要运行一个 长期运行的, 不随当前终端的退出而结束的, 输出被重定向的后台任务, 可以使用 `nohup` 命令.

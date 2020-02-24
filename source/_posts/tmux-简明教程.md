@@ -2,9 +2,8 @@
 title: tmux 简明教程
 date: 2019-04-09 21:54:47
 tags:
-    - Tmux
-categories:
-    - Linux
+    - tmux
+categories: 教程
 ---
 
 # Tmux 介绍

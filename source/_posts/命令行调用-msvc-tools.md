@@ -4,10 +4,9 @@ title:  命令行调用 MSVC Tools
 date:   2018-11-05 15:52:13
 mathjax:  false
 tags:
-    - C/C++
-    - MSVC
-categories:
-    - 日常
+  - C/C++
+  - msvc
+categories: 日常
 ---
 
 # 2019 8 月更新

@@ -1,10 +1,10 @@
 ---
 title: '测试'
 tags:
-    - Python
+    - python
     - Note
 categories:
-    - Python
+    - python
 ---
 
 # 看看 markdown 文档
