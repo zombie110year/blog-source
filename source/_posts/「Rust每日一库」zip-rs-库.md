@@ -1,11 +1,12 @@
 ---
 layout: posts
 title: 「Rust练习」zip-rs 库
-date: 2020-02-26 16:28:26
+date: 2020-03-30 16:28:26
 tags:
   - rust
   - zip
-categories: 记录
+categories:
+  - Rust每日一库
 description: |
   Rust 的 zip-rs 库提供了创建、写入、读取 Zip 格式归档的功能。
 ---
