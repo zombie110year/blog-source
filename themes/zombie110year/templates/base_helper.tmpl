@@ -94,7 +94,6 @@ lang="{{ lang }}">
     {{ social_buttons_code }}
 {% endmacro %}
 
-
 {% macro html_stylesheets() %}
     {% if use_cdn %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -150,8 +149,6 @@ lang="{{ lang }}">
         {% endif %}
     {% endfor %}
 {% endmacro %}
-
-
 
 {% macro html_feedlinks() %}
     {% if rss_link %}

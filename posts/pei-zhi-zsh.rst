@@ -111,5 +111,4 @@
     alias ll='ls -Al'
     export FZF_DEFAULT_COMMAND='fd --type f'
 
-
 .. _`oh-my-zsh`: https://github.com/ohmyzsh/ohmyzsh

@@ -3,5 +3,7 @@
     "files.associations": {
         "*.ref": "restructuredtext",
         "*.tmpl": "jinja",
-    }
+    },
+    "python.pythonPath": "C:/Users/zom/.local/pipx/venvs/nikola/Scripts/python.exe",
+    "editor.tabSize": 4
 }

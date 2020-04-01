@@ -5,7 +5,6 @@ import time
 # !! This is the configuration of Nikola. !! #
 # !!  You should edit it to your liking.  !! #
 
-
 # ! Some settings can be different in different languages.
 # ! A comment stating (translatable) is used to denote those.
 # ! There are two ways to specify a translatable setting:
@@ -13,7 +12,6 @@ import time
 # ! (b) BLOG_TITLE = {"en": "My Blog", "es": "Mi Blog"}
 # ! Option (a) is used when you don't want that setting translated.
 # ! Option (b) is used for settings that are different in different languages.
-
 
 # Data about this site
 BLOG_AUTHOR = "zombie110year"  # (translatable)
@@ -229,7 +227,6 @@ PAGES = (
     ("pages/*.html", "pages", "page.tmpl"),
 )
 
-
 # Below this point, everything is optional
 
 # Post's dates are considered in UTC by default, if you want to use
@@ -291,7 +288,7 @@ TIMEZONE = "Asia/Shanghai"
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
     "rest": ('.rst', '.txt'),
-    "markdown": ('.md', '.mdown', '.markdown'),
+    # "markdown": ('.md', '.mdown', '.markdown'),
     "textile": ('.textile',),
     "txt2tags": ('.t2t',),
     "bbcode": ('.bb',),
@@ -305,7 +302,7 @@ COMPILERS = {
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
-    # "pandoc": ('.rst', '.md', '.txt'),
+    "pandoc": ('.md', '.mdown', '.markdown'),
 }
 
 # Enable reST directives that insert the contents of external files such
@@ -531,7 +528,6 @@ HIDDEN_CATEGORIES = []
 #        "Roberto Alsina": "Nikola father."
 #    },
 # }
-
 
 # If you do not want to display an author publicly, you can mark it as hidden.
 # The author will not be displayed on the author list page and posts.
@@ -1084,13 +1080,14 @@ MARKDOWN_EXTENSIONS = [
 # Default is {} (no config at all)
 # MARKDOWN_EXTENSION_CONFIGS = {}
 
-
 # Extra options to pass to the pandoc command.
 # by default, it's empty, is a list of strings, for example
 # ['-F', 'pandoc-citeproc', '--bibliography=/Users/foo/references.bib']
 # Pandoc does not demote headers by default.  To enable this, you can use, for example
 # ['--base-header-level=2']
-# PANDOC_OPTIONS = []
+# '--katex=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/',
+PANDOC_OPTIONS = [
+]
 
 # Social buttons. This is sample code for AddThis (which was the default for a
 # long time). Insert anything you want here, or even make it empty (which is

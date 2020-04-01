@@ -18,7 +18,6 @@
 
     .. contents::
 
-
 Nikola 博客系统的特点
 #####################
 
@@ -241,3 +240,18 @@ Travis CI 集成 Python 工程的文档为 https://docs.travis-ci.com/user/langu
     :encoding: utf-8
     :code: yml
     :literal:
+
+使用 Pandoc 处理 Markdown
+#########################
+
+参考 https://www.getnikola.com/handbook.html#pandoc。
+
+为了沿用之前对 |a_katex| 的配置，对 pandoc 传入参数
+:code:`--katex=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/`
+使用 jsDeliver CDN 上的 |a_katex|。
+
+.. code:: python
+
+    PANDOC_OPTIONS = [
+        '--katex='
+    ]
