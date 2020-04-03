@@ -1,6 +1,6 @@
 [Theme]
 engine = jinja
-parent = bootstrap4-jinja
+parent = base-jinja
 author = Zombie110year
 author_url = https://zombie110year.top/
 license = MIT

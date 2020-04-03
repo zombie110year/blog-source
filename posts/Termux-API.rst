@@ -100,4 +100,3 @@ Play <https://play.google.com/store/apps/details?id=com.termux.api>`__
    $ termux-clipboard-set 'Hello World'    # 写入剪贴板
    $ termux-clipboard-get                  # 读取剪贴板
    Hello World
-
