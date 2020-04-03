@@ -137,9 +137,9 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "文章归档"),
+        ("/archive.html", "归档"),
         ("/categories/", "标签"),
-        ("/rss.xml", "RSS 源"),
+        ("/rss.xml", "RSS"),
     ),
 }
 
