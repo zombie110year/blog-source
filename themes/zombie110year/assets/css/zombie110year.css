@@ -183,6 +183,7 @@ table {
 .figure img {
   padding: 1px;
   border: thin solid var(--background-color-light);
+  max-width: 60vw;
 }
 /* 图片 end */
 
