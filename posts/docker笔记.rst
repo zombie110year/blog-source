@@ -1,6 +1,5 @@
 ---
 title: Docker笔记
-mathjax: false
 tags:
   - docker
 categories: 笔记
@@ -33,9 +32,6 @@ Docker             VM
 |Docker Container| |Vitual Machine|
 ================== ================
 
-.. raw:: html
-
-   <!--more-->
 
 Docker 镜像
 -----------
@@ -467,4 +463,3 @@ docker-compose 是一个 Python 编写的 docker 命令解析器，用于将一�
 
 .. |Docker Container| image:: /assert/img/docker-containerized-appliction-blue-border_2.webp
 .. |Vitual Machine| image:: /assert/img/container-vm-whatcontainer_2.webp
-

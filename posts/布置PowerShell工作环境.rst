@@ -7,9 +7,6 @@ categories: 记录
 date: 2018-08-21 14:00:46
 ---
 
-.. raw:: html
-
-   <!--more-->
 
 推荐 ConEmu
 ===========
@@ -249,4 +246,3 @@ userfunc.ps1
 
    因为用了 Travis-CI {% post_link 为-Hexo-博客添加自动集成 为 Hexo
    博客添加了自动集成 %}, 这个函数被弃用了.
-

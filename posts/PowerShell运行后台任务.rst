@@ -2,7 +2,6 @@
 comments: true
 title:  PowerShell运行后台任务
 date:   2018-9-10 19:33:31
-mathjax:  false
 tags:
     - powershell
     - windows
@@ -14,9 +13,6 @@ categories: 记录
 
 但是在 Windows 的 PowerShell 中, 有什么命令可以起到这样的效果呢?
 
-.. raw:: html
-
-   <!--more-->
 
 ``Start-Job``
 =============
@@ -146,4 +142,3 @@ TODO:
 
 -  ``[class]::method()`` 这样的语法是 ``.NET`` 的内容.
 -  `.NET教程 <https://docs.microsoft.com/zh-cn/dotnet/standard/tour>`__
-

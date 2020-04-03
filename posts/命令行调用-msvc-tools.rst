@@ -2,7 +2,6 @@
 comments: true
 title:  命令行调用 MSVC Tools
 date:   2018-11-05 15:52:13
-mathjax:  false
 tags:
   - C/C++
   - msvc
@@ -255,4 +254,3 @@ Makefile <https://github.com/seisman/how-to-write-makefile>`__ 学习
 
 -  `带你玩转Visual
    Studio–命令行编译C/C++程序 <https://blog.csdn.net/luoweifu/article/details/49847749>`__
-

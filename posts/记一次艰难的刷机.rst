@@ -2,7 +2,6 @@
 title:  记一次蛋疼的刷机
 date:   2019-01-26 22:28:47
 comments: true
-mathjax:  false
 tags:
     - 翻墙
     - 刷机
@@ -22,9 +21,6 @@ categories: 记录
 最终, 我使用了 Brook 的 socks5tohttp 功能, 并在 MIUI 设置页面登录 Wi-Fi
 时设置了 HTTP 代理, 成功登录 Google.
 
-.. raw:: html
-
-   <!--more-->
 
 Brook 配置
 ==========
@@ -68,4 +64,3 @@ Android Wi-Fi 配置
 1. 刷机之前把 Google 账号退了.
 2. Android 可以直接使用 HTTP 代理.
 3. 可以用 brook socks5tohttp 转化代理.
-

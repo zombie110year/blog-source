@@ -8,9 +8,6 @@ tags:
 categories: 教程
 ---
 
-.. raw:: html
-
-   <!--more-->
 
 部署翻墙工具 Brook
 ==================
@@ -213,4 +210,3 @@ Brook 没有提供 Linux 下的 GUI 程序, 只能通过命令行使用. 不过�
 
 .. |Vultr-Billing.png| image:: https://i.loli.net/2018/07/24/5b56e6795aa58.png
    :target: https://i.loli.net/2018/07/24/5b56e6795aa58.png
-

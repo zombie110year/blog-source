@@ -12,9 +12,6 @@ categories:
 
 --------------
 
-.. raw:: html
-
-   <!-- more -->
 
 `Chocolatey <https://chocolatey.org/>`__
 
@@ -56,9 +53,6 @@ categories:
 
 等待安装完成后, ``choco --help`` 检查安装是否成功.
 
-.. raw:: html
-
-   <!--more-->
 
 先安装一个 Vim 试试
 ===================
@@ -98,4 +92,3 @@ categories:
 难道需要重启才生效? 正好 Win10 有系统更新要安装, 先重启看看.
 
    重启之后就行了, Why?
-

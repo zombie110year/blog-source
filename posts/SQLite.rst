@@ -37,9 +37,6 @@ categories: 教程
 
    UPDATE /* 表 */ SET /* 列=值 对 */ WHERE /* 限定条件 */;
 
-.. raw:: html
-
-   <!--more-->
 
 数据库与表的概念
 ================
@@ -505,4 +502,3 @@ Python 可以使用标准库 ``sqlite3`` 来访问 sqlite3 , 常用的方法如�
 .. raw:: html
 
    <!-- # SQLite3 嵌入 C/C++ 程序 -->
-

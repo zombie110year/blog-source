@@ -22,9 +22,6 @@ Travis CI 是 GitHub 上非常流行的 CI 工具.
 可以在 Travis 的网页上定义一些不希望公开的环境变量, 并在 ``.travis.yml``
 中以 ``${varname}`` 的形式引用.
 
-.. raw:: html
-
-   <!--more-->
 
 为 Hexo 添加 CI
 ===============

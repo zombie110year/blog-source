@@ -2,7 +2,6 @@
 comments: true
 title:  Linux搭建AnkiServer
 date:   2018-08-24 20:11:31
-mathjax:  false
 tags:
     - anki
 categories: 日常
@@ -20,9 +19,6 @@ categories: 日常
 `tsudoko/anki-sync-server <https://github.com/tsudoko/anki-sync-server>`__.
 不过作者没有提供简单的安装办法,
 
-.. raw:: html
-
-   <!--more-->
 
 首先克隆 Git 仓库:
 
@@ -212,4 +208,3 @@ iOS
 ---
 
 据说没有任何办法.
-

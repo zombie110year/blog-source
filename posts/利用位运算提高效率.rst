@@ -2,7 +2,7 @@
 comments: true
 title: 利用位运算提高效率
 date: 2018-10-12 19:22:06
-mathjax: true
+has_math: true
 tags:
   - 位运算
 categories: 记录
@@ -95,9 +95,6 @@ categories: 记录
        a | b & a == a;
        a ^ b ^ a == a ^ a ^ b == 0 ^ b == b;
 
-.. raw:: html
-
-   <!--more-->
 
 判断整数奇偶性
 ==============
@@ -350,4 +347,3 @@ categories: 记录
        x   = (a ^ b) ^ a;
            = b;
        y   = a;
-

@@ -2,7 +2,6 @@
 comments: true
 title:  配置matplotlib
 date:   2018-09-29 01:25:26
-mathjax:  false
 tags:
     - python
     - matplotlib
@@ -25,9 +24,6 @@ categories: 记录
 在网上找到的很多解决方案, 都提到要绘制中文需要使用 ``u'中文'``
 这样的语句, 猜测这个是 Python2 的遗留, Python3 实测不需要这么做.
 
-.. raw:: html
-
-   <!--more-->
 
 matplotlib 字体设置
 -------------------
@@ -204,4 +200,3 @@ KB/s)
 
    c.InteractiveShellApp.matplotlib = 'inline'     # 自动显示图片
    c.InlineBackend.figure_formats = ['svg']        # 生成 svg 矢量图
-

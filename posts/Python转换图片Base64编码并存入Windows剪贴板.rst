@@ -2,7 +2,6 @@
 comments: true
 title:  Python转换图片Base64编码并存入Windows剪贴板
 date:   2018-8-30 21:12:54
-mathjax:  false
 tags:
     - python
     - win32api
@@ -17,9 +16,6 @@ categories: 记录
    from base64 import b64encode    # 编码 Base64
    from win32clipboard
 
-.. raw:: html
-
-   <!--more-->
 
 剪贴板类型
 ==========
@@ -107,4 +103,3 @@ SetClipboardText
    :alt: 示例图片
 
    示例图片
-

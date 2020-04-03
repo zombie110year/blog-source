@@ -20,9 +20,6 @@ Termux 是运行在安卓手机上的一个终端模拟器, 不需要 root 权�
 Termux 配置
 ===========
 
-.. raw:: html
-
-   <!--more-->
 
 ::
 
@@ -173,4 +170,3 @@ termux-api
 -  `Termux中安装gcc-7/gfortran-7实操过程，安装成功可以编译Fortran,c/c++ <http://www.cnblogs.com/BlogOfMr-Leo/p/8660920.html>`__
 -  `神器Termux的使用日常 <https://www.jianshu.com/p/5c8678cef499>`__
 -  `在安卓上部署服务器–解决内网穿透 <http://zkeeer.space/?p=96>`__
-

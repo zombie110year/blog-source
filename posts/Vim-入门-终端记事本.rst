@@ -26,9 +26,6 @@ date: 2018-08-20 18:38:07
 -  替换
 -  撤销, 重做动作
 
-.. raw:: html
-
-   <!--more-->
 
 .. raw:: html
 
@@ -466,4 +463,3 @@ Vim 特性列表中包含 ``+clipboard``\ 。
 .. raw:: html
 
    <script src="https://gist.github.com/zombie110year/7e6855ac01e3fbb012a8dd853bbc4285.js"></script>
-

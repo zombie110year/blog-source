@@ -15,9 +15,6 @@ Asynchronous Javascript And XML
 通过异步的方式从其他地址获取数据并通过 JavaScript 运算.
 常用于动态更新页面.
 
-.. raw:: html
-
-   <!-- more -->
 
 要实现这一点, 可以使用浏览器内置对象 ``XMLHttpRequest`` (以后简称
 ``xhr``). 在使用时, 需要完成这些任务:
@@ -248,4 +245,3 @@ playground
 
    server.listen(8080, "localhost");
    console.log("http://localhost:8080");
-

@@ -13,9 +13,6 @@ date: 2019-11-10 18:28:40
 在编辑一些文档时，可能有用 latex
 编译公式，转化成位图，插入文档的需求。有这么一条工具链的话，可以将这一套流程自动化，有利于简化工作流程。
 
-.. raw:: html
-
-   <!-- more -->
 
 需要安装的程序有 texlive、imagemagick、ghostscript。
 
@@ -78,4 +75,3 @@ imagemagick 的这几个参数分别表示
 -  ``-trim`` 表示裁剪，只留下存在文字的矩形区域
 
 imagemagick 的参数会分成 input 和 output 两个组，这点需要注意。
-

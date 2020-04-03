@@ -8,9 +8,6 @@ tags:
 categories: 笔记
 ---
 
-.. raw:: html
-
-   <!--more-->
 
 排列 Permutation
 ================
@@ -132,4 +129,3 @@ Python 标准库
                    _trueAlgo([*done, _del], _rest, count-1)
        _trueAlgo(done=[], rest=Iter, count=Count)
        return result
-

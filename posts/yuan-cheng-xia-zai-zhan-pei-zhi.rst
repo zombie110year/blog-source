@@ -19,9 +19,6 @@ type: text
 2. 自动将下载的文件上传到 OneDrive
 3. 自动清理已上传到 OneDrive 的文件
 
-.. raw:: html
-
-   <!-- more -->
 
 （下载器）aria2 配置
 ====================

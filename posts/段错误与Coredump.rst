@@ -13,9 +13,6 @@ Core Dump 是什么
 Core Dump 是 Linux 系统在进程出现错误而中断时会产生的一种文件,
 在其中储存了进程的内存状态, 寄存器状态, 调用栈等信息.
 
-.. raw:: html
-
-   <!--more-->
 
 Core Dump 如何产生
 ==================
@@ -136,4 +133,3 @@ gdb 连起来, 在 ``launch.json`` 中的调试配置中增加:
 -  http://man7.org/linux/man-pages/man5/core.5.html
 -  https://zhuanlan.zhihu.com/p/24591108
 -  https://www.cnblogs.com/hazir/p/linxu_core_dump.html
-

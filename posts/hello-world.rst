@@ -2,7 +2,7 @@
 comments: true
 title: Hello World
 date: 2018-07-23 22:12:38
-mathjax: true
+has_math: true
 tags:
   - hexo
 ---
@@ -81,4 +81,3 @@ Hello World!
       再次尝试.(但是为什么混用中英文时就不会出现区分大小写导致的错误呢?)
 
       -  问题解决了.
-

@@ -36,9 +36,6 @@ Windows 下链接文件的格式可以有:
    New-Item -ItemType HardLink -Path D:\Link -Value D:\Target #创建硬链接 D:\Link -> D:\Target. 注意, 硬链接只能链接两个文件, 不能链接两个目录
    New-Item -ItemType Junction -Path D:\Link -Value D:\Target #创建 Junction D:\Link -> D:\Target
 
-.. raw:: html
-
-   <!--more-->
 
 在创建链接时, 可以使用 ``-Force`` 参数. 如果在创建链接之前,
 目录中已经存在一个与链接同名的文件或子目录, 那么系统会报错
@@ -141,4 +138,3 @@ Law的回答 <https://www.zhihu.com/question/286730188/answer/451095023>`__
 1. 使用 ``-Force`` 参数使创建的链接覆盖同名文件/目录.
 2. 使用 ``(Get-Item .\Link).Delete()`` 方法删除链接,
    而不影响被链接的文件.
-

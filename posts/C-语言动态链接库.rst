@@ -11,9 +11,6 @@ categories: 记录
 
 DLL(Dynamic Linked Library) 是一种可在运行时被其他程序链接并执行的代码.
 
-.. raw:: html
-
-   <!--more-->
 
 GNU 工具链
 ==========
@@ -38,7 +35,7 @@ GNU 工具链
    用逗号作为分隔符; 而 ``-soname,libswap.so`` 则是命名动态库,
    这不是命名生成的文件, 而是填写生成文件中的一个字段,
    以便调用者识别动态库的版本. \ `wiki -
-   soname <https://en.wikipedia.org/wiki/Soname>`__\ 
+   soname <https://en.wikipedia.org/wiki/Soname>`__\
 -  ``-o libswap.so`` 将输出写入到此文件中.
 
 .. code:: c
@@ -247,4 +244,3 @@ MSVC 编译 C 程序的最小要求是 “C++ 桌面开发” 以及 “单个�
 
 -  https://medium.com/@Cu7ious/how-to-use-dynamic-libraries-in-c-46a0f9b98270
 -  https://docs.microsoft.com/en-us/cpp/cpp/declspec
-

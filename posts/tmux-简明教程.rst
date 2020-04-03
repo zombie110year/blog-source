@@ -28,9 +28,6 @@ Tmux 的划分涉及到四个层次: Server, Session, Window, Pane.
 
    Tmux Intro
 
-.. raw:: html
-
-   <!--more-->
 
 tmux 的配置文件为 ``~/.tmux.conf``
 

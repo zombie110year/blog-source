@@ -50,9 +50,6 @@ API、JSON API、和 RegExp
 -  浏览器：FireFox 68.\*
 -  脚本管理器：Tampermonkey
 
-.. raw:: html
-
-   <!-- more -->
 
 抓包
 ----
@@ -513,4 +510,3 @@ TamperMonkey 脚本管理器可以加载额外的脚本。
    // ==/UserScript==
 
 只是它不处理依赖关系。
-

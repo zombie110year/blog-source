@@ -32,9 +32,6 @@ ANSI 转义序列使用 ASCII 码为 ``0x1b`` 的字节作为转义字符,
 则用于标志一个转义序列的结尾, 不同的 tail 对应不同功能.
 在这两个组件之间的部分 ``<code>``, 则是转义序列的具体内容.
 
-.. raw:: html
-
-   <!-- more -->
 
 字符渲染序列(SGR)
 -----------------
@@ -139,4 +136,3 @@ Rendition** (SGR) 序列.
    -  https://zhuanlan.zhihu.com/p/69885819
    -  https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
    -  https://en.wikipedia.org/wiki/ANSI_escape_code
-

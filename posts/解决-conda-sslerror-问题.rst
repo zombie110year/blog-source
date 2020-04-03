@@ -2,7 +2,6 @@
 title:  解决 Conda SSLError 问题
 date:   2019-02-17 19:11:08
 comments: true
-mathjax:  false
 tags:
     - anaconda
 categories: 记录
@@ -22,9 +21,6 @@ categories: 记录
    HTTP errors are often intermittent, and a simple retry will get you on your way.
    SSLError(MaxRetryError('HTTPSConnectionPool(host=\'mirrors.ustc.edu.cn\', port=443): Max retries exceeded with url: /anaconda/cloud/conda-forge/win-64/repodata.json (Caused by SSLError("Can\'t connect to HTTPS URL because the SSL module is not available."))'))
 
-.. raw:: html
-
-   <!--more-->
 
 我最开始还以为是安装包出错, openssl 模块文件损坏了. 为此还多次重装,
 甚至回滚到旧版本. 但是问题依然没有解决. 令人恶心万分.

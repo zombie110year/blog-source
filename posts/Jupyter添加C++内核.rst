@@ -2,7 +2,6 @@
 comments: true
 title:  Jupyter添加C++内核
 date:   2018-09-23 11:47:11
-mathjax:  false
 tags:
     - jupyter
     - C/C++
@@ -24,9 +23,6 @@ kernel <https://github.com/calysto/octave_kernel>`__\ (基于 Oct2Py) 等.
 详细的方法见
 `此文档 <https://jupyter-client.readthedocs.io/en/latest/wrapperkernels.html>`__.
 
-.. raw:: html
-
-   <!--more-->
 
 安装 xeus-cling
 ===============
@@ -104,4 +100,3 @@ jupyter kernelspec
 0. ``jupyter kernelspec list`` 列出已有内核.
 1. ``jupyter kernelspec install XXXX`` 安装目标内核.
 2. ``jupyter kernelspec remove XXXX`` 移除目标内核.
-

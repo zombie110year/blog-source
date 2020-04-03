@@ -1,7 +1,6 @@
 ---
 title:  Hexo 配置 Gitalk 的过程
 date:   2018-10-03 23:36:45
-mathjax:  false
 comments: true
 tags:
   - hexo
@@ -20,9 +19,6 @@ Gitalk 官方提到的一种安装方式是通过 npm install 安装,
 但是我根本不知道应该在哪里添加 ``import gitalk`` 代码,
 所以就按在页面引用 ``gitalk.js`` 的方法安装了.
 
-.. raw:: html
-
-   <!--more-->
 
 申请 GitHub Repo issue 的读写权限
 ---------------------------------

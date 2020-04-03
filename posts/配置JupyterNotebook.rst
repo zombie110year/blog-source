@@ -2,7 +2,6 @@
 comments: true
 title:  配置 Jupyter Notebook
 date:   2018-09-15 22:39:08
-mathjax:  false
 tags:
     - python
     - anaconda
@@ -63,9 +62,6 @@ Cell 支持所有 Markdown 特性, 甚至可以使用 MathJax 渲染数学环境
 
 也可以导出为 ``.py`` 脚本, 这会去除非 Code 的 Cell.
 
-.. raw:: html
-
-   <!--more-->
 
 JupyterNotebook配置
 ===================
@@ -192,4 +188,3 @@ JupyterNotebook版本控制
 -  `如何优雅地使用jupyter？ - SHAN的回答 -
    知乎 <https://www.zhihu.com/question/59392251/answer/177708041>`__:
    去除 Code Cell
-

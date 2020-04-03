@@ -2,7 +2,7 @@
 comments: true
 title: Hexo配置过程
 date: 2018-07-25 21:30:45
-mathjax: true
+has_math: true
 tags:
   - hexo
 categories: 笔记
@@ -34,9 +34,6 @@ Hexo 配置过程
 步骤
 ----
 
-.. raw:: html
-
-   <!--more-->
 
 开始使用 Hexo
 ~~~~~~~~~~~~~

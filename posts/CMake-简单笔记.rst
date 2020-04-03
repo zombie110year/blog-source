@@ -9,9 +9,6 @@ categories: 笔记
 
    CMake 3.14.0
 
-.. raw:: html
-
-   <!--more-->
 
 CMake 基本概念
 ==============
@@ -309,4 +306,3 @@ cmake 命令行选项
 得到 graphviz 标记语言文件, 可以继续使用 graphviz 工具得到图片.
 
 https://cmake.org/cmake/help/v3.14/module/CMakeGraphVizOptions.html
-

@@ -2,7 +2,6 @@
 title:  git 中文出现乱码的解决方案
 date:   2019-02-17 19:26:54
 comments: true
-mathjax:  false
 tags:
     - git
     - 字符编码
@@ -68,4 +67,3 @@ categories: 记录
 这就必须设置为 gbk 才不会乱码了.
 
 如果使用其他查看器, 从 less 类推, 修改相关的字符编码设置即可.
-

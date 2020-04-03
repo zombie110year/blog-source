@@ -17,10 +17,6 @@ date: 2018-08-24 01:08:09
 1. 其次, 需要在 DNS 解析服务商处建立域名映射
 2. 最后, 需要在 GitHub 仓库中添加 CNAME 文件, 使其接受映射.
 
-.. raw:: html
-
-   <!--more-->
-
 如果映射域名为 ``blog.example.com``, 则 CNAME 文件内容为
 
 ::
@@ -63,4 +59,3 @@ SSL <https://www.aliyun.com/product/cas#product-area2>`__ 是免费的,
 提交之后等待审核…
 
 审核比较快, 半个小时就发下来了. 在控制台签发到网站即可.
-
