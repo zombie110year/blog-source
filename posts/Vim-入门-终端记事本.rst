@@ -460,6 +460,4 @@ Vim 特性列表中包含 ``+clipboard``\ 。
 我的 Vim 配置文件
 =================
 
-.. raw:: html
-
-   <script src="https://gist.github.com/zombie110year/7e6855ac01e3fbb012a8dd853bbc4285.js"></script>
+.. gist:: 7e6855ac01e3fbb012a8dd853bbc4285

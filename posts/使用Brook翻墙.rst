@@ -56,9 +56,7 @@ Sydney         `syd-au-ping.vultr.com <syd-au-ping.vultr.com>`__
 
 用下面这个脚本:
 
-.. raw:: html
-
-   <script src="https://gist.github.com/zombie110year/c0e26f4b9d7376489688fb264e3d9e3b.js"></script>
+.. gist:: c0e26f4b9d7376489688fb264e3d9e3b
 
 先把这个文件保存到本地的 ``vultr_ping.py``\ ，或者直接在 REPL
 中运行，在按照文档注释中的例子用就可以了。 因为 ``show_ping`` 函数是用

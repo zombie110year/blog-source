@@ -89,9 +89,7 @@ SetClipboardText
 成品代码
 ========
 
-.. raw:: html
-
-   <script src="https://gist.github.com/zombie110year/640cf8732446065f856eb00499abfa3c.js"></script>
+.. gist:: 640cf8732446065f856eb00499abfa3c
 
 另外, 发现无论如何复制, 一定会有一个 ``CF_HDROP``
 句柄指向图片的缓存路径.

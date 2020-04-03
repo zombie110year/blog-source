@@ -235,6 +235,4 @@ Tmux 也可以使用插件, 并且官方提供了插件管理器
 速查表
 ======
 
-.. raw:: html
-
-   <script src="https://gist.github.com/zombie110year/1f02c500eae2006f2d0fd958a242aece.js">你无法访问 gist.github.com</script>
+.. gist:: 1f02c500eae2006f2d0fd958a242aece
