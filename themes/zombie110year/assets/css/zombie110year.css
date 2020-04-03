@@ -131,7 +131,7 @@ a:hover {
 .entry-content p a {
   background: var(--front-color);
   color: var(--background-color);
-  padding: var(--icon-distance);
+  padding: 0 var(--icon-distance);
   border-radius: var(--icon-radius);
 }
 .footer-license {
