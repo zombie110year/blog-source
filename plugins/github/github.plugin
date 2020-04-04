@@ -1,6 +1,6 @@
 [Core]
-name = rest_github_role
-module = github_role
+name = rest_github
+module = github
 
 [Nikola]
 compiler = rest
@@ -10,4 +10,4 @@ PluginCategory = CompilerExtension
 author = Zombie110year
 version = 0.1
 website = https://plugins.getnikola.com/
-description = Provide a :github:`owner/repo` role for reStructuredText to refer to GitHub.
+description = Provide a :github:`owner/repo` role and .. gist:: ID Directive for reStructuredText.

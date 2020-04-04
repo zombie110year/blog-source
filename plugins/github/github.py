@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 
 from docutils import nodes
-from docutils.parsers.rst import roles
+from docutils.parsers.rst import roles, directives, Directive
 from docutils.parsers.rst.states import Inliner
 from nikola.plugin_categories import RestExtension
 from typing import *
@@ -22,8 +22,39 @@ class Plugin(RestExtension):
         """Set Nikola site."""
         self.site = site
         roles.register_canonical_role('github', github_repository)
+        directives.register_directive('gist', GitHubGist)
         return super(Plugin, self).set_site(site)
 
+
+class GitHubGist(Directive):
+    """Embed GitHub Gist
+
+    Usage::
+
+        .. gist:: ID
+    """
+    required_arguments = 0
+    optional_arguments = 0
+    option_spec = {}
+    has_content = True
+
+    def run(self):
+        with open("C:/Users/zom/Desktop/rest.log", "at") as log:
+            log.write(f"{self.content!r}")
+        gist_id: str = self.content[0].strip()
+        if gist_id.startswith("https://"):
+            # 网页链接
+            script_url = f"{gist_id}.js"
+        elif m := re.search(r"(\S+)/([\dabcdef]+)", gist_id):
+            # owner/id
+            owner = m[1]
+            id = m[2]
+            script_url = f"https://gist.github.com/{owner}/{id}.js"
+        else:
+            raise self.error(f"Error: Cannot parse gist id: {gist_id!r}")
+
+        script_el = f"<script src={script_url!r}></script>"
+        return [nodes.raw("", script_el, format='html')]
 
 def github_repository(name: str,
                       rawtext: str,
@@ -34,6 +65,10 @@ def github_repository(name: str,
                       content: List[str] = []):
     """reST extension for replace :github:`zombie110year/blog-source` to
     <a href="https://github.com/zombie110year/blog-source">zombie110year/blog-source | GitHub</a>
+
+    Usage::
+
+        :github:`owner/repo`
     """
     owner_repo = re.search(r"(?P<owner>\S+)/(?P<repo>\S+)", text)
     if owner_repo is not None:
