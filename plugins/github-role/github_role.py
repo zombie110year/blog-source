@@ -2,6 +2,10 @@
 """github role for reStructuredText."""
 
 import re
+import requests as r
+from dataclasses import dataclass
+from functools import lru_cache
+
 from docutils import nodes
 from docutils.parsers.rst import roles
 from docutils.parsers.rst.states import Inliner
@@ -35,7 +39,28 @@ def github_repository(name: str,
     if owner_repo is not None:
         owner = owner_repo["owner"]
         repo = owner_repo["repo"]
-        url = f"https://github.com/{owner}/{repo}"
-        return [nodes.reference(rawtext, f"{owner}/{repo} | GitHub", refuri=url, **options)], []
+        info = check_github_repo(owner, repo)
+        return [nodes.reference(rawtext, info.title, refuri=info.url, **options)], []
     else:
         return [], [f"Error: input cannot be refered to a GitHub repository."]
+
+
+@dataclass
+class GithubInfo:
+    owner: str
+    repo: str
+
+    @property
+    def url(self):
+        return f"https://github.com/{self.owner}/{self.repo}"
+
+    @property
+    def title(self):
+        return f"GitHub - {self.owner}/{self.repo}"
+
+
+@lru_cache
+def check_github_repo(owner: str, repo: str) -> GithubInfo:
+    # todo: get description
+    info = GithubInfo(owner=owner, repo=repo)
+    return info
