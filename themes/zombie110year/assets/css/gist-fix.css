@@ -1,0 +1,8 @@
+/* 修复 Gist 样式 */
+.gist {
+  --background-color: initial;
+  --background-color-light: initial;
+  --front-color: initial;
+  --front-color-light: initial;
+  --front-color-light2: initial;
+}
