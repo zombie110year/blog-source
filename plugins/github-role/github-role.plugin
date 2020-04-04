@@ -1,0 +1,13 @@
+[Core]
+name = rest_github_role
+module = github_role
+
+[Nikola]
+compiler = rest
+PluginCategory = CompilerExtension
+
+[Documentation]
+author = Zombie110year
+version = 0.1
+website = https://plugins.getnikola.com/
+description = Provide a :github:`owner/repo` role for reStructuredText to refer to GitHub.
