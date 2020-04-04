@@ -33,6 +33,3 @@ def mozilla_developer_network(name: str,
     query_word = text
     url = f"https://developer.mozilla.org/search?q={query_word}"
     return [nodes.reference(rawtext, query_word, refuri=url, **options)], []
-
-
-roles.register_canonical_role("mdn", mozilla_developer_network)
