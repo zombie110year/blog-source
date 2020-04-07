@@ -9,6 +9,8 @@ categories: 记录
 date: 2019-09-11 16:22:44
 ---
 
+.. default-role:: code
+
 User-Script 简易爬虫
 ====================
 
@@ -120,44 +122,55 @@ JSON，在其中可对请求方案进行详细的设置。
 要发送定制的请求，可以设置 ``init`` 参数的值，这是一个
 JSON，可以设置这些键值：
 
--  ``method``: HTTP 方法，如 ``GET``\ 、 ``POST``\ 。
--  ``headers``: 请求的头信息，形式为
-   ```Headers`` <https://developer.mozilla.org/zh-CN/docs/Web/API/Headers>`__
-   的对象或包含
-   ```ByteString`` <https://developer.mozilla.org/zh-CN/docs/Web/API/ByteString>`__
-   值的对象字面量。
--  ``body``: 请求的 body 信息：可能是一个
-   ```Blob`` <https://developer.mozilla.org/zh-CN/docs/Web/API/Blob>`__\ 、\ ```BufferSource`` <https://developer.mozilla.org/zh-CN/docs/Web/API/BufferSource>`__\ 、\ ```FormData`` <https://developer.mozilla.org/zh-CN/docs/Web/API/FormData>`__\ 、\ ```URLSearchParams`` <https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams>`__
-   或者
-   ```USVString`` <https://developer.mozilla.org/zh-CN/docs/Web/API/USVString>`__
-   对象。注意 GET 或 HEAD 方法的请求不能包含 body 信息。
--  ``mode``: 请求的模式，如 ``cors``\ 、 ``no-cors`` 或者
-   ``same-origin``\ 。
--  ``credentials``: 请求的 credentials，如 ``omit``\ 、\ ``same-origin``
-   或者 ``include``\ 。为了在当前域名内自动发送 cookie，
-   必须提供这个选项，从 Chrome 50 开始， 这个属性也可以接受
-   ```FederatedCredential`` <https://developer.mozilla.org/zh-CN/docs/Web/API/FederatedCredential>`__
-   实例或是一个
-   ```PasswordCredential`` <https://developer.mozilla.org/zh-CN/docs/Web/API/PasswordCredential>`__
-   实例。
--  ``cache``: 请求的 cache 模式: ``default``\ 、 ``no-store`` 、
-   ``reload``\ 、 ``no-cache`` 、 ``force-cache`` 或者
-   ``only-if-cached``\ 。
--  ``redirect``: 可用的 redirect 模式: ``follow`` (自动重定向),
-   ``error`` (如果产生重定向将自动终止并且抛出一个错误), 或者 ``manual``
-   (手动处理重定向). 在Chrome中，Chrome 47之前的默认值是 follow，从
-   Chrome 47开始是 manual。
--  ``referrer``: 一个
-   ```USVString`` <https://developer.mozilla.org/zh-CN/docs/Web/API/USVString>`__
-   可以是 ``no-referrer``\ 、\ ``client``\ 或一个 URL。默认是
-   ``client``\ 。
--  ``referrerPolicy``: 如何指定 HTTP 头中的 ``referer`` 字段。可以是
-   ``no-referrer``\ 、 ``no-referrer-when-downgrade``\ 、 ``origin``\ 、
-   ``origin-when-cross-origin``\ 、 ``unsafe-url``\ 。
--  ``integrity``: 包括请求的 `subresource
-   integrity <https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity>`__
-   值 （ 例如：
-   ``sha256-BpfBw7ivV8q2jLiT13fxDYAe2tJllusRSZ273h2nFSE=``\ ）。
+method
+   HTTP 方法，如 `GET`, `POST`。
+
+headers
+   请求的信息头，形式为 :mdn:`Headers` 的对象，或包含 :mdn:`ByteString` 值的对象字面量。
+
+body
+   请求的消息体。
+
+   可能是一个 :mdn:`Blob`、:mdn:`BufferSource`、:mdn:`FormData`、:mdn:`URLSearchParams`
+   或者 :mdn:`USVString` 对象。注意 GET 或 HEAD 方法的请求不能包含 body 信息。
+
+mode
+   请求的模式。如 `cors`、`no-cors` 或者 `same-origin`。
+
+credentials
+   请求的政策，如 `omit`、`same-origin` 或者 `include`。
+   为了在当前域名内自动发送 cookie，必须提供此选项，从 Chrome 50 开始，这个属性也可以接受
+   :mdn:`FederatedCredential` 实例或者一个 :mdn:`PasswordCredential` 实例。
+
+cache
+   请求的缓存模式：`default`、`no-store`、`reload`、`no-cache`、`force-cache` 或者 `only-if-cached`。
+
+redirect
+   可用的重定向模式：
+
+   follow
+      自动重定向
+
+   error
+      如果产生重定向将自动终止并抛出一个错误
+
+   manual
+      手动处理重定向
+
+   在 Chrome 中，Chrome 47 之前的默认值是 `follow`，从 47 开始是 manual。
+
+referrer
+   一个 :mdn:`USVString`，可以是 `no-referrer`、`client` 或一个 URL。
+   默认是 `client`。
+
+referrerPolicy
+   如何指定 HTTP 头中的 `referer` 字段 [#notice-referer]_ 。可以是
+   `no-referrer`、`no-referrer-when-downgrade`、`origin`、`origin-when-cross-origin` 或 `unsafe-url`。
+
+integrity
+   包含请求的 :mdn:`subresource integrity` 值，例如 ` sha256-BpfBw7ivV8q2jLiT13fxDYAe2tJllusRSZ273h2nFSE=`。
+
+.. [#notice-referer] 注意，在 HTTP 头中是 referer，在其他地方是 referrer，:code:`r` 字母的差异来源于书写错误。
 
 读取当前页面的 HTTP 头信息并设定请求头
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,11 +222,7 @@ User-Agent
 
 GET 和 HEAD 方法不能设置请求参数，它们的参数是在 URL 中的。
 
-body 的值可以是
-```Blob`` <https://developer.mozilla.org/zh-CN/docs/Web/API/Blob>`__\ 、\ ```BufferSource`` <https://developer.mozilla.org/zh-CN/docs/Web/API/BufferSource>`__\ 、\ ```FormData`` <https://developer.mozilla.org/zh-CN/docs/Web/API/FormData>`__\ 、\ ```URLSearchParams`` <https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams>`__
-或者
-```USVString`` <https://developer.mozilla.org/zh-CN/docs/Web/API/USVString>`__
-对象。
+body 的值可以是 :mdn:`Blob`、:mdn:`BufferSource` 或 :mdn:`USVString` 对象。
 
 .. code:: js
 
@@ -297,7 +306,7 @@ JSON API
 -  ``u``: Unicode 模式
 -  ``y``: 粘性匹配;
    仅匹配目标字符串中此正则表达式的lastIndex属性指示的索引(并且不尝试从任何后续的索引匹配)
--  ```dotAll``\ 模式 <https://github.com/tc39/proposal-regexp-dotall-flag>`__\ ，匹配任何字符（包括终止符
+-  `dotAll 模式 <https://github.com/tc39/proposal-regexp-dotall-flag>`__\ ，匹配任何字符（包括终止符
    ``\n``\ ）
 
 获取结果
@@ -306,14 +315,8 @@ JSON API
 文件下载法
 ~~~~~~~~~~
 
-JavaScript 原生提供了
-`Blob <https://developer.mozilla.org/zh-CN/docs/Web/API/Blob>`__ API
-用于存储不可变的二进制数据。类似的还有个可变的
-`ArrayBuffer <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`__
-对象，ArrayBuffer
-长度固定，且需要使用视图去修改它。但我们关注文件操作的话，就使用 Blob
-的子类 `File <https://developer.mozilla.org/zh-CN/docs/Web/API/File>`__
-好了。
+JavaScript 原生提供了 :mdn:`Blob` API 用于存储不可变的二进制数据。类似的还有个可变的 :mdn:`ArrayBuffer` 对象，
+ArrayBuffer 长度固定，且需要使用视图去修改它。但我们只关注文件操作的话，就使用 Blob 的子类 :mdn:`File` 就好了。
 
 File 对象的构造函数的形参为
 
@@ -321,22 +324,21 @@ File 对象的构造函数的形参为
 
    File(bits, name[, options]);
 
--  *bits*
-   ```ArrayBuffer`` <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`__\ ，\ ```ArrayBufferView`` <https://developer.mozilla.org/zh-CN/docs/Web/API/ArrayBufferView>`__\ ，\ ```Blob`` <https://developer.mozilla.org/zh-CN/docs/Web/API/Blob>`__\ ，或者
-   ```DOMString`` <https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString>`__
-   对象的
-   ```Array`` <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Array>`__
-   — 或者任何这些对象的组合。这是 UTF-8 编码的文件内容。对于文本文件，
--  *name*
-   ```USVString`` <https://developer.mozilla.org/zh-CN/docs/Web/API/USVString>`__\ ，表示文件名称，或者文件路径。
--  *options* （可选） 选项对象，包含文件的可选属性。可用的选项如下：
+bits
+   :mdn:`ArrayBuffer`、:mdn:`ArrayBufferView`、:mdn:`Blob` 或者 :mdn:`DOMString` 对象组成的 :mdn:`Array`。
+   或者任何这些元素的组合。这是 UTF-8 编码的文件内容。对于文本文件，
 
-   -  ``type``:
-      ```DOMString`` <https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString>`__\ ，表示将要放到文件中的内容的
-      MIME 类型。默认值为 ``""`` 。
-   -  ``lastModified``: 数值，表示文件最后修改时间的 Unix
-      时间戳（毫秒）。默认值为
-      ```Date.now()`` <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/now>`__\ 。
+name
+   :mdn:`USVString`，表示文件名称或者文件路径。
+
+options
+   可选，选项对象，包含文件的可选属性。可用的选项如下：
+
+   type
+      :mdn:`DOMString`，表示将要放到文件中的内容的 MIME 类型。默认 ``""``。
+
+   lastModified
+      number，表示文件的最后修改时间。是 Unix 时间戳，精确到毫秒。默认值是 :mdn:`Date.now`。
 
 得到了 File 对象，接下来考虑下载的问题。可以利用 ``a`` 元素，构造这样的
 HTML 元素插入页面：
@@ -359,16 +361,13 @@ HTML 元素插入页面：
    a.innerText = "下载 Hello World";
    document.body.appendChild(a);
 
-Blob URL
-只在本机有效，文件也是储存在浏览器中的，关闭标签页就会自动清理，也可以手动清理，用
+Blob URL 只在本机有效，文件也是储存在浏览器中的，关闭标签页就会自动清理，也可以手动清理，用
 
 .. code:: js
 
    URL.revokeObjectURL("blob:**************");
 
-..
-
-   参考 https://javascript.ruanyifeng.com/htmlapi/file.html
+参考 https://javascript.ruanyifeng.com/htmlapi/file.html 。
 
 textarea
 ~~~~~~~~
@@ -434,26 +433,27 @@ JSZip 中的 ``file``
 函数可以传入可选参数以指定文件的类型：https://stuk.github.io/jszip/documentation/api_jszip/file_data.html
 这里列举一些在写入二进制数据时可能用到的参数：
 
-+----+-----+-----+-----------------------------------------------------+
-| na | t   | d   | description                                         |
-| me | ype | efa |                                                     |
-|    |     | ult |                                                     |
-+====+=====+=====+=====================================================+
-| ba | b   | ``f | 如果数据已经用 base64 编码，则设置为                |
-| se | ool | als | ``true``\ 。例如由 ``<canvas>``                     |
-| 64 | ean | e`` | 元素生成的图像数据。文本数据不需要此选项。          |
-|    |     |     | `More <https://stuk.github.io/jszip/docume          |
-|    |     |     | ntation/api_jszip/file_data.html#base64-option>`__. |
-+----+-----+-----+-----------------------------------------------------+
-| bi | b   | ``f | 如果数据需要被当作原始数据处理，则设置为            |
-| na | ool | als | ``true``\ ，如果是文本，则设置为                    |
-| ry | ean | e`` | ``false``\ 。如果使用了 base64                      |
-|    |     |     | 选项，则此选项也默认为 true。如果输入的 data        |
-|    |     |     | 参数不是字符串，此项也自动设为                      |
-|    |     |     | ``tru                                               |
-|    |     |     | e``\ 。\ `More <https://stuk.github.io/jszip/docume |
-|    |     |     | ntation/api_jszip/file_data.html#binary-option>`__. |
-+----+-----+-----+-----------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+   *  - name
+      - type
+      - default
+      - description
+   *  -  base64
+      -  boolean
+      -  false
+      -  如果数据已经用 base64 编码，则设置为 true。例如由 ``<canvas>`` 元素生成的图像数据。
+         文本数据不需要此选项。
+         `More <https://stuk.github.io/jszip/documentation/api_jszip/file_data.html#base64-option>`__。
+   *  -  binary
+      -  boolean
+      -  false
+      -  如果数据需要被当作原始数据处理，则设置为 true，如果是文本，则 false。
+         如果使用了 base64 选项，则此项默认为 true。
+         如果输入的 data 参数不是字符串，此项也为 true。
+         `More <https://stuk.github.io/jszip/documentation/api_jszip/file_data.html#binary-option>`__。
+
 
 其他工具的使用方法
 ------------------

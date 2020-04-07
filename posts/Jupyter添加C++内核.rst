@@ -16,9 +16,9 @@ C++!
 查看支持的语言内核.
 
 这些内核中, 有些是基于 Ipython Kernel 开发的, 因此需要在运行时指定,
-并且在保存时为 ``.ipynb`` 文件, 例如 `bash
-kernel <https://github.com/takluyver/bash_kernel>`__, `IOctave
-kernel <https://github.com/calysto/octave_kernel>`__\ (基于 Oct2Py) 等.
+并且在保存时为 ``.ipynb`` 文件, 例如
+:github:`takluyver/bash_kernel`，
+:github:`calysto/octave_kernel` （基于 Oct2Py） 等。
 
 详细的方法见
 `此文档 <https://jupyter-client.readthedocs.io/en/latest/wrapperkernels.html>`__.
@@ -27,7 +27,7 @@ kernel <https://github.com/calysto/octave_kernel>`__\ (基于 Oct2Py) 等.
 安装 xeus-cling
 ===============
 
-`xeus-cling@GitHub <https://github.com/QuantStack/xeus-cling>`__.
+:github:`QuantStack/xeus-cling`
 
 此仓库可以使用 ``conda`` 安装. 但是因为国内无此仓库(QuantStack)的镜像,
 所以安装速度很慢.
@@ -36,13 +36,12 @@ kernel <https://github.com/calysto/octave_kernel>`__\ (基于 Oct2Py) 等.
 -----------------------
 
 经过一下午的尝试, conda 安装法失败了, 因为总是会遇到网络连接中断的问题,
-所以这次从 `GitHub xeus-cling <>`__ 下载源代码来安装.
+所以这次从 :github:`QuantStack/xeus-cling` 下载源代码来安装.
 
 安装 cling
 ==========
 
-`Cling
-kernel <https://github.com/root-project/cling/tree/master/tools/Jupyter>`__
+:github:`root-project/cling`
 是使 Jupyter Notebook 支持 C/C++ 语言的内核.
 
 Cling 依赖于 Python3, 如果机器上没有安装, 需要先安装:
@@ -84,7 +83,7 @@ cmake 编译, 以我的网络条件, 下载源码花费约 30 分钟, 编译约 
 
 但是发现此方法安装的 cling 内核无法连接. 原因不明, 无法解决.
 
-推荐使用 `xeus-cling <#安装-xeus-cling>`__.
+推荐使用 `安装 xeus-cling`_ 。
 
 内核的安装位置
 ==============

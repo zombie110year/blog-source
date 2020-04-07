@@ -23,11 +23,10 @@ Tmux 的划分涉及到四个层次: Server, Session, Window, Pane.
 
 看看下面这个示意图:
 
-.. figure:: /assert/img/tmux-intro.webp
-   :alt: Tmux Intro
+.. figure:: /images/tmux-intro.png
+   :alt: Tmux 示意图
 
-   Tmux Intro
-
+   Tmux 示意图
 
 tmux 的配置文件为 ``~/.tmux.conf``
 
@@ -190,8 +189,7 @@ tmux 256 色
 插件
 ====
 
-Tmux 也可以使用插件, 并且官方提供了插件管理器
-`github.com/tmux-plugins/tpm <https://github.com/tmux-plugins/tpm>`__
+Tmux 也可以使用插件, 并且官方提供了插件管理器 :github:`tmux-plugins/tpm`，
 使用 git 安装:
 
 .. code:: sh
@@ -224,15 +222,17 @@ Tmux 也可以使用插件, 并且官方提供了插件管理器
 参考
 ====
 
-   参考: - http://man.openbsd.org/OpenBSD-current/man1/tmux.1 -
-   https://gist.github.com/MohamedAlaa/2961058 -
-   http://mingxinglai.com/cn/2012/09/tmux/ -
-   https://suixinblog.cn/2018/12/tmux.html -
-   http://louiszhai.github.io/2017/09/30/tmux/ -
-   http://www.wutianqi.com/blog/3681.html -
-   https://liam.page/2016/09/10/tmux-plugin-resurrect/
+参考:
+
+- http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+- https://gist.github.com/MohamedAlaa/2961058
+- http://mingxinglai.com/cn/2012/09/tmux/
+- https://suixinblog.cn/2018/12/tmux.html
+- http://louiszhai.github.io/2017/09/30/tmux/
+- http://www.wutianqi.com/blog/3681.html
+- https://liam.page/2016/09/10/tmux-plugin-resurrect/
 
 速查表
 ======
 
-.. gist:: 1f02c500eae2006f2d0fd958a242aece
+.. gist:: zombie110year/1f02c500eae2006f2d0fd958a242aece

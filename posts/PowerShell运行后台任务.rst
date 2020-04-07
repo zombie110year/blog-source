@@ -134,11 +134,8 @@ PowerShell 的进程, 而一个 PowerShell 中 Id 为 1 的 Runspace
 但是脚本仍然不是独立于终端的, 当前会话一退出, Runspace 也关闭了.
 (并且我找不到 stdout 了)
 
-三个需求只解决了一个, 但实在没有情报了. 因此, 该问题暂时搁置.
-
-(凑合着用吧…)
-
-TODO:
+推荐使用 ``start-process`` 来启动独立进程。只要 ``-WindowStyle Hidden`` 就
+可以隐藏窗口。
 
 -  ``[class]::method()`` 这样的语法是 ``.NET`` 的内容.
 -  `.NET教程 <https://docs.microsoft.com/zh-cn/dotnet/standard/tour>`__

@@ -21,7 +21,8 @@ categories: 教程
 
 我选择的是 vultr 这个服务商, 因为他支持使用 PayPal 甚至 支付宝 付款.
 
-|Vultr-Billing.png|
+.. figure:: https://i.loli.net/2018/07/24/5b56e6795aa58.png
+   :alt: Vultr Billing
 
 只是为了翻墙的话, 购买倒数第二 $5/mon 五美元每月的套餐即可.
 虽然有更便宜的 $2.5/mon 但是这个服务器将无法分配到公网 IPv4 地址, 只有
@@ -34,31 +35,31 @@ IPv6…
 
 vultr 机房一览:
 
-============== =======================================================
+============== =================================================================
 地理位置       域名
-============== =======================================================
-Tokyo          `hnd-jp-ping.vultr.com <hnd-jp-ping.vultr.com>`__
-Singapore      `sgp-ping.vultr.com <sgp-ping.vultr.com>`__
-Amsterdam      `ams-nl-ping.vultr.com <ams-nl-ping.vultr.com>`__
-Paris          `par-fr-ping.vultr.com <par-fr-ping.vultr.com>`__
-Frankfurt      `fra-de-ping.vultr.com <fra-de-ping.vultr.com>`__
-London         `lon-gb-ping.vultr.com <lon-gb-ping.vultr.com>`__
-New York       `nj-us-ping.vultr.com <nj-us-ping.vultr.com>`__
-Chicago        `il-us-ping.vultr.com <il-us-ping.vultr.com>`__
-Dallas         `tx-us-ping.vultr.com <tx-us-ping.vultr.com>`__
-Atlanta        `ga-us-ping.vultr.com <ga-us-ping.vultr.com>`__
-Los Angeles    `lax-ca-us-ping.vultr.com <lax-ca-us-ping.vultr.com>`__
-Miami          `fl-us-ping.vultr.com <fl-us-ping.vultr.com>`__
-Seattle        `wa-us-ping.vultr.com <wa-us-ping.vultr.com>`__
-Silicon Valley `sjo-ca-us-ping.vultr.com <sjo-ca-us-ping.vultr.com>`__
-Sydney         `syd-au-ping.vultr.com <syd-au-ping.vultr.com>`__
-============== =======================================================
+============== =================================================================
+Tokyo          `hnd-jp-ping.vultr.com <https://hnd-jp-ping.vultr.com>`__
+Singapore      `sgp-ping.vultr.com <https://sgp-ping.vultr.com>`__
+Amsterdam      `ams-nl-ping.vultr.com <https://ams-nl-ping.vultr.com>`__
+Paris          `par-fr-ping.vultr.com <https://par-fr-ping.vultr.com>`__
+Frankfurt      `fra-de-ping.vultr.com <https://fra-de-ping.vultr.com>`__
+London         `lon-gb-ping.vultr.com <https://lon-gb-ping.vultr.com>`__
+New York       `nj-us-ping.vultr.com <https://nj-us-ping.vultr.com>`__
+Chicago        `il-us-ping.vultr.com <https://il-us-ping.vultr.com>`__
+Dallas         `tx-us-ping.vultr.com <https://tx-us-ping.vultr.com>`__
+Atlanta        `ga-us-ping.vultr.com <https://ga-us-ping.vultr.com>`__
+Los Angeles    `lax-ca-us-ping.vultr.com <https://lax-ca-us-ping.vultr.com>`__
+Miami          `fl-us-ping.vultr.com <https://fl-us-ping.vultr.com>`__
+Seattle        `wa-us-ping.vultr.com <https://wa-us-ping.vultr.com>`__
+Silicon Valley `sjo-ca-us-ping.vultr.com <https://sjo-ca-us-ping.vultr.com>`__
+Sydney         `syd-au-ping.vultr.com <https://syd-au-ping.vultr.com>`__
+============== =================================================================
 
 用下面这个脚本:
 
-.. gist:: c0e26f4b9d7376489688fb264e3d9e3b
+.. gist:: zombie110year/c0e26f4b9d7376489688fb264e3d9e3b
 
-先把这个文件保存到本地的 ``vultr_ping.py``\ ，或者直接在 REPL
+先把这个文件保存到本地的 ``vultr_ping.py``，或者直接在 REPL
 中运行，在按照文档注释中的例子用就可以了。 因为 ``show_ping`` 函数是用
 ANSI Color Sequence
 将结果在终端里打印成表的，如果终端不支持，可能会很难看。
@@ -205,6 +206,3 @@ Brook 没有提供 Linux 下的 GUI 程序, 只能通过命令行使用. 不过�
 上被结束掉了. 正在研究利用 systemd 进程监控守护的方法.
 
 [TODO:挖坑待填]
-
-.. |Vultr-Billing.png| image:: https://i.loli.net/2018/07/24/5b56e6795aa58.png
-   :target: https://i.loli.net/2018/07/24/5b56e6795aa58.png

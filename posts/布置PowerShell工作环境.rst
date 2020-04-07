@@ -244,5 +244,4 @@ userfunc.ps1
 
 ..
 
-   因为用了 Travis-CI {% post_link 为-Hexo-博客添加自动集成 为 Hexo
-   博客添加了自动集成 %}, 这个函数被弃用了.
+   因为用了 Travis-CI :doc:`为-Hexo-博客添加自动集成`, 这个函数被弃用了.

@@ -45,7 +45,7 @@ CMake 基本概念
 ``project``
 -----------
 
-```project`` <https://cmake.org/cmake/help/v3.14/command/project.html>`__
+`project <https://cmake.org/cmake/help/v3.14/command/project.html>`__
 设置项目信息. 在顶层模块中, 这是必须的设置.
 
 .. code:: cmake
